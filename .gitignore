@@ -1,4 +1,16 @@
 node_modules/
 web.config
-lib/
 bower_components
+lib/xmljs/libxml2-2.7.8/*
+lib/jquery.ui
+lib/filesaver/demo
+lib/**/*.md
+lib/**/*.html
+lib/**/*.json
+lib/**/*.markdown
+lib/**/*.asciidoc
+lib/**/*.xml
+lib/**/*.sh
+lib/**/*.a
+lib/**/*.xsd
+lib/NS.UI.Navbar/demo
