@@ -9,16 +9,17 @@
 
 function loadAllCss() {
     var links = [
-        'lib/font-awesome/css/font-awesome.css',
-        'lib/fancytree/skin-win7/ui.fancytree.min.css',
-        'lib/bootstrap/bootstrap.css',
-        'lib/bootstrap/bootstrap-responsive.css',
-        'lib/jsdifflib/diffview.css',
-        'lib/nanoscroller/nanoscroller.css',
-        'lib/NS.UI.Navbar/navbar-modernui.css',
-        'lib/NS.UI.Navbar/navbar.css',
-        'lib/NS.UI.Notification/notification.css',
-        'compressed/formbuilder.min.css'
+        'libs/font-awesome/css/font-awesome.min.css',
+        'libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css',
+        'libs/bootstrap/dist/css/bootstrap-theme.min.css',
+        'libs/bootstrap/dist/css/bootstrap.min.css',
+        'libs/jsdifflib/diffview.css',
+        'libs/nanoscroller/dist/css/nanoscroller.css',
+        'libs/NS.UI.Navbar/themes/navbar.bootstrap3.css',
+        'libs/NS.UI.Notification/notification.css',
+        'compressed/formbuilder.min.css',
+        'libs/fancytree/dist/skin-win7/ui.fancytree.min.css',
+        'libs/backbone-forms/distribution/templates/bootstrap3.css'
     ];
     for (var l in links) {
         var link  = document.createElement("link");
@@ -31,20 +32,29 @@ function loadAllCss() {
 
 require.config({
     paths: {
-        backbone             : "../../lib/backbone/backbone",
-        blobjs               : "../../lib/blobjs/Blob",
-        bootstrap            : "../../lib/bootstrap/bootstrap",
-        fancytree            : "../../lib/fancytree/jquery.fancytree-custom.min",
-        filesaver            : "../../lib/filesaver/FileSaver",
-        i18n                 : "../../lib/i18n/i18next",
-        jquery               : "../../lib/jquery/jquery",
-        jqueryui             : "../../lib/jquery-ui/jquery-ui",
-        nanoscroller         : "../../lib/nanoscroller/jquery.nanoscroller",
-        underscore           : "../../lib/underscore/underscore",
-        "NS.UI.Navbar"       : "../../lib/NS.UI.Navbar/navbar",
-        "NS.UI.Notification" : "../../lib/NS.UI.Notification/notification",
-        requirejs            : "../../lib/requirejs/require",
-        "font-awesome"       : "../../lib/font-awesome/*"
+        backbone              : "../../libs/backbone/backbone",
+        blobjs                : "../../libs/blobjs/Blob",
+        bootstrap             : "../../libs/bootstrap/dist/js/bootstrap.min",
+        fancytree             : "../../libs/fancytree/dist/jquery.fancytree-custom.min",
+        filesaver             : "../../libs/filesaver/FileSaver",
+        i18n                  : "../../libs/i18n/i18next",
+        jquery                : "../../libs/jquery/dist/jquery",
+        jqueryui              : "../../libs/jquery-ui/jquery-ui.min",
+        underscore            : "../../libs/underscore/underscore",
+        "NS.UI.Navbar"        : "../../libs/NS.UI.Navbar/navbar",
+        "NS.UI.NavbarTheme"   : "../../libs/NS.UI.Navbar/themes/navbar.bootstrap3",
+        "NS.UI.Notification"  : "../../libs/NS.UI.Notification/notification",
+        requirejs             : "../../libs/requirejs/require",
+        "font-awesome"        : "../../libs/font-awesome/fonts/*",
+        "backbone-forms"      : "../../libs/backbone-forms/distribution.amd/backbone-forms",
+        "backbone-forms-list" : "../../libs/backbone-forms//distribution.amd/editors/list.min",
+        modalAdapter          : "../../libs/bootstrapAdapter/src/backbone.bootstrap-modal",
+        bootstrapTemplate : '../../libs/backbone-forms/distribution/templates/bootstrap3',
+        template              : "../../libs/backbone-forms/distribution/templates/bootstrap",
+        xmljs                 : "../../libs/xmljs/xmllint",
+        bootstrapAdapter      : "../../libs/bootstrapAdapter/index",
+        nanoscroller          : "../../libs/nanoscroller/dist/javascripts/jquery.nanoscroller.min",
+        typeahead             : "../../libs/typeahead/bootstrap3-typeahead.min"
     },
     shim: {
         jquery: {
@@ -59,6 +69,16 @@ require.config({
                 "jquery"
             ],
             exports: "Backbone"
+        },
+        "backbone-forms": {
+            deps: [
+                "backbone"
+            ],
+            exports: "Backbone"
+        },
+        bootstrapTemplate : {
+            deps : [ 'backbone-forms'],
+            exports : 'Form'
         },
         jqueryui: {
             exports: "$",
@@ -78,14 +98,19 @@ require.config({
                 "jquery"
             ]
         },
-        nanoscroller: {
+        "NS.UI.Navbar": {
             exports: "$",
             deps: [
                 "jquery",
-                "jqueryui"
+                "backbone",
+                "bootstrap"
             ]
         },
-        "NS.UI.Navbar": {
+        "NS.UI.NavbarTheme" : {
+            deps : ['NS.UI.Navbar'],
+            exports : "NS"
+        },
+        "NS.UI.Notification": {
             exports: "$",
             deps: [
                 "jquery",
@@ -98,14 +123,27 @@ require.config({
             deps: [
                 "jquery"
             ]
+        },
+        typeahead: {
+            exports: "$",
+            deps: [
+                "jquery", "bootstrap"
+            ]
+        },
+        nanoscroller : {
+            exports: "$",
+            deps: [
+                "jquery"
+            ]
         }
     },
+    
     packages: [
 
     ]
 });
 
-require(['app/formbuilder'], function(formbuilder) {
+require(['formbuilder'], function(formbuilder) {
     loadAllCss();
 
     var options = {

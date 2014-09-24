@@ -15,22 +15,20 @@
 
     .content {
         background  : #fff;
-        height      : 100%; 
+        height      : 100%;
 
         //  Widget Panel on the left
         .widgetsPanel {
-            height      : 100%;
             background  : #ddd;
-            height      : 100%;
 
             h1 { font-weight: lighter; font-family: "Segoe UI Light", "Helvetica Neue", "Segoe UI", "Segoe WP", sans-serif !important}
 
             .nano-pane {
                 background : #aaa;
-                .nano-slider { background : #ddd; border-radius: 0 !important; }
+                .nano-slider { background : #O8C; border-radius: 0 !important; }
             }
 
-            .nano-content { padding-top: 50px; padding-bottom: 60px; }
+            .nano-content { padding-bottom: 60px; }
 
             .fields {
                 .font();
@@ -85,16 +83,14 @@
             .dropField {
                 .noMarginTop();
                 padding-top    : 0px;
-                padding-bottom : 5px;
-                margin-bottom  : 5px;
                 margin-left    : 0!important;
                 background     : #fff;
                 transition : background 0.2s ease-in-out;
                 &:hover {
                     background : beige;
-                    &>.element:first-child>.row>.actions {
-                            display : block;
-                        }
+                    .actions {
+                        display : block;
+                    }
                 }
                 .actions {
                     display: none;
@@ -144,8 +140,10 @@
                     margin-left     : 12px !important;
                     margin-right    : 22px;
                 }
-                input[type="checkbox"] {
-                    margin-left : 10px;
+                input[type="checkbox"], input[type="radio"] {
+                    margin-left : 0px !important;
+                    position: static !important;
+                    width : 25px;
                 }
                 label:hover { cursor : default !important; }
             }
@@ -357,3 +355,11 @@ fieldset.subformField {
         }
     }
 }
+
+.itemList {
+    float          : left;
+    vertical-align : middle;
+    padding-top    : 5px;
+    padding-right  : 5px;
+}
+

@@ -8,11 +8,34 @@
         "checkbox"     : "Checkbox",
         "hidden"       : "Hidden",
         "file"         : "File",
-        "tree"         : "TreeView",
-        "long"         : "Long text",
-        "mask"         : "Pattenr",
+        "treeview"     : "Tree View",
+        "longtext"     : "Long text",
+        "pattern"      : "Pattern",
         "line"         : "Horizontal line",
-        "autocomplete" : "autocomplete"
+        "autocomplete" : "Auto complete",
+        "table"        : "Presentation",
+        "subform"      : "Fieldset",
+		"horizontalline" : "Horizontal line",
+    },
+
+    "protocol" : {
+        "name" : "Protocol name",
+        "description" : "Protocol Description",
+        "keywords" : "Keywords"
+    },
+
+    "modal" : {
+        "comment" : "Your coment",
+        "filename" : "File name",
+        "save" : {
+            "title" : "Protocol save",
+            "button" : "Save"
+        },
+        "export" : {
+            "title" : "Export",
+            "json" : "Export as JSON file",
+            "xml" : "Exporter as XML File"
+        }
     },
 
     "nav" : {
@@ -45,5 +68,37 @@
         "edit"      : "Edit",
         "delete"    : "Delete",
         "clone"     : " Clone"
+    },
+
+    "schema" : {
+        "required"          : "Required",
+        "readonly"          : "Read only",
+        "value"             : "Value",
+        "default"           : "Default value",
+        "url"               : "Web service URL",
+        "hint"              : "Help text",
+        "size"              : "Maximal size",
+        "file"              : "Default file",
+        "mime"              : "Allowed file type",
+        "title"             : "Title",
+        "key"               : "Key",
+        "folder"            : "Folder",
+        "defaultNode"       : "Default node",
+        "multipleSelection" : "Multiple selection",
+        "hierarchic"        : "Hierarchic selection",
+        "child"             : "Sub node",
+        "real"              : "Real value",
+        "englishText"       : "English displayed text",
+        "frenchText"        : "French displayed text",
+        "format"            : "Display format",
+        "multiline"         : "Multiline",
+        "min"               : "Minimal value",
+        "max"               : "Maximal value",
+        "precision"         : "Step",
+        "unity"             : "Unity",
+        "pattern"           : "Pattern value",
+        "multiple"          : "Multiple",
+        "legend"            : "Legend"
     }
+
 }

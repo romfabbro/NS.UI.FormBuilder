@@ -1,5 +1,6 @@
 node_modules/
 web.config
+<<<<<<< HEAD
 bower_components
 lib/xmljs/libxml2-2.7.8/*
 lib/jquery.ui
@@ -15,3 +16,8 @@ lib/**/*.a
 lib/**/*.xsd
 lib/NS.UI.Navbar/demo
 libs/**
+=======
+libs/
+bower_components
+compressed/
+>>>>>>> master

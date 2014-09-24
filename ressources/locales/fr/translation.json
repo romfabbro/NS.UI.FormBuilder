@@ -1,32 +1,53 @@
 {
     "fields" : {
-        "text"         : "Texte",
-        "numeric"      : "Numérique",
-        "date"         : "Date",
-        "select"       : "Liste déroulante",
-        "radio"        : "Bouton radio",
-        "checkbox"     : "Case à cocher",
-        "hidden"       : "Masqué",
-        "file"         : "Fichier",
-        "tree"         : "Arbre",
-        "long"         : "Texte long",
-        "mask"         : "Masque",
-        "line"         : "Ligne horizontale",
-        "autocomplete" : "autocomplete",
-        "table"        : "Présentation",
-        "fieldset"     : "Sous formulaire"
+        "text"           : "Texte",
+        "numeric"        : "Numérique",
+        "date"           : "Date",
+        "select"         : "Liste déroulante",
+        "radio"          : "Bouton radio",
+        "checkbox"       : "Case à cocher",
+        "hidden"         : "Masqué",
+        "file"           : "Fichier",
+        "longtext"       : "Texte long",
+        "pattern"        : "Masque",
+        "line"           : "Ligne horizontale",
+        "autocomplete"   : "Auto complétion",
+        "table"          : "Présentation",
+        "subform"        : "Sous formulaire",
+        "horizontalline" : "Séparation",
+        "treeview"       : "Arborescence"
+    },
+
+    "protocol" : {
+        "name" : "Nom du protocole",
+        "description" : "Description du protocol",
+        "keywords" : "Mots clés"
+    },
+
+    "modal" : {
+        "comment" : "Votre commentaire",
+        "filename" : "Nom du fichier",
+        "save" : {
+            "title" : "Sauvegarde du protocol",
+            "button" : "Sauvegarder"
+        },
+        "export" : {
+            "title" : "Export",
+            "json" : "Exporter au format JSON",
+            "xml" : "Exporter au format XML"
+        }
     },
 
     "nav" : {
         "save" : {
             "title"     : " Enregistrer",
             "cloud"     : "Enregistrer sur le serveur",
-            "export"    : "Exporter au format XML"
+            "export"    : "Exporter au format XML ou JSON"
         },
         "import" : {
             "title"     : " Importer un protocole",
             "cloud"     : "Charger depuis le serveur",
-            "import"    : "Importer un fichier XML"
+            "import"    : "Importer un fichier XML ou JSON"
         },
 
         "clear"     : " Tout supprimer",
@@ -46,6 +67,37 @@
     "actions" : {
         "edit"      : "Modifier",
         "delete"    : "Supprimer",
-        "clone"     : " Dupliqueer"
+        "clone"     : " Dupliquer"
+    },
+
+    "schema" : {
+        "required"          : "Requis",
+        "readonly"          : "Lecture seule",
+        "value"             : "Valeur",
+        "default"           : "Valeur par défaut",
+        "url"               : "Adresse service web",
+        "hint"              : "Text d'aide",
+        "size"              : "Taille maximal",
+        "file"              : "Fichier par défaut",
+        "mime"              : "Type de fichier autorisé",
+        "title"             : "Intitulé",
+        "key"               : "Clé",
+        "folder"            : "Dossier",
+        "defaultNode"       : "Noeud par défaut",
+        "multipleSelection" : "Sélection multiple",
+        "hierarchic"        : "Sélection hiérarchique",
+        "child"             : "Sous dossier",
+        "real"              : "Valeur réelle",
+        "englishText"       : "Texte affiché en anglais",
+        "frenchText"        : "Text affiché en français",
+        "format"            : "Format d'affichage",
+        "multiline"         : "Multi ligne",
+        "min"               : "Valeur minimale",
+        "max"               : "Valuer maximale",
+        "precision"         : "Précision",
+        "unity"             : "Unité",
+        "pattern"           : "Masque de valeur",
+        "multiple"          : "Multiple",
+        "legend"            : "Légende"
     }
 }
