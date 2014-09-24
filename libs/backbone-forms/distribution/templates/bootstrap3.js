@@ -24,25 +24,26 @@
 
 
   Form.Field.template = _.template('\
-            <div class="form-group padding5 paddingRight25 field-<%= key %>">\
-                <label class="control-label" for="<%= editorId %>"><%= title %></label>\
-                <div data-editor >\
-                    <p class="help-block" data-error></p>\
-                    <p class="help-block"><%= help %></p>\
-                </div>\
-            </div>\
-        ');
+    <div class="form-group field-<%= key %>">\
+      <label class="col-sm-2 control-label" for="<%= editorId %>"><%= title %></label>\
+      <div class="col-sm-10">\
+        <span data-editor></span>\
+        <p class="help-block" data-error></p>\
+        <p class="help-block"><%= help %></p>\
+      </div>\
+    </div>\
+  ');
 
 
   Form.NestedField.template = _.template('\
-            <div class="form-group padding5 paddingRight25 field-<%= key %>">\
-                <label class="control-label" for="<%= editorId %>"><%= title %></label>\
-                <div data-editor >\
-                    <p class="help-block" data-error></p>\
-                    <p class="help-block"><%= help %></p>\
-                </div>\
-            </div>\
-        ');
+    <div class="field-<%= key %>">\
+      <div title="<%= title %>" class="input-xlarge">\
+        <span data-editor></span>\
+        <div class="help-inline" data-error></div>\
+      </div>\
+      <div class="help-block"><%= help %></div>\
+    </div>\
+  ');
 
   Form.editors.Base.prototype.className = 'form-control';
   Form.Field.errorClassName = 'has-error';
