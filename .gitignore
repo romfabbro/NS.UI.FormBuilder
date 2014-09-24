@@ -1,23 +1,16 @@
 node_modules/
 web.config
-<<<<<<< HEAD
 bower_components
-lib/xmljs/libxml2-2.7.8/*
-lib/jquery.ui
-lib/filesaver/demo
-lib/**/*.md
-lib/**/*.html
-lib/**/*.json
-lib/**/*.markdown
-lib/**/*.asciidoc
-lib/**/*.xml
-lib/**/*.sh
-lib/**/*.a
-lib/**/*.xsd
-lib/NS.UI.Navbar/demo
-libs/**
-=======
-libs/
-bower_components
-compressed/
->>>>>>> master
+libs/xmljs/libxml2-2.7.8/*
+libs/jquery.ui
+libs/filesaver/demo
+libs/**/*.md
+libs/**/*.html
+libs/**/*.json
+libs/**/*.markdown
+libs/**/*.asciidoc
+libs/**/*.xml
+libs/**/*.sh
+libs/**/*.a
+libs/**/*.xsd
+libs/NS.UI.Navbar/demo
