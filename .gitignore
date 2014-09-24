@@ -14,3 +14,4 @@ lib/**/*.sh
 lib/**/*.a
 lib/**/*.xsd
 lib/NS.UI.Navbar/demo
+libs/**

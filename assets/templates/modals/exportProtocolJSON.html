@@ -1,0 +1,54 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 data-i18n="modal.export.title">
+                Export protocol
+            </h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="form-group">
+                <label data-i18n="protocol.name">
+                    Protocol name
+                </label>
+                <input type="text" id="exportProtocolName" class="form-control" data-provide="typeahead" />
+            </div>
+
+            <div class="form-group paddingTop5">
+                <label data-i18n="protocol.description">
+                    Protocol description
+                </label>
+                <textarea id="exportProtocolDescription" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group paddingTop5">
+                <label data-i18n="protocol.keywords">
+                    Keywords <i>(Taped enter for validate)</i>
+                </label>
+                <input type="text" id="exportProtocolKeywords" class="form-control" data-provider="typeahead" />
+                <ul class="row-fluid" id="exportProtocolKeywordsList">
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label data-i18n="modal.filename">
+                    JSON file name
+                </label>
+                <input type="text" id="exportProtocolFileName" class="form-control" />
+            </div>
+
+            <input type="text" id="exportmode" class="hide" />
+        </di>
+        <div class="modal-footer paddingBottom10 paddingRight0">
+            <a href="#" class="btn btn-primary" data-i18n="modal.export.json">
+                Export protocol as JSON file
+            </a>
+            <a href="#" class="btn btn-info" data-i18n="modal.export.xml">
+                Export protocol as XML file
+            </a>
+        </div>
+
+    </div>
+</div>
