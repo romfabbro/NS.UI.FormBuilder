@@ -12,53 +12,60 @@
     <section class="container-fluid" id="formBuilder">
     </section>
     <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/underscore/underscore-min.js"></script>
+    <script src="libs/underscore/underscore.js"></script>
     <script src="libs/backbone/backbone.js"></script>
     <script src="libs/requirejs/require.js"></script>
     <script src="build/formbuilder.min.js"></script>
+
     <script type="text/javascript">
-    $(document).ready(function() {
+        $(document).ready(function() {
 
-        function loadAllCss() {
-            var links = [
-                'libs/font-awesome/css/font-awesome.min.css',
-                'libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css',
-                'libs/bootstrap/dist/css/bootstrap-theme.min.css',
-                'libs/bootstrap/dist/css/bootstrap.min.css',
-                'libs/jsdifflib/diffview.css',
-                'libs/nanoscroller/dist/css/nanoscroller.css',
-                'libs/NS.UI.Navbar/themes/navbar.bootstrap3.css',
-                'libs/NS.UI.Notification/notification.css',
-                'compressed/formbuilder.min.css',
-                'libs/fancytree/dist/skin-win7/ui.fancytree.min.css',
-                'libs/backbone-forms/distribution/templates/bootstrap3.css'
-            ];
-            for (var l in links) {
-                var link = document.createElement("link");
-                link.type = "text/css";
-                link.rel = "stylesheet";
-                link.href = links[l];
-                document.getElementsByTagName("head")[0].appendChild(link);
-            }
-        }
-
-        require(['formbuilder'], function(formbuilder) {
-            loadAllCss();
-
-            var options = {
-                // Specify URL for formBuilder configuration
-                // Replace this URL with your own
-                autocompleteURL: 'ressources/autocomplete/',
-                translationURL: 'ressources/locales/',
-                keywordAutocomplete: 'ressources/autocomplete/keywords.json',
-                protocolAutocomplete: 'ressources/autocomplete/protocols.json',
-                unitURL: 'ressources/autocomplete/units.json'
+            function loadAllCss() {
+                var links = [
+                    'libs/font-awesome/css/font-awesome.min.css',
+                    'libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css',
+                    'libs/bootstrap/dist/css/bootstrap-theme.min.css',
+                    'libs/bootstrap/dist/css/bootstrap.min.css',
+                    'libs/jsdifflib/diffview.css',
+                    'libs/nanoscroller/dist/css/nanoscroller.css',
+                    'libs/NS.UI.Navbar/themes/navbar.bootstrap3.css',
+                    'libs/NS.UI.Notification/notification.css',
+                    'compressed/formbuilder.min.css',
+                    'libs/fancytree/dist/skin-win7/ui.fancytree.min.css',
+                    'libs/backbone-forms/distribution/templates/bootstrap3.css'
+                ];
+                for (var l in links) {
+                    var link = document.createElement("link");
+                    link.type = "text/css";
+                    link.rel = "stylesheet";
+                    link.href = links[l];
+                    document.getElementsByTagName("head")[0].appendChild(link);
+                }
             }
 
-            formbuilder.initialize(options);
+            require(['formbuilder'], function(formbuilder) {
+                loadAllCss();
+
+                var options = {
+                    // Specify URL for formBuilder configuration
+                    // Replace this URL with your own
+                    URLOptions: {
+                        autocompleteURL: 'ressources/autocomplete/',
+                        translationURL: 'ressources/locales/',
+                        keywordAutocomplete: 'ressources/autocomplete/keywords.json',
+                        protocolAutocomplete: 'ressources/autocomplete/protocols.json',
+                        unitURL: 'ressources/autocomplete/units.json',
+                    },
+                    el: '#formBuilder'
+                }
+
+                formbuilder.initialize(options);
+
+
+            });
         });
-    })
     </script>
+
 </body>
 
 </html>

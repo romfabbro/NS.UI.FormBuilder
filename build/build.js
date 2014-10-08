@@ -1,9 +1,10 @@
 ({
+
     paths: {
         backbone              : "../../libs/backbone/backbone",
         blobjs                : "../../libs/blobjs/Blob",
         bootstrap             : "../../libs/bootstrap/dist/js/bootstrap",
-        fancytree             : "../../libs/fancytree/dist/jquery.fancytree-all.min",
+        fancytree             : "../../libs/fancytree/dist/jquery.fancytree.min",
         filesaver             : "../../libs/filesaver/FileSaver",
         i18n                  : "../../libs/i18n/i18next",
         jquery                : "../../libs/jquery/dist/jquery",
@@ -24,7 +25,8 @@
         nanoscroller          : "../../libs/nanoscroller/dist/javascripts/jquery.nanoscroller",
         typeahead             : "../../libs/typeahead/bootstrap3-typeahead",
         "backbone.radio"      : "../../libs/backbone.radio/build/backbone.radio",
-        fuelux                : "../../libs/fuelux/dist/js/fuelux"
+        fuelux                : "../../libs/fuelux/dist/js/fuelux",
+        text : '../../assets/js/text'
     },
 
     shim: {
@@ -121,6 +123,7 @@
     },
 
     optimize: 'uglify2',
+
     uglify2: {
       output: {
         beautify: true,
@@ -129,6 +132,7 @@
         semicolons: false
       }
     },
+
     baseUrl                 : '../assets/js/',
     mainConfigFile          : '../assets/js/config.js',
     name                    : 'formbuilder',
@@ -137,7 +141,25 @@
         beautify: true
     },
     preserveLicenseComments : false,
+    //findNestedDependencies: true,
 
-    include : ['requirejs', 'jquery', 'underscore', 'backbone', 'views/modals/exportProtocol']
+    include : [
+        'views/fieldViews/TextFieldView',
+        'views/fieldViews/AutocompleteFieldView',
+        'views/fieldViews/BaseView',
+        'views/fieldViews/CheckBoxFieldView',
+        'views/fieldViews/DateFieldView',
+        'views/fieldViews/FileFieldView',
+        'views/fieldViews/HiddenFieldView',
+        'views/fieldViews/HorizontalLineFieldView',
+        'views/fieldViews/LongTextFieldView',
+        'views/fieldViews/NumericFieldView',
+        'views/fieldViews/PatternFieldView',
+        'views/fieldViews/RadioFieldView',
+        'views/fieldViews/SelectFieldView',
+        'views/fieldViews/SubFormFieldView',
+        'views/fieldViews/TableFieldView',
+        'views/fieldViews/TreeViewFieldView',
+    ]
 
 })
