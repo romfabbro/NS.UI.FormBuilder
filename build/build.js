@@ -20,13 +20,12 @@
         modalAdapter          : "../../libs/bootstrapAdapter/src/backbone.bootstrap-modal",
         bootstrapTemplate     : "../../libs/backbone-forms/distribution/templates/bootstrap3",
         template              : "../../libs/backbone-forms/distribution/templates/bootstrap",
-        xmljs                 : "../../libs/xmljs/xmllint",
         bootstrapAdapter      : "../../libs/bootstrapAdapter/index",
         nanoscroller          : "../../libs/nanoscroller/dist/javascripts/jquery.nanoscroller",
         typeahead             : "../../libs/typeahead/bootstrap3-typeahead",
         "backbone.radio"      : "../../libs/backbone.radio/build/backbone.radio",
         fuelux                : "../../libs/fuelux/dist/js/fuelux",
-        text : '../../assets/js/text'
+        text                  : '../../assets/js/text'
     },
 
     shim: {
@@ -141,7 +140,6 @@
         beautify: true
     },
     preserveLicenseComments : false,
-    //findNestedDependencies: true,
 
     include : [
         'views/fieldViews/TextFieldView',
@@ -160,6 +158,9 @@
         'views/fieldViews/SubFormFieldView',
         'views/fieldViews/TableFieldView',
         'views/fieldViews/TreeViewFieldView',
+        'views/modals/exportProtocol',
+        'views/modals/importProtocol',
+        'views/modals/saveProtocol'
     ]
 
 })
