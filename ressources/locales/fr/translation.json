@@ -42,16 +42,16 @@
         "save" : {
             "title"     : " Enregistrer",
             "cloud"     : "Enregistrer sur le serveur",
-            "export"    : "Exporter au format XML ou JSON"
+            "export"    : "Exporter au format JSON"
         },
         "import" : {
             "title"     : " Importer un protocole",
             "cloud"     : "Charger depuis le serveur",
-            "import"    : "Importer un fichier XML ou JSON"
+            "import"    : "Importer un fichier JSON"
         },
 
         "clear"     : " Tout supprimer",
-        "compare"   : " Comparer deux fichiers XML"
+        "compare"   : " Comparer deux protocoles"
     },
 
     "label" : {
@@ -76,11 +76,12 @@
         "value"             : "Valeur",
         "default"           : "Valeur par défaut",
         "url"               : "Adresse service web",
-        "hint"              : "Text d'aide",
+        "help"              : "Texte d'aide",
         "size"              : "Taille maximal",
         "file"              : "Fichier par défaut",
         "mime"              : "Type de fichier autorisé",
         "title"             : "Intitulé",
+        "name"              : "Nom",
         "key"               : "Clé",
         "folder"            : "Dossier",
         "defaultNode"       : "Noeud par défaut",
@@ -98,6 +99,8 @@
         "unity"             : "Unité",
         "pattern"           : "Masque de valeur",
         "multiple"          : "Multiple",
-        "legend"            : "Légende"
+        "legend"            : "Légende",
+        "editorClass"       : "Class CSS de l'éditeur",
+        "fieldClass"        : "Classe CSS du champs"
     }
 }
