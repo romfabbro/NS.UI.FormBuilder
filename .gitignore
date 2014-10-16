@@ -31,3 +31,7 @@ libs/fancytree/dist/src
 libs/nanoscroller/tests
 libs/nanoscroller/docs
 build/bouild
+/nbproject/private/
+nbproject/
+libs/fuelux/js/
+libs/fuelux/less/
