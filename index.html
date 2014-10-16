@@ -4,8 +4,6 @@
 <head>
     <title>FormBuilder</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--<script data-main="assets/js/config" type="text/javascript" src='libs/requirejs/require.js'></script>-->
-
 </head>
 
 <body>
@@ -15,6 +13,8 @@
     <script src="libs/underscore/underscore.js"></script>
     <script src="libs/backbone/backbone.js"></script>
     <script src="libs/requirejs/require.js"></script>
+    <script src="libs/blobjs/Blob.js"></script>
+    <script src="libs/filesaver/FileSaver.js"></script>
     <script src="build/formbuilder.min.js"></script>
 
     <script type="text/javascript">
@@ -22,17 +22,18 @@
 
             function loadAllCss() {
                 var links = [
+                    'libs/nanoscroller/dist/css/nanoscroller.css',
                     'libs/font-awesome/css/font-awesome.min.css',
                     'libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css',
                     'libs/bootstrap/dist/css/bootstrap-theme.min.css',
                     'libs/bootstrap/dist/css/bootstrap.min.css',
                     'libs/jsdifflib/diffview.css',
-                    'libs/nanoscroller/dist/css/nanoscroller.css',
                     'libs/NS.UI.Navbar/themes/navbar.bootstrap3.css',
                     'libs/NS.UI.Notification/notification.css',
                     'compressed/formbuilder.min.css',
                     'libs/fancytree/dist/skin-win7/ui.fancytree.min.css',
-                    'libs/backbone-forms/distribution/templates/bootstrap3.css'
+                    'libs/backbone-forms/distribution/templates/bootstrap3.css',
+                    "libs/fuelux/dist/css/fuelux.min.css"
                 ];
                 for (var l in links) {
                     var link = document.createElement("link");
