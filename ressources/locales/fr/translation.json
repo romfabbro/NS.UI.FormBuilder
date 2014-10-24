@@ -15,7 +15,9 @@
         "table"          : "Présentation",
         "subform"        : "Sous formulaire",
         "horizontalline" : "Séparation",
-        "treeview"       : "Arborescence"
+        "treeview"       : "Arborescence",
+        "boolean"        : "Booléen",
+        "thesaurus"      : "Thesaurus"
     },
 
     "protocol" : {
@@ -101,6 +103,38 @@
         "multiple"          : "Multiple",
         "legend"            : "Légende",
         "editorClass"       : "Class CSS de l'éditeur",
-        "fieldClass"        : "Classe CSS du champs"
+        "fieldClass"        : "Classe CSS du champs",
+        "checked"           : "Sélectionné",
+        "checkboxlabel"     : "Label checkbox",
+        "numericHelp"       : "Saisir une valeur numérique",
+        "decimal"           : "Valeur décimal autorisée",
+        "fieldSize"         : "Taille d'affichage",
+        "sizeValue" : {
+            "small"  : "Etroit",
+            "medium" : "Moyen",
+            "large"  : "Large"
+        },
+        "eol" : "Est en fin de ligne",
+        "webServiceURL" : "URL service web pour les données"
+    },
+
+    "tooltip" : {
+        "text"           : "Champs texte",
+        "numeric"        : "Champs numérique",
+        "date"           : "Champs date",
+        "select"         : "Liste déroulante",
+        "radio"          : "Bouton radio",
+        "checkbox"       : "Case à cocher",
+        "hidden"         : "Champs masqué",
+        "file"           : "Fichier",
+        "longtext"       : "Texte long",
+        "pattern"        : "Champs avec expression régulière",
+        "line"           : "Ligne horizontale",
+        "autocomplete"   : "Auto complétion",
+        "table"          : "Présentation",
+        "subform"        : "Sous formulaire",
+        "horizontalline" : "Séparation",
+        "treeview"       : "Arborescence",
+        "boolean"        : "Booléen"
     }
 }

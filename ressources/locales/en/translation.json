@@ -1,21 +1,23 @@
 {
     "fields" : {
-        "text"         : "Text",
-        "numeric"      : "Numeric",
-        "date"         : "Date",
-        "select"       : "Select",
-        "radio"        : "Radio button",
-        "checkbox"     : "Checkbox",
-        "hidden"       : "Hidden",
-        "file"         : "File",
-        "treeview"     : "Tree View",
-        "longtext"     : "Long text",
-        "pattern"      : "Pattern",
-        "line"         : "Horizontal line",
-        "autocomplete" : "Auto complete",
-        "table"        : "Presentation",
-        "subform"      : "Fieldset",
-		"horizontalline" : "Horizontal line",
+        "text"           : "Text",
+        "numeric"        : "Numeric",
+        "date"           : "Date",
+        "select"         : "Select",
+        "radio"          : "Radio button",
+        "checkbox"       : "Checkbox",
+        "hidden"         : "Hidden",
+        "file"           : "File",
+        "treeview"       : "Tree View",
+        "longtext"       : "Long text",
+        "pattern"        : "Pattern",
+        "line"           : "Horizontal line",
+        "autocomplete"   : "Auto complete",
+        "table"          : "Presentation",
+        "subform"        : "Fieldset",
+        "horizontalline" : "Horizontal line",
+        "boolean"        : "Boolean",
+        "thesaurus"      : "Thesaurus"
     },
 
     "protocol" : {
@@ -33,7 +35,7 @@
         },
         "export" : {
             "title" : "Export",
-            "json" : "Export as JSON file",
+            "json" : "Export as JSON file"
         }
     },
 
@@ -99,7 +101,39 @@
         "multiple"          : "Multiple",
         "legend"            : "Legend",
         "editorClass"       : "Editor CSS class",
-        "fieldClass"        : "Field CSS class"
-    }
+        "fieldClass"        : "Field CSS class",
+        "checked"           : "Selected",
+        "checkboxlabel"     : "Checkbox label",
+        "numericHelp"       : "Enter numeric value",
+        "decimal"           : "Allow decimal value",
+        "fieldSize"         : "Field display size",
+        "sizeValue" : {
+            "small"  : "Small",
+            "medium" : "Medium",
+            "large"  : "Large"
+        },
+        "eol" : "Is the end of the line",
+        "webServiceURL" : "Web service URL pour data list"
+    },
+
+    "tooltip" : {
+        "text"           : "Text field",
+        "numeric"        : "Numeric field",
+        "date"           : "Date field",
+        "select"         : "Dropdown list",
+        "radio"          : "Radio button",
+        "checkbox"       : "Checkbox",
+        "hidden"         : "Hidden field",
+        "file"           : "File",
+        "treeview"       : "Tree View",
+        "longtext"       : "Long text",
+        "pattern"        : "Field with regular expression",
+        "line"           : "Horizontal line",
+        "autocomplete"   : "Auto complete",
+        "table"          : "Presentation",
+        "subform"        : "Fieldset",
+        "horizontalline" : "Horizontal line",
+        "boolean"        : "Boolean"
+    },
 
 }
