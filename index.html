@@ -3,12 +3,26 @@
 
 <head>
     <title>FormBuilder</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="libs/nanoscroller/dist/css/nanoscroller.css">
+<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css">
+<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="libs/jsdifflib/diffview.css">
+<link rel="stylesheet" href="libs/NS.UI.Navbar/themes/navbar.bootstrap3.css">
+<link rel="stylesheet" href="libs/NS.UI.Notification/notification.css">
+<link rel="stylesheet" href="compressed/formbuilder.min.css">
+<link rel="stylesheet" href="libs/fancytree/dist/skin-win7/ui.fancytree.min.css">
+<link rel="stylesheet" href="libs/backbone-forms/distribution/templates/bootstrap3.css">
+<link rel="stylesheet" href="libs/fuelux/dist/css/fuelux.min.css">
+
 </head>
 
 <body>
-    <section class="container-fluid" id="formBuilder">
-    </section>
+    <section class="container-fluid" id="formBuilder"></section>
+
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/underscore/underscore.js"></script>
     <script src="libs/backbone/backbone.js"></script>
@@ -20,49 +34,22 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-            function loadAllCss() {
-                var links = [
-                    'libs/nanoscroller/dist/css/nanoscroller.css',
-                    'libs/font-awesome/css/font-awesome.min.css',
-                    'libs/fancytree/dist/skin-bootstrap/ui.fancytree.min.css',
-                    'libs/bootstrap/dist/css/bootstrap-theme.min.css',
-                    'libs/bootstrap/dist/css/bootstrap.min.css',
-                    'libs/jsdifflib/diffview.css',
-                    'libs/NS.UI.Navbar/themes/navbar.bootstrap3.css',
-                    'libs/NS.UI.Notification/notification.css',
-                    'compressed/formbuilder.min.css',
-                    'libs/fancytree/dist/skin-win7/ui.fancytree.min.css',
-                    'libs/backbone-forms/distribution/templates/bootstrap3.css',
-                    "libs/fuelux/dist/css/fuelux.min.css"
-                ];
-                for (var l in links) {
-                    var link = document.createElement("link");
-                    link.type = "text/css";
-                    link.rel = "stylesheet";
-                    link.href = links[l];
-                    document.getElementsByTagName("head")[0].appendChild(link);
-                }
-            }
-
             require(['formbuilder'], function(formbuilder) {
-                loadAllCss();
 
                 var options = {
                     // Specify URL for formBuilder configuration
                     // Replace this URL with your own
                     URLOptions: {
-                        autocompleteURL: 'ressources/autocomplete/',
-                        translationURL: 'ressources/locales/',
-                        keywordAutocomplete: 'ressources/autocomplete/keywords.json',
-                        protocolAutocomplete: 'ressources/autocomplete/protocols.json',
-                        unitURL: 'ressources/autocomplete/units.json',
+                        autocompleteURL      : 'ressources/autocomplete/',
+                        translationURL       : 'ressources/locales/',
+                        keywordAutocomplete  : 'ressources/autocomplete/keywords.json',
+                        protocolAutocomplete : 'ressources/autocomplete/protocols.json',
+                        unitURL              : 'ressources/autocomplete/units.json',
                     },
                     el: '#formBuilder'
                 }
 
                 formbuilder.initialize(options);
-
-
             });
         });
     </script>
