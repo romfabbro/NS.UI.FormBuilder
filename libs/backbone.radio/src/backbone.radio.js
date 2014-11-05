@@ -1,5 +1,3 @@
-var slice = Array.prototype.slice;
-
 var previousRadio = Backbone.Radio;
 
 var Radio = Backbone.Radio = {};
@@ -75,6 +73,40 @@ function callHandler(callback, context, args) {
   }
 }
 
+// A helper used by `off` methods to the handler from the store
+function removeHandler(store, name, callback, context) {
+  var event = store[name];
+  if (
+     (!callback || (callback === event.callback || callback === event.callback._callback)) &&
+     (!context || (context === event.context))
+  ) {
+    delete store[name];
+    return true;
+  }
+}
+
+function removeHandlers(store, name, callback, context) {
+  store || (store = {});
+  var names = name ? [name] : _.keys(store);
+  var matched = false;
+
+  for (var i = 0, length = names.length; i < length; i++) {
+    name = names[i];
+
+    // If there's no event by this name, log it and continue
+    // with the loop
+    if (!store[name]) {
+      continue;
+    }
+
+    if (removeHandler(store, name, callback, context)) {
+      matched = true;
+    }
+  }
+
+  return matched;
+}
+
 /*
  * tune-in
  * -------
@@ -94,7 +126,7 @@ _.extend(Radio, {
 
   // Log information about the channel and event
   log: function(channelName, eventName) {
-    var args = slice.call(arguments, 2);
+    var args = _.rest(arguments, 2);
     console.log('[' + channelName + '] "' + eventName + '"', args);
   },
 
@@ -129,7 +161,7 @@ Radio.Commands = {
 
   // Issue a command
   command: function(name) {
-    var args = slice.call(arguments, 1);
+    var args = _.rest(arguments);
     if (eventsApi(this, 'command', name, args)) {
       return this;
     }
@@ -160,6 +192,10 @@ Radio.Commands = {
     }
     this._commands || (this._commands = {});
 
+    if (this._commands[name]) {
+      debugLog('A command was overwritten', name, this.channelName);
+    }
+
     this._commands[name] = {
       callback: callback,
       context: context || this
@@ -184,17 +220,15 @@ Radio.Commands = {
   },
 
   // Remove handler(s)
-  stopComplying: function(name) {
+  stopComplying: function(name, callback, context) {
     if (eventsApi(this, 'stopComplying', name)) {
       return this;
     }
-    var store = this._commands;
 
-    if (!name) {
+    // Remove everything if there are no arguments passed
+    if (!name && !callback && !context) {
       delete this._commands;
-    } else if (store && store[name]) {
-      delete store[name];
-    } else {
+    } else if (!removeHandlers(this._commands, name, callback, context)) {
       debugLog('Attempted to remove the unregistered command', name, this.channelName);
     }
 
@@ -210,14 +244,14 @@ Radio.Commands = {
  */
 
 function makeCallback(callback) {
-  return _.isFunction(callback) ? callback : _.constant(callback);
+  return _.isFunction(callback) ? callback : function () { return callback; };
 }
 
 Radio.Requests = {
 
   // Make a request
   request: function(name) {
-    var args = slice.call(arguments, 1);
+    var args = _.rest(arguments);
     var results = eventsApi(this, 'request', name, args);
     if (results) {
       return results;
@@ -248,6 +282,10 @@ Radio.Requests = {
 
     this._requests || (this._requests = {});
 
+    if (this._requests[name]) {
+      debugLog('A request was overwritten', name, this.channelName);
+    }
+
     this._requests[name] = {
       callback: makeCallback(callback),
       context: context || this
@@ -273,18 +311,15 @@ Radio.Requests = {
   },
 
   // Remove handler(s)
-  stopReplying: function(name) {
+  stopReplying: function(name, callback, context) {
     if (eventsApi(this, 'stopReplying', name)) {
       return this;
     }
 
-    var store = this._requests;
-
-    if (!name) {
+    // Remove everything if there are no arguments passed
+    if (!name && !callback && !context) {
       delete this._requests;
-    } else if (store && store[name]) {
-      delete store[name];
-    } else {
+    } else if (!removeHandlers(this._requests, name, callback, context)) {
       debugLog('Attempted to remove the unregistered request', name, this.channelName);
     }
 
@@ -350,7 +385,7 @@ var channel, args, systems = [Backbone.Events, Radio.Commands, Radio.Requests];
 _.each(systems, function(system) {
   _.each(system, function(method, methodName) {
     Radio[methodName] = function(channelName) {
-      args = slice.call(arguments, 1);
+      args = _.rest(arguments);
       channel = this.channel(channelName);
       return channel[methodName].apply(channel, args);
     };
