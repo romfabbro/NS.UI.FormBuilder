@@ -88,7 +88,8 @@
         'views/modals/exportProtocol',
         'views/modals/importProtocol',
         'views/modals/saveProtocol',
-        'views/fieldViews/ThesaurusFieldView'
+        'views/fieldViews/ThesaurusFieldView',
+        'views/fieldViews/AutocompleteTreeViewFieldView'
     ]
 
 })
