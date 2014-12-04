@@ -20,7 +20,7 @@
 	    <link rel="stylesheet" href="libs/bootstrap-select/dist/css/bootstrap-select.min.css" />
 	    <link rel="stylesheet" href="libs/sweetalert/lib/sweet-alert.css" />
 	    <link rel="stylesheet" href="libs/reneco-fonts/style.css" />
-	    <script data-main="assets/js/config" type="text/javascript" src='libs/requirejs/require.js'></script>
+	    <script src='libs/requirejs/require.js'></script>
 	</head>
 	<body>
 		<header>
@@ -39,6 +39,14 @@
 		</header>
 	    <section class="container-fluid" id="formBuilder">
 	    </section>
+
+		<script src="libs/jquery/dist/jquery.min.js"></script>
+		<script src="libs/underscore/underscore.js"></script>
+		<script src="libs/backbone/backbone.js"></script>
+		<script src="libs/requirejs/require.js"></script>
+		<script src="libs/blobjs/Blob.js"></script>
+		<script src="libs/filesaver/FileSaver.js"></script>
+		<script src="build/formbuilder.min.js"></script>
 
 	    <script type="text/javascript">
 -	    $(document).ready(function() {
