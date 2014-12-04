@@ -39,5 +39,27 @@
 		</header>
 	    <section class="container-fluid" id="formBuilder">
 	    </section>
+
+	    <script type="text/javascript">
+-	    $(document).ready(function() {
+-	        require(['formbuilder'], function(formbuilder) {
+-	            var options = {
+-	                // Specify URL for formBuilder configuration
+-	                // Replace this URL with your own
+-	                URLOptions: {
+-	                    autocompleteURL      : 'ressources/autocomplete/',
+-	                    translationURL       : 'ressources/locales/',
+-	                    keywordAutocomplete  : 'ressources/autocomplete/keywords.json',
+-	                    protocolAutocomplete : 'ressources/autocomplete/protocols.json',
+-	                    unitURL              : 'ressources/autocomplete/units.json',
+-	                    preConfiguredField   : 'ressources/fieldConfiguration/preConfiguredField.json',
+-            			configurationURL     : 'configurationSaved' //  This is a random URL, we are in client node without back end
+-	                },
+-	                el: '#formBuilder'
+-	            }
+-	            formbuilder.initialize(options);
+-	        });
+-	    });
+-    </script>
 	</body>
 </html>
