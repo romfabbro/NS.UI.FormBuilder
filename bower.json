@@ -33,7 +33,8 @@
     "jquery-simple-slider" : null,
     "autocompleteTreeview" : "https://github.com/NaturalSolutions/NS.UI.autocompTree.git",
     "rangeslider.js"       : "~0.3.6",
-    "bootstrap-select" : "https://github.com/silviomoreto/bootstrap-select.git",
-    "sweetalert" : null
+    "bootstrap-select"     : "https://github.com/silviomoreto/bootstrap-select.git",
+    "sweetalert"           : null,
+    "reneco-fonts"         : null
   }
 }
