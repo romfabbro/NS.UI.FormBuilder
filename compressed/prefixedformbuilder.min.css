@@ -391,7 +391,8 @@ button.saveButton {
   line-height: 37px;
   margin-bottom: 10px;
   margin-top: 10px;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 #formBuilder .content .widgetsPanel .fields:hover {
   cursor: pointer;
@@ -518,7 +519,8 @@ button.saveButton {
   margin-top: 0 !important;
   padding-top: 0px;
   margin-left: 0!important;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
   background: #111;
   margin-bottom: 20px;
 }
@@ -530,7 +532,8 @@ button.saveButton {
 #formBuilder .content .dropArea .dropField .element .row.paddingBottom5 {
   font-family: 'Exo 2', sans-serif !important;
   font-weight: 300;
-  transition: background 0.2s ease-in-out;
+  -webkit-transition: background 0.2s ease-in-out;
+          transition: background 0.2s ease-in-out;
   height: 45px;
   line-height: 45px;
   color: white;
@@ -934,7 +937,8 @@ button.saveButton {
   background: none !important;
   color: #111 !important;
   opacity: 0.5 !important;
-  transition: all 0.1s !important;
+  -webkit-transition: all 0.1s !important;
+          transition: all 0.1s !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 20px;
@@ -1041,11 +1045,9 @@ button.saveButton {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 #saveModal textarea,
 #exportModal textarea {
