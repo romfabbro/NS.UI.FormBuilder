@@ -1,5 +1,4 @@
 ({
-
     paths: {
         backbone               : "../../libs/backbone/backbone",
         blobjs                 : "../../libs/blobjs/Blob",
@@ -11,12 +10,10 @@
         "jquery-ui"            : "../../libs/jquery-ui/jquery-ui",
         underscore             : "../../libs/underscore/underscore",
         requirejs              : "../../libs/requirejs/require",
-        "font-awesome"         : "../../libs/font-awesome/fonts/*",
         "backbone-forms"       : "../../libs/backbone-forms/distribution.amd/backbone-forms",
         modalAdapter           : "../../libs/bootstrapAdapter/src/backbone.bootstrap-modal",
         "backbone-forms-list"  : "../../libs/backbone-forms/distribution.amd/editors/list.min",
         bootstrapTemplate      : "../../libs/backbone-forms/distribution/templates/bootstrap3",
-        xmljs                  : "../../libs/xmljs/xmllint",
         bootstrapAdapter       : "../../libs/bootstrapAdapter/index",
         typeahead              : "../../libs/typeahead/bootstrap3-typeahead",
         "backbone.radio"       : "../../libs/backbone.radio/build/backbone.radio",
@@ -27,15 +24,15 @@
         "jquery-simple-slider" : "../../libs/jquery-simple-slider/js/simple-slider",
         "perfect-scrollbar"    : "../../libs/perfect-scrollbar/src/perfect-scrollbar",
         rangeslider            : "../../libs/rangeslider.js/dist/rangeslider",
-        "bootstrap-select"     : "../../libs/bootstrap-select/dist/js/bootstrap-select.min",
-        sweetalert : "../../libs/sweetalert/lib/sweet-alert.min"
+        "bootstrap-select"     : "../../libs/bootstrap-select/dist/js/bootstrap-select",
+        sweetalert             : "../../libs/sweetalert/lib/sweet-alert",
     },
     shim: {
         blobjs: {
-            exports: "blobjs"
+            exports: "Blob"
         },
         filesaver: {
-            exports: "filesaver"
+            exports: "Filesaver"
         },
         difflib: {
             exports: "difflib"
@@ -75,10 +72,10 @@
             exports: "$"
         },
         i18n: {
-            exports: "$",
             deps: [
                 "jquery"
-            ]
+            ],
+            exports: "$"
         },
         bootstrap: {
             exports: "$",
@@ -91,12 +88,6 @@
             deps: [
                 "jquery",
                 "bootstrap"
-            ]
-        },
-        nanoscroller: {
-            exports: "$",
-            deps: [
-                "jquery"
             ]
         },
         autocompleteTreeView: {
@@ -119,13 +110,13 @@
                 "jquery"
             ]
         },
-        "bootstrap-select" :{
+        "bootstrap-select": {
             exports: "$",
             deps: [
                 "jquery"
             ]
         },
-        sweetalert:{
+        sweetalert: {
             exports: "$",
             deps: [
                 "jquery"
@@ -134,7 +125,6 @@
     },
 
     optimize: 'uglify2',
-
     uglify2: {
       output: {
         beautify: true,
@@ -143,7 +133,6 @@
         semicolons: false
       }
     },
-
     baseUrl                 : '../assets/js/',
     mainConfigFile          : '../assets/js/config.js',
     name                    : 'formbuilder',
@@ -152,9 +141,10 @@
         beautify: true
     },
     preserveLicenseComments : false,
-    removeCombined: true,
 
     include : [
+        'requirejs',
+        'backbone',
         'views/fieldViews/TextFieldView',
         'views/fieldViews/AutocompleteFieldView',
         'views/fieldViews/BaseView',
@@ -163,8 +153,8 @@
         'views/fieldViews/FileFieldView',
         'views/fieldViews/HiddenFieldView',
         'views/fieldViews/HorizontalLineFieldView',
-        'views/fieldViews/LongTextFieldView',
-        'views/fieldViews/NumericFieldView',
+        'views/fieldViews/TextAreaFieldView',
+        'views/fieldViews/NumberFieldView',
         'views/fieldViews/PatternFieldView',
         'views/fieldViews/RadioFieldView',
         'views/fieldViews/SelectFieldView',
