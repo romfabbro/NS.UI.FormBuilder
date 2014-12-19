@@ -9,7 +9,6 @@
 	    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
 	    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="libs/jsdifflib/diffview.css">
-	    <link rel="stylesheet" href="libs/NS.UI.Navbar/themes/navbar.bootstrap3.css">
 	    <link rel="stylesheet" href="compressed/formbuilder.min.css">
 	    <link rel="stylesheet" href="libs/fancytree/dist/skin-win7/ui.fancytree.min.css">
 	    <link rel="stylesheet" href="libs/backbone-forms/distribution/templates/bootstrap3.css">
@@ -20,7 +19,6 @@
 	    <link rel="stylesheet" href="libs/bootstrap-select/dist/css/bootstrap-select.min.css" />
 	    <link rel="stylesheet" href="libs/sweetalert/lib/sweet-alert.css" />
 	    <link rel="stylesheet" href="libs/reneco-fonts/style.css" />
-	    <script src='libs/requirejs/require.js'></script>
 	</head>
 	<body>
 		<header>
@@ -40,34 +38,33 @@
 	    <section class="container-fluid" id="formBuilder">
 	    </section>
 
-		<script src="libs/jquery/dist/jquery.min.js"></script>
-		<script src="libs/underscore/underscore.js"></script>
-		<script src="libs/backbone/backbone.js"></script>
 		<script src="libs/requirejs/require.js"></script>
-		<script src="libs/blobjs/Blob.js"></script>
-		<script src="libs/filesaver/FileSaver.js"></script>
 		<script src="build/formbuilder.min.js"></script>
 
 	    <script type="text/javascript">
--	    $(document).ready(function() {
--	        require(['formbuilder'], function(formbuilder) {
--	            var options = {
--	                // Specify URL for formBuilder configuration
--	                // Replace this URL with your own
--	                URLOptions: {
--	                    autocompleteURL      : 'ressources/autocomplete/',
--	                    translationURL       : 'ressources/locales/',
--	                    keywordAutocomplete  : 'ressources/autocomplete/keywords.json',
--	                    protocolAutocomplete : 'ressources/autocomplete/protocols.json',
--	                    unitURL              : 'ressources/autocomplete/units.json',
--	                    preConfiguredField   : 'ressources/fieldConfiguration/preConfiguredField.json',
--            			configurationURL     : 'configurationSaved' //  This is a random URL, we are in client node without back end
--	                },
--	                el: '#formBuilder'
--	            }
--	            formbuilder.initialize(options);
--	        });
--	    });
--    </script>
+	 	    $(document).ready(function() {
+
+	 	        require(['formbuilder'], function(formbuilder) {
+
+		            formbuilder.initialize({
+						// Specify URL for formBuilder configuration
+		                // Replace this URL with your own
+		                URLOptions: {
+		                    autocompleteURL      : 'ressources/autocomplete/',
+		                    translationURL       : 'ressources/locales/',
+		                    keywordAutocomplete  : 'ressources/autocomplete/keywords.json',
+	                    	protocolAutocomplete : 'ressources/autocomplete/protocols.json',
+		                    unitURL              : 'ressources/autocomplete/units.json',
+		                    preConfiguredField   : 'ressources/fieldConfiguration/preConfiguredField.json',
+	            			configurationURL     : 'configurations'
+		                },
+		                el: '#formBuilder'
+		            });
+
+		            console.log ("ici")
+
+		        });
+		    });
+    </script>
 	</body>
 </html>
