@@ -2,12 +2,12 @@
 
 ## Screenshoots
 
-![formBuilder](https://bfc338e5d0f8ee39c10a706464e4731eb4bd4d7a.googledrive.com/host/0B363_4UXLoNhUWhTOWhCbXlQQ2s/form.jpg)
+![formBuilder](http://s16.postimg.org/722bej4p1/Form_Builder_Google_Chrome_2.jpg)
 
 ## Features
 
 * Graphical form definition
-* Export / Import with JSON or XML file
+* Export / Import in JSON file
 * Drag'n drop field position ajustement
 * Model definition based on backone-forms
 
@@ -18,11 +18,15 @@ That page is static, so some functionnalities like "save on the cloud" will not 
 
 ### Demo FormBuilder to Backbone forms
 
-When you've imported a JSON file, you can try it on this page [FormBuilder to 
+When you've imported a JSON file, you can try it on this page [FormBuilder to
 Backbone-forms](http://amiceli.github.io/FormBuilderTobackbone-forms/).
 You can generate a form with your jSON File.
 
-You can also try [this demo](http://amiceli.github.io/backboneformsWizard/). You can 
+You can also try [this demo](http://amiceli.github.io/backboneformsWizard/). You can
 generate a form with fieldset and wizard.
+
+#### Back end
+
+Check out python back end [repository](https://github.com/NaturalSolutions/NS.Server.FormBuilder)
 
 ##### Currently the FormBuilder is not 100% compatible with backbone forms but it's our goal.
