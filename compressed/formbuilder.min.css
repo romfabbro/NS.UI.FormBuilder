@@ -340,6 +340,9 @@ button.saveButton {
   background-image: url('../assets/images/back.jpg');
   height: 100%;
 }
+#formBuilder .content .widgetsPanel.col-md-4-push-left {
+  margin-left: -33.33333333% !important;
+}
 #formBuilder .content .widgetsPanel .scroll {
   position: relative;
   overflow: hidden;
@@ -444,6 +447,7 @@ button.saveButton {
   height: 100%;
   background: #312f30;
   margin-bottom: 50px;
+  z-index: 1;
 }
 #formBuilder .content .dropArea footer {
   height: 80px;
@@ -485,6 +489,10 @@ button.saveButton {
   padding-bottom: 15px;
   overflow: hidden;
   margin-bottom: 0;
+}
+#formBuilder .content .dropArea .col-md-10 h1 label {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
 }
 #formBuilder .content .dropArea .col-md-10 h1:focus {
   box-shadow: none;
@@ -768,8 +776,9 @@ button.saveButton {
   color: white;
 }
 #formBuilder .content #settings {
+  position: absolute;
+  z-index: 0;
   background: #231f20;
-  margin-left: 0;
   padding-bottom: 50px;
   height: 100%;
 }
