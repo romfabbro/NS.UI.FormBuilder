@@ -164,7 +164,8 @@
         'views/modals/importProtocol',
         'views/modals/saveProtocol',
         'views/fieldViews/ThesaurusFieldView',
-        'views/fieldViews/AutocompleteTreeViewFieldView'
+        'views/fieldViews/AutocompleteTreeViewFieldView',
+        'views/fieldViews/NumericRangeFieldView'
     ]
 
 })
