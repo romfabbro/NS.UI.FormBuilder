@@ -39,19 +39,13 @@
         },
         "cancel" : "Cancel",
         "clear" : "Clear form",
-        "title" : "Create new form"
-    },
-
-    "modal" : {
-        "comment" : "Your coment",
-        "filename" : "File name",
-        "save" : {
-            "title" : "Protocol save",
-            "button" : "Save"
-        },
-        "export" : {
-            "title" : "Export",
-            "json" : "Export as JSON file"
+        "title" : "Create new form",
+        "count" : "Field(s)",
+        "actions" : {
+            "import" : "IMPORT",
+            "export" : "EXPORT",
+            "save"   : "SAVE",
+            "clear"  : "CLEAR ALL"
         }
     },
 
@@ -136,7 +130,8 @@
         "label"         : {
             "fr" : "French label",
             "en" : "English label"
-        }
+        },
+        "name" : "Field name"
     },
 
     "tooltip" : {
@@ -169,5 +164,75 @@
         "list"         : "List fields"
     },
 
-    "panel" : "Options panel"
+    "panel" : "Options panel",
+
+    "navbar" : {
+        "context" : {
+            "edition" : "edition"
+        },
+        "status" : {
+            "online" : "Online"
+        }
+    },
+
+    "field" : {
+        "action" : {
+            "edit" : "Edit"
+        }
+    },
+
+    "settings" : {
+        "actions" : {
+            "saveAsType" : "Save as new type",
+            "save" : "Save changes",
+            "cancel" : "Cancel"
+        },
+        "preField" : "Pre-configurated field"
+    },
+
+    "modal" : {
+        "comment" : "Your coment",
+        "filename" : "File name",
+        "save" : {
+            "title" : "Protocol save",
+            "button" : "Save"
+        },
+        "export" : {
+            "title" : "Export",
+            "json" : "Export as JSON file"
+        },
+        "clear" : {
+            "title"       : "Are you sure ?",
+            "text"        : "The form will be lost !",
+            "yes"         : "Yes, delete it",
+            "no"          : "No, cancel",
+            "deleted"     : "Deleted",
+            "formDeleted" : "Your form has been deleted !"
+        },
+        "import" : {
+            "error" : "An error occured !",
+            "errorMsg" : "Your form can't be imported !"
+        },
+        "export" : {
+            "success" : "Export successful !",
+            "error" : "Export failed !",
+            "errorMsg" : "An error occured during form export"
+        },
+        "save" : {
+            "success" : "Form savad !",
+            "successMsg" : "Your form was successfully saved on the server !",
+            "error" : "An error occured !",
+            "errorMsg" :" Your form wasn't saved. Consider making a export"
+        },
+        "field" : {
+            "error" : "Field can't be added !",
+            "errorMsg" : "An error occured during field addition !"
+        },
+        "configuration" : {
+            "success"    : "Field saved !",
+            "successMsg" : "Your field has been saved as a pre-configurated field.",
+            "error"      : "Field not saved !",
+            "errorMsg"   : "Your field couldn't be saved ."
+        }
+    }
 }

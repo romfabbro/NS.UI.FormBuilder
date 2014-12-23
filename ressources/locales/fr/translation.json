@@ -40,20 +40,13 @@
         },
         "cancel" : "Annuler",
         "clear" : "Supprimer",
-        "title" : "Création d'un nouveau formulaire"
-    },
-
-    "modal" : {
-        "comment"  : "Votre commentaire",
-        "filename" : "Nom du fichier",
-        "save" : {
-            "title"  : "Sauvegarde du protocol",
-            "button" : "Sauvegarder"
-        },
-        "export" : {
-            "title" : "Export",
-            "json"  : "Exporter au format JSON",
-            "xml"   : "Exporter au format XML"
+        "title" : "Création d'un nouveau formulaire",
+        "count" : "Champ(s)",
+        "actions" : {
+            "import" : "IMPORTER",
+            "export" : "EXPORTER",
+            "save"   : "SAUVER",
+            "clear"  : "TOUT EFFACER"
         }
     },
 
@@ -139,7 +132,8 @@
         "label"         : {
             "fr" : "Label en français",
             "en" : "Label en anglais"
-        }
+        },
+        "name" : "Nom"
     },
 
     "tooltip" : {
@@ -173,5 +167,76 @@
         "list"         : "Champs à choix multiples"
     },
 
-    "panel" : "Paramètres"
+    "panel" : "Paramètres",
+
+    "navbar" : {
+        "context" : {
+            "edition" : "édition"
+        },
+        "status" : {
+            "online" : "Connecté"
+        }
+    },
+
+    "field" : {
+        "action" : {
+            "edit" : "Modifier"
+        }
+    },
+
+    "settings" : {
+        "actions" : {
+            "saveAsType" : "Enregistrez comme nouveau type",
+            "save"       : "Sauvegarder",
+            "cancel"     : "Annuler"
+        },
+        "preField" : "Champs pré configurés"
+    },
+    "modal" : {
+        "comment"  : "Votre commentaire",
+        "filename" : "Nom du fichier",
+        "save" : {
+            "title"  : "Sauvegarde du protocol",
+            "button" : "Sauvegarder"
+        },
+        "export" : {
+            "title" : "Export",
+            "json"  : "Exporter au format JSON",
+            "xml"   : "Exporter au format XML"
+        },
+        "clear" : {
+            "title"       : "Etes vous sûr ?",
+            "text"        : "Le formulaire sera définitivement perdu !",
+            "yes"         : "Oui, supprimer",
+            "no"          : "Non, nnuler",
+            "deleted"     : "Supprimé !",
+            "formDeleted" : "Votre formulaire a été supprimé !"
+        },
+        "import" : {
+            "error"    : "Une erreur est survenu !",
+            "errorMsg" : "Votre formulaire n'a pas pu être importé"
+        },
+        "export" : {
+            "success"  : "Export réussi !",
+            "error"    : "Echec de l'export !",
+            "errorMsg" : "Une erreur est survenue lors de l'export"
+        },
+        "save" : {
+            "success"    : "Sauvé !",
+            "successMsg" : "Votre formulaire a été enregistré sur le serveur !",
+            "error"      : "Une erreur est survenu !",
+            "errorMsg"   : "Votre formulaire n'a pas été enregistré !\nPensez à faire un export"
+        },
+        "field" : {
+            "error"    : "Echec de l'ajout !",
+            "errorMsg" : "Une erreur est survenue lors de l'ajout du champ !"
+        },
+        "configuration" : {
+            "success"    : "Champs sauvegardé !",
+            "successMsg" : "Votre champs a été enregistré comme champs pré-configuré.",
+            "error"      : "Champs non sauvegardé !",
+            "errorMsg"   : "Votre champs n'a pas pu être sauvegardé."
+        }
+    }
+
 }
