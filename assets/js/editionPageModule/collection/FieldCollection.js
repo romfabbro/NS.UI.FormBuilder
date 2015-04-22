@@ -10,7 +10,7 @@
 
 define([
     'backbone',
-    '../models/fields',
+    '../models/Fields',
     'backbone.radio',
     '../../Translater'
 ], function (Backbone, Fields, Radio, Translater) {
