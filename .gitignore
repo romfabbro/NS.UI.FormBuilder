@@ -14,9 +14,7 @@ libs/**/*.sh
 libs/**/*.a
 libs/**/*.xsd
 libs/NS.UI.Navbar/demo
-assets/js/
 assets/stylesheet/
-assets/templates/
 libs/jquery-ui/ui/
 libs/jquery-ui/themes/
 libs/jquery/src/*

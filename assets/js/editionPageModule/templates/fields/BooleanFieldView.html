@@ -1,0 +1,22 @@
+<div class="element padding5">
+    <div class="row paddingBottom5">
+        <label class="col-md-6">
+            <i class="fa fa-arrows"></i>
+            <%= labelFr %><% if (required === true) { %> (*) <% } %>
+        </label>
+        <div class="col-md-6 right actions">
+            <span class="reneco trash"></span>
+<span class="reneco duplicate"></span>
+           <span class="reneco edit"></span>
+        </div>
+    </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"  name="checked" id="<%= id %>" value="checked" <% if (checked){ %>checked<% } %> />
+                <%= checkboxLabel %>
+            </label>
+        </div>
+    </div>
+
+
+</div>
