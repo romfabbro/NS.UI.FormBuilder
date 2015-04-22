@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         // Watch less file changes for compile
         watch: {
             stylesheet: {
-                files: ['assets/stylesheet/*.less'],
+                files: ['assets/stylesheet/**/*.less'],
                 tasks: ['less:dist', 'autoprefixer:single_file']
             }
         },
@@ -30,13 +30,13 @@ module.exports = function(grunt) {
             single_file: {
                 src: "compressed/formbuilder.min.css",
                 dest: "compressed/prefixedformbuilder.min.css"
-            },
+            }
         }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-bower-clean');
 
 }

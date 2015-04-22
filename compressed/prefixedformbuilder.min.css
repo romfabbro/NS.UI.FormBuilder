@@ -22,9 +22,6 @@ body {
   line-height: 30px;
   font-size: 20px;
 }
-.error {
-  box-shadow: 0 0 3px #c80000 inset !important;
-}
 .marginLeft10 {
   margin-left: 10px !important;
 }
@@ -143,1156 +140,6 @@ body {
 }
 .noMarginTop {
   margin-top: 0 !important;
-}
-.btn,
-button {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  height: 35px;
-  margin-top: 12.5px;
-  color: white;
-}
-.btn.gray,
-button.gray {
-  border-radius: 0 !important;
-  background: #111;
-}
-.btn.gray:hover,
-button.gray:hover {
-  color: white;
-}
-.btn.red,
-button.red {
-  background: #892833;
-}
-.btn.form,
-button.form {
-  border: none !important;
-  width: 120px;
-  text-transform: uppercase;
-}
-.btn.reneco,
-button.reneco {
-  overflow: hidden;
-  border: none;
-  line-height: 22px;
-}
-.btn.reneco label,
-button.reneco label {
-  height: 38px;
-  position: relative;
-  /* top: -5px; */
-  top: -7px;
-  padding-top: 7px;
-  width: 38px;
-  left: 15px;
-  float: right;
-  text-align: center;
-  padding-right: 5px;
-}
-.btn.reneco label span,
-button.reneco label span {
-  text-align: center;
-  font-size: 20px;
-}
-.btn.reneco.red label,
-button.reneco.red label {
-  background: #702029;
-}
-.btn:hover,
-button:hover,
-.btn:active,
-button:active,
-.btn:focus,
-button:focus,
-.btn:visited,
-button:visited {
-  color: white;
-  box-shadow: none !important;
-  outline: none !important;
-}
-.btn:hover *,
-button:hover *,
-.btn:active *,
-button:active *,
-.btn:focus *,
-button:focus *,
-.btn:visited *,
-button:visited * {
-  color: white;
-}
-.btn.saveButton,
-button.saveButton {
-  background: transparent !important;
-  box-shadow: none;
-  outline: none;
-  border: 2px #555 solid !important;
-  color: #555 !important;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  margin: 5px auto;
-  width: 250px;
-  height: 45px !important;
-  width: 100%;
-  margin-left: 0 !important;
-  margin-top: 30px !important;
-  margin-bottom: 30px;
-}
-.checkboxField input[type="checkbox"] {
-  display: none;
-}
-.checkboxField label.checkboxLabel:before {
-  font-family: FontAwesome !important;
-  display: inline-block;
-  color: #555;
-  font-size: 24px;
-  content: "\f096";
-  letter-spacing: 10px;
-}
-.checkboxField label.checkboxLabel:before:hover {
-  cursor: pointer !important;
-}
-.checkboxField label.checkboxLabel.selected:before {
-  content: "\f046";
-}
-.checkboxField label.checkboxLabel.selected:before:hover {
-  cursor: pointer !important;
-}
-.radioField input[type="radio"] {
-  display: none;
-}
-.radioField label.radioLabel:before {
-  font-family: FontAwesome !important;
-  display: inline-block;
-  color: #555;
-  font-size: 24px;
-  content: "\f10c";
-  letter-spacing: 10px;
-}
-.radioField label.radioLabel:before:hover {
-  cursor: pointer !important;
-}
-.radioField label.radioLabel.selected:before {
-  content: "\f192";
-}
-.radioField label.radioLabel.selected:before:hover {
-  cursor: pointer !important;
-}
-.bootstrap-select {
-  box-shadow: none;
-}
-.bootstrap-select .selectpicker {
-  border: none;
-  background: #222;
-  color: white;
-  box-shadow: none;
-}
-.bootstrap-select .selectpicker:focus,
-.bootstrap-select .selectpicker:active {
-  box-shadow: none;
-}
-.bootstrap-select .selectpicker li span.text {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  font-size: 16px;
-  color: white;
-}
-.bootstrap-select .selectpicker li.selected {
-  box-shadow: none;
-  background: #222;
-}
-#formBuilder {
-  height: 100%;
-  overflow: hidden;
-}
-#formBuilder .copy,
-#formBuilder .trash,
-#formBuilder .wrench {
-  text-decoration: none;
-}
-#formBuilder .content {
-  background: #fff;
-  height: 100%;
-}
-#formBuilder .content .bootstrap-select {
-  background: transparent;
-}
-#formBuilder .content .bootstrap-select .dropdown-menu {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-color: #333;
-  border-radius: 0;
-}
-#formBuilder .content .bootstrap-select .selectpicker {
-  background: #222;
-  border-radius: 0;
-  border-color: #333;
-  text-shadow: none;
-  color: #555;
-  margin-top: 0;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .bootstrap-select .selectpicker li {
-  background: #111;
-  color: #000;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .bootstrap-select .selectpicker li:hover {
-  color: #111;
-  background: #000;
-}
-#formBuilder .content .bootstrap-select .selectpicker li a {
-  background: transparent;
-}
-#formBuilder .content .widgetsPanel {
-  background-image: url('../assets/images/back.jpg');
-  height: 100%;
-}
-#formBuilder .content .widgetsPanel.col-md-4-push-left {
-  margin-left: -33.33333333% !important;
-}
-#formBuilder .content .widgetsPanel.col-md-1 #toggle {
-  text-align: center;
-}
-#formBuilder .content .widgetsPanel.col-md-1 #toggle span {
-  font-size: 35px;
-}
-#formBuilder .content .widgetsPanel.col-md-1 #smallFeatures {
-  display: block;
-}
-#formBuilder .content .widgetsPanel #smallFeatures {
-  display: none;
-  text-align: center;
-  margin-top: 20px;
-}
-#formBuilder .content .widgetsPanel #smallFeatures div {
-  background: #555;
-  color: #eee;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  margin: 5px auto;
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span {
-  font-family: FontAwesome !important;
-  font-size: 25px;
-  line-height: 50px;
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconDateField:before {
-  content: "\f073";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconTextField:before {
-  content: "\f031";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconTextAreaField:before {
-  content: "\f039";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconNumberField:before {
-  content: '69';
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconNumericRangeField:before {
-  content: "\f1de";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconFileField:before {
-  content: "\f1c2";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconTreeViewField:before {
-  content: "\f1bb";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconSubformField {
-  font-family: 'reneco-font' !important;
-  speak: none !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  line-height: 1 !important;
-  -webkit-font-smoothing: antialiased !important;
-  line-height: 50px !important;
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconSubformField:before {
-  content: "\e678";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconThesaurusField {
-  font-family: 'reneco-font' !important;
-  speak: none !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  line-height: 1 !important;
-  -webkit-font-smoothing: antialiased !important;
-  line-height: 50px !important;
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconThesaurusField:before {
-  content: "\e696";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconHiddenField:before {
-  content: "\f070";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconHorizontalLineField:before {
-  content: "\f068";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconCheckBoxField:before {
-  content: "\f046";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconRadioField:before {
-  content: "\f192";
-}
-#formBuilder .content .widgetsPanel #smallFeatures div span.iconSelectField:before {
-  content: "\f150";
-}
-#formBuilder .content .widgetsPanel .scroll {
-  position: relative;
-  overflow: hidden;
-  height: 90%;
-  margin-top: 5%;
-}
-#formBuilder .content .widgetsPanel #toggle {
-  text-align: right;
-  width: 100%;
-}
-#formBuilder .content .widgetsPanel #toggle span {
-  font-size: 30px;
-  z-index: 255;
-  color: #555;
-}
-#formBuilder .content .widgetsPanel #toggle span.closed:before {
-  content: "\e011";
-}
-#formBuilder .content .widgetsPanel h1 {
-  font-weight: lighter;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .widgetsPanel .col-md-5.col-md-offset-1 {
-  padding-left: 0 !important;
-}
-#formBuilder .content .widgetsPanel .col-md-5:not(.col-md-offset-1) {
-  padding-right: 0 !important;
-}
-#formBuilder .content .widgetsPanel .fields {
-  height: 45px;
-  background: white;
-  border: 2px #aaa solid;
-  text-align: center;
-  line-height: 37px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
-}
-#formBuilder .content .widgetsPanel .fields label {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  color: #555;
-  font-size: 18px;
-  position: relative;
-}
-#formBuilder .content .widgetsPanel .fields i {
-  opacity: 0;
-  color: #ccc;
-  font-size: 22px;
-  width: 0;
-  left: -20px;
-  position: relative;
-  top: 2px;
-  -webkit-transition: opacity 0.3s ease-in;
-          transition: opacity 0.3s ease-in;
-}
-#formBuilder .content .widgetsPanel .fields:hover {
-  cursor: pointer;
-  outline: 5px #aaa solid;
-}
-#formBuilder .content .widgetsPanel .fields:hover i {
-  opacity: 1;
-}
-#formBuilder .content .widgetsPanel #accordion h3 {
-  border-bottom: 1px #555 solid;
-  padding-bottom: 10px;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .widgetsPanel #accordion h3:hover {
-  color: #555;
-  cursor: pointer;
-  box-shadow: none;
-  border-bottom: 1px #555 solid;
-  outline: none;
-}
-#formBuilder .content .widgetsPanel #accordion h3:active,
-#formBuilder .content .widgetsPanel #accordion h3:focus,
-#formBuilder .content .widgetsPanel #accordion h3:blur {
-  box-shadow: none;
-  border-bottom: 1px #555 solid;
-  outline: none;
-}
-#formBuilder .content .widgetsPanel #accordion h3 span.glyphicon {
-  height: 30px;
-  line-height: 30px;
-  font-size: 18px;
-}
-#formBuilder .content .widgetsPanel #accordion .ui-state-focus {
-  box-shadow: none;
-  border: none;
-  outline: none;
-}
-#formBuilder .content .mainField {
-  padding-left: 10px;
-  background: #242021;
-  border: 1px #555 solid !important;
-  color: #555;
-}
-#formBuilder .content .col11centered {
-  margin-left: 4.15555% !important;
-}
-#formBuilder .content .dropArea {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  background: #312f30;
-  margin-bottom: 50px;
-  z-index: 1;
-}
-#formBuilder .content .dropArea footer {
-  height: 80px;
-  position: relative;
-  bottom: 0;
-  background: #2e2b2c;
-  margin-left: -15px;
-  margin-right: -15px !important;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-#formBuilder .content .dropArea footer div {
-  height: 100%;
-}
-#formBuilder .content .dropArea footer button {
-  margin-top: 15px;
-}
-#formBuilder .content .dropArea footer button label:hover {
-  cursor: pointer;
-}
-#formBuilder .content .dropArea footer button.red {
-  border-radius: 2px;
-}
-#formBuilder .content .dropArea footer button.red:last-child {
-  margin-left: 20px;
-}
-#formBuilder .content .dropArea .col-md-10 {
-  padding-right: 40px !important;
-  padding-left: 40px !important;
-}
-#formBuilder .content .dropArea .col-md-10 h1 {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  width: 100%;
-  background: #312f30;
-  font-size: 35px;
-  color: #fff;
-  border-bottom: 1px #555 solid;
-  padding-bottom: 15px;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-#formBuilder .content .dropArea .col-md-10 h1 label {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .dropArea .col-md-10 h1:focus {
-  box-shadow: none;
-}
-#formBuilder .content .dropArea .col-md-10 .reneco.settings {
-  color: #555;
-}
-#formBuilder .content .dropArea .col-md-10 .reneco.settings:hover {
-  cursor: pointer;
-  color: #888;
-}
-#formBuilder .content .dropArea .scrollSection {
-  height: 80%;
-}
-#formBuilder .content .dropArea .scrollSection .col-md-12:first-child {
-  height: 100%;
-}
-#formBuilder .content .dropArea .scrollSection #scrollSection {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-#formBuilder .content .dropArea .scrollSection .ps-scrollbar-y-rail {
-  background: black;
-  height: 550px !important;
-  overflow: hidden;
-}
-#formBuilder .content .dropArea .drop {
-  padding: 0;
-  padding-bottom: 200px;
-}
-#formBuilder .content .dropArea .dropField {
-  margin-top: 0 !important;
-  padding-top: 0px;
-  margin-left: 0!important;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-  background: #111;
-  margin-bottom: 20px;
-}
-#formBuilder .content .dropArea .dropField .element {
-  background: #222;
-  padding: 0 !important;
-  border: 1px solid #3e3e3f;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  -webkit-transition: background 0.2s ease-in-out;
-          transition: background 0.2s ease-in-out;
-  height: 45px;
-  line-height: 45px;
-  color: white;
-  background-color: #3e3e3f;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .col-md-6 {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  height: 45px;
-  line-height: 45px;
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .col-md-6 .fa-arrows {
-  margin-right: 10px;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right {
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right a:not(.btn):nth-child(even) {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right a:not(.btn):last-child {
-  padding-right: 15px;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right a:not(.btn) i {
-  font-size: 25px;
-  height: 30px;
-  width: 30px;
-  display: none;
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right a.btn {
-  margin-top: -15px;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .right a.btn i {
-  height: 30px;
-  width: 30px;
-  padding-right: 5px;
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element .row.paddingBottom5 .fa-arrows {
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element .row:not(.paddingBottom5) {
-  background: #312f30;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-#formBuilder .content .dropArea .dropField .element .row .actions .trash,
-#formBuilder .content .dropArea .dropField .element .row .actions .copy {
-  visibility: hidden;
-}
-#formBuilder .content .dropArea .dropField .element:hover {
-  border: 1px solid #57585a;
-}
-#formBuilder .content .dropArea .dropField .element:hover .row.paddingBottom5 {
-  background: #57585a;
-}
-#formBuilder .content .dropArea .dropField .element:hover .actions .trash,
-#formBuilder .content .dropArea .dropField .element:hover .actions .copy {
-  visibility: visible;
-}
-#formBuilder .content .dropArea .dropField .element a {
-  color: #aaa;
-}
-#formBuilder .content .dropArea .dropField .element a:hover {
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .element a.copy,
-#formBuilder .content .dropArea .dropField .element a.trash {
-  font-size: 25px;
-  margin-right: 7px;
-}
-#formBuilder .content .dropArea .dropField .element a.trash {
-  margin-right: 20px;
-}
-#formBuilder .content .dropArea .dropField a.reneco {
-  overflow: hidden;
-  padding-right: 50px;
-}
-#formBuilder .content .dropArea .dropField a.reneco div {
-  position: absolute;
-  float: right;
-  top: 4px;
-  height: 35px;
-  width: 35px;
-  background: #000;
-  line-height: 35px;
-  overflow: hidden;
-  right: 15px;
-}
-#formBuilder .content .dropArea .dropField a.reneco div span {
-  background: transparent;
-}
-#formBuilder .content .dropArea .dropField hr {
-  height: 1px;
-  margin-top: 0;
-  min-height: 0;
-}
-#formBuilder .content .dropArea .dropField:hover a:not(.btn) i {
-  display: initial !important;
-}
-#formBuilder .content .dropArea .dropField label {
-  line-height: 30px;
-  font-size: 20px;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content .dropArea .dropField label:hover {
-  cursor: default !important;
-}
-#formBuilder .content .dropArea .dropField.textArea textarea {
-  padding-left: 10px;
-  background: #242021;
-  border: 1px #555 solid !important;
-  color: #555;
-  resize: none;
-}
-#formBuilder .content .dropArea .dropField.textArea .span1:last-child {
-  height: 48px;
-}
-#formBuilder .content .dropArea .dropField input[type="text"],
-#formBuilder .content .dropArea .dropField input[type="number"],
-#formBuilder .content .dropArea .dropField select {
-  padding-left: 10px;
-  background: #242021;
-  border: 1px #555 solid !important;
-  color: #555;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset {
-  border: 1px #222 solid;
-  min-height: 100px;
-  padding-bottom: 10px;
-  margin-right: 7px;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset .subElement {
-  background: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  box-shadow: 0 0 2px #555;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset .subElement:hover {
-  box-shadow: 0 0 4px #555;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset .subElement:hover .actions {
-  display: block !important;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset .sortableRow {
-  margin-top: 20px;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-#formBuilder .content .dropArea .dropField .subformField fieldset.hovered {
-  background: rgba(200, 210, 220, 0.5) !important;
-  border: 1px dashed #888 !important;
-}
-#formBuilder .content .dropArea .dropField .checkboxField input[type="checkbox"] + label span {
-  font-family: FontAwesome !important;
-}
-#formBuilder .content .dropArea .dropField .checkboxField input[type="checkbox"] + label span:before {
-  content: "\f096";
-}
-#formBuilder .content .dropArea .dropField .checkboxField input[type="checkbox"]:checked + label span {
-  font-family: FontAwesome !important;
-}
-#formBuilder .content .dropArea .dropField .checkboxField input[type="checkbox"]:checked + label span:before {
-  content: "\f046";
-}
-#formBuilder .content .dropArea .dropField .radioField input[type="radio"] + label span {
-  font-family: FontAwesome !important;
-}
-#formBuilder .content .dropArea .dropField .radioField input[type="radio"] + label span:before {
-  content: "\f10c";
-}
-#formBuilder .content .dropArea .dropField .radioField input[type="radio"]:checked + label span {
-  font-family: FontAwesome !important;
-}
-#formBuilder .content .dropArea .dropField .radioField input[type="radio"]:checked + label span:before {
-  content: "\f192";
-}
-#formBuilder .content .dropArea .dropField .radioField label,
-#formBuilder .content .dropArea .dropField .checkboxField label {
-  color: #888;
-}
-#formBuilder .content .dropArea .dropField input[type="radio"] {
-  margin-left: 0px !important;
-  position: static !important;
-  width: 25px;
-}
-#formBuilder .content .dropArea .dropField .treeview,
-#formBuilder .content .dropArea .dropField .thesaurusField,
-#formBuilder .content .dropArea .dropField .fancytreeview {
-  background: transparent;
-}
-#formBuilder .content .dropArea .dropField .treeview ul,
-#formBuilder .content .dropArea .dropField .thesaurusField ul,
-#formBuilder .content .dropArea .dropField .fancytreeview ul {
-  background: transparent;
-  border: none;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span.fancytree-node:hover,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span.fancytree-node:hover,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span.fancytree-node:hover {
-  background: #222;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span.fancytree-node:hover .fancytree-title,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span.fancytree-node:hover .fancytree-title,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span.fancytree-node:hover .fancytree-title {
-  background: #222;
-  border-color: #222 !important;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span.fancytree-focused,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span.fancytree-focused,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span.fancytree-focused {
-  background: black !important;
-  border-color: black !important;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span.fancytree-focused .fancytree-title,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span.fancytree-focused .fancytree-title,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span.fancytree-focused .fancytree-title {
-  background: black;
-  border-color: black !important;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span.fancytree-focused:hover .fancytree-title,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span.fancytree-focused:hover .fancytree-title,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span.fancytree-focused:hover .fancytree-title {
-  background: black;
-  border-color: black !important;
-}
-#formBuilder .content .dropArea .dropField .treeview ul span .fancytree-title,
-#formBuilder .content .dropArea .dropField .thesaurusField ul span .fancytree-title,
-#formBuilder .content .dropArea .dropField .fancytreeview ul span .fancytree-title {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .fancytreeview {
-  background: #111;
-}
-#formBuilder .content .dropArea .dropField .slider {
-  float: left;
-  width: 500px !important;
-}
-#formBuilder .content .dropArea .dropField .find {
-  background: #862332;
-  border-radius: 0;
-  border-color: #862332;
-}
-#formBuilder .content .dropArea .dropField .displayValue {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  color: white;
-}
-#formBuilder .content .dropArea .dropField .checkbox label,
-#formBuilder .content .dropArea .dropField .radio label {
-  color: white;
-}
-#formBuilder .content #settings {
-  position: absolute;
-  z-index: 0;
-  background: #231f20;
-  padding-bottom: 50px;
-  height: 100%;
-}
-#formBuilder .content #settings .ps-scrollbar-y-rail {
-  margin-top: 40px;
-  background: #000;
-  opacity: 1;
-}
-#formBuilder .content #settings .scroll {
-  position: relative;
-  overflow: hidden;
-  height: 95%;
-}
-#formBuilder .content #settings button:not(.selectpicker ) {
-  height: 35px;
-  margin-top: 12.5px;
-  color: white;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content #settings button:not(.selectpicker ).gray {
-  border-radius: 0 !important;
-  background: #454343;
-}
-#formBuilder .content #settings button:not(.selectpicker ).gray:hover {
-  color: white;
-}
-#formBuilder .content #settings button:not(.selectpicker ):not(.gray) {
-  border-radius: 2px;
-  background: #862332;
-}
-#formBuilder .content #settings button:not(.selectpicker ):not(.gray):last-child {
-  margin-left: 20px;
-}
-#formBuilder .content #settings hr {
-  border-color: black;
-}
-#formBuilder .content #settings .bootstrap-select {
-  margin-top: 10px;
-}
-#formBuilder .content #settings .bootstrap-select .dropdown-menu {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-color: #333;
-  border-radius: 0;
-}
-#formBuilder .content #settings .bootstrap-select .selectpicker {
-  background: #111;
-  border-radius: 0;
-  border-color: #333;
-  text-shadow: none;
-  color: #555;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-}
-#formBuilder .content #settings .bootstrap-select .selectpicker li {
-  background: #111;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  color: #000;
-}
-#formBuilder .content #settings .bootstrap-select .selectpicker li:hover {
-  color: #111;
-  background: #000;
-}
-#formBuilder .content #settings .bootstrap-select .selectpicker li a {
-  background: transparent;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-#formBuilder .content #settings .bootstrap-select .selectpicker li .text {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  color: #555;
-  font-size: 15px;
-}
-#formBuilder .content #settings.fa {
-  font-family: FontAwesome !important;
-}
-#formBuilder .content #settings .listEdit:hover {
-  cursor: pointer;
-}
-#formBuilder .content #settings h1 {
-  text-align: center;
-  padding-bottom: 0 !important ;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  color: #111;
-  height: 70px;
-  line-height: 60px;
-}
-#formBuilder .content #settings h1:hover {
-  cursor: pointer;
-}
-#formBuilder .content #settings h2 {
-  text-align: center;
-  font-size: 18px;
-}
-#formBuilder .content #settings h2 span:not(.selected) {
-  color: #08C;
-}
-#formBuilder .content #settings h2 span:not(.selected):hover {
-  cursor: pointer;
-}
-#formBuilder .content #settings h2 a {
-  color: #08c;
-  text-decoration: none;
-}
-#formBuilder .content #settings h2 a.selected {
-  color: #222;
-}
-#formBuilder .content #settings h2 a:hover {
-  text-decoration: none;
-}
-#formBuilder .content #settings label {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 50px;
-  height: 30px;
-  text-align: left;
-  color: #000;
-}
-#formBuilder .content #settings input[type="number"],
-#formBuilder .content #settings input[type="text"],
-#formBuilder .content #settings select,
-#formBuilder .content #settings textarea {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  background: #292c2e;
-  color: #555;
-  border: none;
-  border-radius: 0 !important;
-  font-size: 18px;
-  line-height: 25px;
-  height: 40px;
-}
-#formBuilder .content #settings input[type="number"]:active,
-#formBuilder .content #settings input[type="text"]:active,
-#formBuilder .content #settings select:active,
-#formBuilder .content #settings textarea:active,
-#formBuilder .content #settings input[type="number"]:hover,
-#formBuilder .content #settings input[type="text"]:hover,
-#formBuilder .content #settings select:hover,
-#formBuilder .content #settings textarea:hover,
-#formBuilder .content #settings input[type="number"]:focus,
-#formBuilder .content #settings input[type="text"]:focus,
-#formBuilder .content #settings select:focus,
-#formBuilder .content #settings textarea:focus {
-  box-shadow: none !important;
-}
-#formBuilder .content #settings textarea {
-  resize: none;
-  height: 120px;
-}
-#formBuilder .content #settings #fieldRequire {
-  text-align: left !important;
-  margin-left: -15px;
-}
-#formBuilder .content #settings .close,
-#formBuilder .content #settings .addOp {
-  background: none !important;
-  color: #111 !important;
-  opacity: 0.5 !important;
-  -webkit-transition: all 0.1s !important;
-          transition: all 0.1s !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-size: 20px;
-}
-#formBuilder .content #settings .close {
-  font-size: 28px;
-}
-#formBuilder .content #settings .minMax label {
-  text-align: center !important;
-  line-height: 40px;
-}
-#formBuilder .content #settings .block {
-  background: white;
-  margin-top: 10px;
-  box-shadow: 0 0 3px #aaa;
-}
-#formBuilder .content #settings .block table {
-  margin-bottom: 0;
-}
-#formBuilder .content #settings .block table caption {
-  box-shadow: 0 0 3px #aaa;
-  border-bottom: 1px #aaa solid;
-}
-#formBuilder .content #settings .pillbox {
-  background: #111;
-  color: #555;
-  border: 1px #333 solid;
-}
-#formBuilder .content #settings .pillbox .pill-group {
-  padding-left: 0;
-  margin-bottom: 0;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-#formBuilder .content #settings .pillbox .pill-group .pill {
-  background: transparent;
-  border: 1px #333 solid;
-  border-radius: 0;
-  margin-top: 0;
-  margin-left: 7px;
-}
-#formBuilder .content #settings .pillbox .pill-group .pill span.reneco {
-  color: white !important;
-  font-size: 15px !important;
-  padding-left: 7px;
-  margin-top: 3px;
-}
-#formBuilder .content #settings .pillbox .pill-group .pillbox-input-wrap input[type="text"] {
-  border: none;
-  background: transparent;
-  float: left;
-}
-#formBuilder .content #settings .pillbox .pill-group .pillbox-input-wrap input[type="text"]:active,
-#formBuilder .content #settings .pillbox .pill-group .pillbox-input-wrap input[type="text"]:focus {
-  box-shadow: none !important;
-}
-#formBuilder .content #settings .pillbox .pill-group .pillbox-input-wrap .pillbox-more {
-  display: none;
-}
-#formBuilder .content #settings .checkboxField label,
-#formBuilder .content #settings .radioField label {
-  color: #555;
-}
-#formBuilder .content #settings .leftField {
-  width: 30%;
-  float: left;
-}
-.modal {
-  background: transparent;
-  margin-top: 100px;
-}
-.modal h2 {
-  color: #575757;
-  font-size: 30px;
-  text-align: center;
-  font-weight: 600;
-  text-transform: none;
-  position: relative;
-  margin: 25px 0;
-  padding: 0;
-  line-height: 25px;
-  display: block;
-}
-.modal button {
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 0 !important;
-}
-.modal button.col-md-2 {
-  height: 34px;
-  line-height: 0px;
-}
-.modal .json {
-  border-radius: 0;
-}
-.modal .control {
-  display: block;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-#saveModal textarea,
-#exportModal textarea {
-  resize: none;
-  height: 60px;
-  max-height: 60px;
-}
-#saveModal label > i,
-#exportModal label > i {
-  color: #888;
-}
-#saveModal .modal-body,
-#exportModal .modal-body {
-  padding-bottom: 25px;
-  overflow-x: hidden;
-}
-#saveModal .modal-body .row-fluid:nth-child(even),
-#exportModal .modal-body .row-fluid:nth-child(even) {
-  margin-bottom: 5px;
-}
-#importModal .btn-success {
-  padding-top: 5px !important;
-}
-#importProtocolFileText {
-  float: left;
-}
-#editListModal {
-  width: 1000px;
-  left: 35%;
-}
-#editListModal .modal-header {
-  text-align: center;
-  background: #eee;
-  font-weight: 100;
-}
-#editListModal h2 {
-  font-size: 20px;
-}
-header {
-  font-family: 'Exo 2', sans-serif !important;
-  font-weight: 300;
-  height: 42px;
-  background: #862332;
-  line-height: 38px;
-  margin-bottom: 0 !important;
-}
-header .logo {
-  width: 20;
-  margin-left: 7px;
-  margin-right: 7px;
-}
-header .title,
-header .mode,
-header .user,
-header .status {
-  color: white;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 20px;
-  margin-left: 7px;
-  margin-right: 7px;
-}
-header .glyphicon-chevron-down {
-  color: white;
-}
-header .pipe {
-  color: white;
-  font-weight: 300;
-  font-size: 25px;
-  margin-left: 7px;
-  margin-top: -2px;
-}
-header .pull-right {
-  margin-right: 25px;
-}
-header .navbar .container-fluid {
-  background: #862332 !important;
-}
-header .navbar-default {
-  background: #862332 !important;
-}
-header a[data-key="save"]:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e166";
-}
-header a[data-key="import"]:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e198";
-}
-header a[data-key="clear"]:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e020";
-}
-header a[data-key="show"]:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e178";
-}
-header a[data-key="saveConfiguration"]:before {
-  font-family: "Glyphicons Halflings";
-  content: "\e032";
-}
-header .navbar-form,
-header .navbar-user {
-  display: none;
 }
 .margin0 {
   margin: 0px !important;
@@ -1473,4 +320,1675 @@ header .navbar-user {
 }
 .paddingRight25 {
   padding-right: 25px !important;
+}
+.btn,
+button {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  height: 35px;
+  color: white;
+}
+.btn.gray,
+button.gray {
+  border-radius: 0;
+  background: #111;
+}
+.btn.gray:hover,
+button.gray:hover {
+  color: white;
+}
+.btn.grey,
+button.grey {
+  background: #484647;
+}
+.btn.red,
+button.red {
+  background: #892833;
+}
+.btn.form,
+button.form {
+  border: none !important;
+  width: 120px;
+  text-transform: uppercase;
+}
+.btn.reneco,
+button.reneco {
+  overflow: hidden;
+  border: none;
+  line-height: 22px;
+  border-radius: 2.5px;
+}
+.btn.reneco label,
+button.reneco label {
+  height: 38px;
+  position: relative;
+  /* top: -5px; */
+  top: -7px;
+  padding-top: 7px;
+  width: 38px;
+  left: 15px;
+  float: right;
+  text-align: center;
+  padding-right: 5px;
+}
+.btn.reneco label span,
+button.reneco label span {
+  text-align: center;
+  font-size: 20px;
+}
+.btn.reneco.red label,
+button.reneco.red label {
+  background: #702029;
+}
+.btn.reneco.grey label,
+button.reneco.grey label {
+  background: #3d3b3c;
+}
+.btn:hover,
+button:hover,
+.btn:active,
+button:active,
+.btn:focus,
+button:focus,
+.btn:visited,
+button:visited {
+  color: white;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.btn:hover *,
+button:hover *,
+.btn:active *,
+button:active *,
+.btn:focus *,
+button:focus *,
+.btn:visited *,
+button:visited * {
+  color: white;
+}
+.btn.saveButton,
+button.saveButton {
+  background: transparent !important;
+  box-shadow: none;
+  outline: none;
+  border: 2px #555 solid !important;
+  color: #555 !important;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 5px auto;
+  width: 250px;
+  height: 45px !important;
+  width: 100%;
+  margin-left: 0 !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px;
+}
+.checkboxField.form-control {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: 45px;
+  padding-left: 0;
+}
+.checkboxField.form-control .help-block {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  font-size: 16px;
+  color: #aaa183;
+}
+.checkboxField input {
+  display: none;
+}
+.checkboxField input + label {
+  color: #aaa;
+  font-size: 20px;
+}
+.checkboxField input + label:before {
+  font-family: FontAwesome !important;
+  content: "\f096";
+}
+.checkboxField input:checked + label:before {
+  font-family: FontAwesome !important;
+  content: "\f046";
+}
+.radioField input[type="radio"] {
+  display: none;
+}
+.radioField label.radioLabel:before {
+  font-family: FontAwesome !important;
+  display: inline-block;
+  color: #555;
+  font-size: 24px;
+  content: "\f10c";
+  letter-spacing: 10px;
+}
+.radioField label.radioLabel:before:hover {
+  cursor: pointer !important;
+}
+.radioField label.radioLabel.selected:before {
+  content: "\f192";
+}
+.radioField label.radioLabel.selected:before:hover {
+  cursor: pointer !important;
+}
+.bootstrap-select {
+  box-shadow: none;
+  border-radius: 2.5px;
+  background: transparent !important;
+}
+.bootstrap-select .selectpicker {
+  border: none;
+  background: #222;
+  color: white;
+  box-shadow: none;
+}
+.bootstrap-select .selectpicker:focus,
+.bootstrap-select .selectpicker:active {
+  box-shadow: none;
+}
+.bootstrap-select .selectpicker li span.text {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  font-size: 16px;
+  color: white;
+}
+.bootstrap-select .selectpicker li.selected {
+  box-shadow: none;
+  background: #222;
+}
+.checkBoxEditor {
+  margin-bottom: 10px;
+}
+.checkBoxEditor > label:first-child {
+  display: none;
+}
+.sweet-alert h2 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+.sweet-alert p {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+.modal {
+  background: transparent;
+  margin-top: 100px;
+}
+.modal label {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  font-weight: 500;
+}
+.modal input {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+.modal h2 {
+  color: #575757;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: none;
+  position: relative;
+  margin: 25px 0;
+  padding: 0;
+  line-height: 25px;
+  display: block;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+.modal button {
+  margin-top: 5px;
+}
+.modal button.col-md-2 {
+  height: 34px;
+  line-height: 0px;
+}
+.modal .control {
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+#saveModal h2,
+#exportModal h2 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#saveModal textarea,
+#exportModal textarea {
+  resize: none;
+  height: 60px;
+  max-height: 60px;
+}
+#saveModal label > i,
+#exportModal label > i {
+  color: #888;
+}
+#saveModal .modal-body,
+#exportModal .modal-body {
+  padding-bottom: 25px;
+  overflow-x: hidden;
+}
+#saveModal .modal-body .row-fluid:nth-child(even),
+#exportModal .modal-body .row-fluid:nth-child(even) {
+  margin-bottom: 5px;
+}
+#importModal .btn-success {
+  padding-top: 5px !important;
+}
+#importProtocolFileText {
+  float: left;
+}
+#editListModal {
+  width: 1000px;
+  left: 35%;
+}
+#editListModal .modal-header {
+  text-align: center;
+  background: #eee;
+  font-weight: 100;
+}
+#editListModal h2 {
+  font-size: 20px;
+}
+#importModal input {
+  margin-left: 0;
+}
+header {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  height: 42px;
+  background: #862332;
+  line-height: 38px;
+  margin-bottom: 0 !important;
+}
+header .logo {
+  width: 20;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+header .title,
+header .mode,
+header .user,
+header .status {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 20px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+header .glyphicon-chevron-down {
+  color: white;
+}
+header .pipe {
+  color: white;
+  font-weight: 300;
+  font-size: 25px;
+  margin-left: 7px;
+  margin-top: -2px;
+}
+header .pull-right {
+  margin-right: 25px;
+}
+header .navbar .container-fluid {
+  background: #862332 !important;
+}
+header .navbar-default {
+  background: #862332 !important;
+}
+header a[data-key="save"]:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e166";
+}
+header a[data-key="import"]:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e198";
+}
+header a[data-key="clear"]:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e020";
+}
+header a[data-key="show"]:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e178";
+}
+header a[data-key="saveConfiguration"]:before {
+  font-family: "Glyphicons Halflings";
+  content: "\e032";
+}
+header .navbar-form,
+header .navbar-user {
+  display: none;
+}
+input,
+select,
+textarea {
+  border-radius: 2.5px !important;
+}
+.datepicker-editor {
+  width: 100%;
+  position: relative;
+}
+.datepicker-editor button {
+  height: 34px;
+  width: 34px;
+  margin-left: 2px;
+  float: right;
+  color: black;
+  background: transparent;
+  border: 1px #ddd solid;
+  color: #ddd;
+}
+.datepicker-editor input {
+  width: 94%;
+  height: 35px;
+}
+.general-error {
+  background: transparent;
+  box-shadow: 0 0 0 1px #dbb1b1 inset, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: #a94442;
+  min-height: 1em;
+  padding: 1em 1.5em;
+  line-height: 1.3;
+  display: none;
+}
+.general-error h2 {
+  text-align: left !important;
+}
+.spinner {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+  float: right;
+  line-height: 95px;
+  /* height: 70px; */
+  position: relative;
+  left: -210px;
+}
+.spinner.end {
+  display: none;
+}
+.spinner > div {
+  background-color: #eee;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+@-webkit-keyframes stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+@keyframes stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+#mainRegion {
+  height: 100%;
+  overflow: hidden;
+}
+#mainRegion > div:first-child {
+  height: 100%;
+}
+#mainRegion .copy,
+#mainRegion .trash,
+#mainRegion .wrench {
+  text-decoration: none;
+}
+#mainRegion .content {
+  background: #fff;
+  height: 100%;
+}
+#mainRegion .content .bootstrap-select {
+  background: transparent;
+}
+#mainRegion .content .bootstrap-select .dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-color: #333;
+  border-radius: 0;
+}
+#mainRegion .content .bootstrap-select .selectpicker {
+  background: #222;
+  border-radius: 0;
+  border-color: #333;
+  text-shadow: none;
+  color: #555;
+  margin-top: 0;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#mainRegion .content .bootstrap-select .selectpicker li {
+  background: #111;
+  color: #000;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#mainRegion .content .bootstrap-select .selectpicker li:hover {
+  color: #111;
+  background: #000;
+}
+#mainRegion .content .bootstrap-select .selectpicker li a {
+  background: transparent;
+}
+.mainField {
+  padding-left: 10px;
+  background: #242021;
+  border: 1px #555 solid !important;
+  color: #555;
+}
+.col11centered {
+  margin-left: 4.15555% !important;
+}
+#formPanel {
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+#formPanel .dropArea {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background: #312f30;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+#formPanel .dropArea footer {
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  background: #2e2b2c;
+  padding-top: 7px;
+  width: 100% !important;
+}
+#formPanel .dropArea footer div {
+  height: 100%;
+}
+#formPanel .dropArea footer button {
+  margin-top: 15px;
+}
+#formPanel .dropArea footer button label:hover {
+  cursor: pointer;
+}
+#formPanel .dropArea footer button.red:last-child {
+  margin-left: 20px;
+}
+#formPanel .dropArea .col-md-10 {
+  padding-right: 40px !important;
+  padding-left: 40px !important;
+}
+#formPanel .dropArea .col-md-10 h1 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  width: 100%;
+  background: #312f30;
+  font-size: 35px;
+  color: #fff;
+  border-bottom: 1px #555 solid;
+  padding-bottom: 15px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+#formPanel .dropArea .col-md-10 h1 label {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#formPanel .dropArea .col-md-10 h1:focus {
+  box-shadow: none;
+}
+#formPanel .dropArea .col-md-10 .reneco.settings {
+  color: #555;
+}
+#formPanel .dropArea .col-md-10 .reneco.settings:hover {
+  cursor: pointer;
+  color: #888;
+}
+#formPanel .dropArea .scrollSection {
+  height: 90%;
+  overflow: hidden;
+}
+#formPanel .dropArea .scrollSection .col-md-12:first-child {
+  height: 100%;
+}
+#formPanel .dropArea .scrollSection .col-md-12:first-child .slimScrollBar {
+  left: 90%;
+}
+#formPanel .dropArea .drop {
+  padding: 0;
+  padding-bottom: 200px;
+}
+#formPanel .dropArea .dropField {
+  margin-top: 0 !important;
+  padding-top: 0px;
+  margin-left: 0!important;
+  background: #111;
+  margin-bottom: 20px;
+}
+#formPanel .dropArea .dropField .element {
+  background: #222;
+  padding: 0 !important;
+  border: 1px solid #3e3e3f;
+}
+#formPanel .dropArea .dropField .element .row.paddingBottom5 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  -webkit-transition: background 0.2s ease-in-out;
+          transition: background 0.2s ease-in-out;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  background-color: #3e3e3f;
+}
+#formPanel .dropArea .dropField .element .row.paddingBottom5 .col-md-6 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+}
+#formPanel .dropArea .dropField .element .row.paddingBottom5 .col-md-6 .fa-arrows {
+  margin-right: 10px;
+}
+#formPanel .dropArea .dropField .element .row.paddingBottom5 .fa-arrows {
+  color: white;
+}
+#formPanel .dropArea .dropField .element .row .actions span {
+  color: #aaa;
+  font-size: 24px;
+  line-height: 42px;
+  padding-left: 20px;
+  visibility: hidden;
+}
+#formPanel .dropArea .dropField .element .row .actions span.edit {
+  color: white;
+}
+#formPanel .dropArea .dropField .element .row .actions span:hover {
+  color: white;
+  cursor: pointer;
+}
+#formPanel .dropArea .dropField .element .row:not(.paddingBottom5) {
+  background: #312f30;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#formPanel .dropArea .dropField .element:hover {
+  border: 1px solid #57585a;
+}
+#formPanel .dropArea .dropField .element:hover .row.paddingBottom5 {
+  background: #57585a;
+}
+#formPanel .dropArea .dropField .element:hover .actions:not(.locked) span {
+  visibility: visible !important;
+}
+#formPanel .dropArea .dropField .element a {
+  color: #aaa;
+}
+#formPanel .dropArea .dropField .element a:hover {
+  color: white;
+}
+#formPanel .dropArea .dropField .element a.copy,
+#formPanel .dropArea .dropField .element a.trash,
+#formPanel .dropArea .dropField .element a .reneco.edit {
+  font-size: 25px;
+  margin-right: 7px;
+}
+#formPanel .dropArea .dropField .element a.trash {
+  margin-right: 20px;
+}
+#formPanel .dropArea .dropField .element input,
+#formPanel .dropArea .dropField .element select {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#formPanel .dropArea .dropField a.reneco {
+  overflow: hidden;
+  padding-right: 50px;
+}
+#formPanel .dropArea .dropField a.reneco div {
+  position: absolute;
+  float: right;
+  top: 4px;
+  height: 35px;
+  width: 35px;
+  background: #000;
+  line-height: 35px;
+  overflow: hidden;
+  right: 15px;
+}
+#formPanel .dropArea .dropField a.reneco div span {
+  background: transparent;
+}
+#formPanel .dropArea .dropField hr {
+  height: 1px;
+  margin-top: 0;
+  min-height: 0;
+}
+#formPanel .dropArea .dropField:hover a:not(.btn) i {
+  display: initial !important;
+}
+#formPanel .dropArea .dropField label {
+  line-height: 30px;
+  font-size: 20px;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#formPanel .dropArea .dropField label:hover {
+  cursor: default !important;
+}
+#formPanel .dropArea .dropField.textArea textarea {
+  padding-left: 10px;
+  background: #242021;
+  border: 1px #555 solid !important;
+  color: #555;
+  resize: none;
+}
+#formPanel .dropArea .dropField.textArea .span1:last-child {
+  height: 48px;
+}
+#formPanel .dropArea .dropField input[type="text"],
+#formPanel .dropArea .dropField input[type="number"],
+#formPanel .dropArea .dropField select {
+  padding-left: 10px;
+  background: #242021;
+  border: 1px #555 solid !important;
+  color: #555;
+}
+#formPanel .dropArea .dropField .subformField fieldset {
+  border: 1px #222 solid;
+  min-height: 100px;
+  padding-bottom: 10px;
+  margin-right: 7px;
+}
+#formPanel .dropArea .dropField .subformField fieldset .subElement {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 0 0 2px #555;
+}
+#formPanel .dropArea .dropField .subformField fieldset .subElement:hover {
+  box-shadow: 0 0 4px #555;
+}
+#formPanel .dropArea .dropField .subformField fieldset .subElement:hover .actions {
+  display: block !important;
+}
+#formPanel .dropArea .dropField .subformField fieldset .sortableRow {
+  margin-top: 20px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#formPanel .dropArea .dropField .subformField fieldset.hovered {
+  background: rgba(200, 210, 220, 0.5) !important;
+  border: 1px dashed #888 !important;
+}
+#formPanel .dropArea .dropField .radioField input[type="radio"] + label span {
+  font-family: FontAwesome !important;
+}
+#formPanel .dropArea .dropField .radioField input[type="radio"] + label span:before {
+  content: "\f10c";
+}
+#formPanel .dropArea .dropField .radioField input[type="radio"]:checked + label span {
+  font-family: FontAwesome !important;
+}
+#formPanel .dropArea .dropField .radioField input[type="radio"]:checked + label span:before {
+  content: "\f192";
+}
+#formPanel .dropArea .dropField .radioField label,
+#formPanel .dropArea .dropField .checkboxField label {
+  color: #888;
+}
+#formPanel .dropArea .dropField input[type="radio"] {
+  margin-left: 0px !important;
+  position: static !important;
+  width: 25px;
+}
+#formPanel .dropArea .dropField .treeview,
+#formPanel .dropArea .dropField .thesaurusField,
+#formPanel .dropArea .dropField .fancytreeview {
+  background: transparent;
+}
+#formPanel .dropArea .dropField .treeview ul,
+#formPanel .dropArea .dropField .thesaurusField ul,
+#formPanel .dropArea .dropField .fancytreeview ul {
+  background: transparent;
+  border: none;
+}
+#formPanel .dropArea .dropField .treeview ul span.fancytree-node:hover,
+#formPanel .dropArea .dropField .thesaurusField ul span.fancytree-node:hover,
+#formPanel .dropArea .dropField .fancytreeview ul span.fancytree-node:hover {
+  background: #222;
+}
+#formPanel .dropArea .dropField .treeview ul span.fancytree-node:hover .fancytree-title,
+#formPanel .dropArea .dropField .thesaurusField ul span.fancytree-node:hover .fancytree-title,
+#formPanel .dropArea .dropField .fancytreeview ul span.fancytree-node:hover .fancytree-title {
+  background: #222;
+  border-color: #222 !important;
+}
+#formPanel .dropArea .dropField .treeview ul span.fancytree-focused,
+#formPanel .dropArea .dropField .thesaurusField ul span.fancytree-focused,
+#formPanel .dropArea .dropField .fancytreeview ul span.fancytree-focused {
+  background: black !important;
+  border-color: black !important;
+}
+#formPanel .dropArea .dropField .treeview ul span.fancytree-focused .fancytree-title,
+#formPanel .dropArea .dropField .thesaurusField ul span.fancytree-focused .fancytree-title,
+#formPanel .dropArea .dropField .fancytreeview ul span.fancytree-focused .fancytree-title {
+  background: black;
+  border-color: black !important;
+}
+#formPanel .dropArea .dropField .treeview ul span.fancytree-focused:hover .fancytree-title,
+#formPanel .dropArea .dropField .thesaurusField ul span.fancytree-focused:hover .fancytree-title,
+#formPanel .dropArea .dropField .fancytreeview ul span.fancytree-focused:hover .fancytree-title {
+  background: black;
+  border-color: black !important;
+}
+#formPanel .dropArea .dropField .treeview ul span .fancytree-title,
+#formPanel .dropArea .dropField .thesaurusField ul span .fancytree-title,
+#formPanel .dropArea .dropField .fancytreeview ul span .fancytree-title {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: white;
+}
+#formPanel .dropArea .dropField .fancytreeview {
+  background: #111;
+}
+#formPanel .dropArea .dropField .slider {
+  float: left;
+  width: 500px !important;
+}
+#formPanel .dropArea .dropField .find {
+  background: #862332;
+  border-radius: 0;
+  border-color: #862332;
+}
+#formPanel .dropArea .dropField .displayValue {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: white;
+}
+#formPanel .dropArea .dropField .checkbox label,
+#formPanel .dropArea .dropField .radio label {
+  color: white;
+}
+#widgetPanel {
+  background-image: url('../assets/images/back.jpg');
+  height: 100%;
+}
+#widgetPanel > div:first-child {
+  height: 100%;
+}
+#widgetPanel.col-md-4-push-left {
+  margin-left: -33.33333333% !important;
+}
+#widgetPanel.col-md-1 #toggle {
+  text-align: center;
+}
+#widgetPanel.col-md-1 #toggle span {
+  font-size: 35px;
+}
+#widgetPanel.col-md-1 #smallFeatures {
+  display: block;
+}
+#widgetPanel #smallFeatures {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+#widgetPanel #smallFeatures div {
+  background: #555;
+  color: #eee;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 5px auto;
+}
+#widgetPanel #smallFeatures div span {
+  font-family: FontAwesome !important;
+  font-size: 25px;
+  line-height: 50px;
+}
+#widgetPanel #smallFeatures div span.iconDateField:before {
+  content: "\f073";
+}
+#widgetPanel #smallFeatures div span.iconTextField:before {
+  content: "\f031";
+}
+#widgetPanel #smallFeatures div span.iconTextAreaField:before {
+  content: "\f039";
+}
+#widgetPanel #smallFeatures div span.iconNumberField:before {
+  content: '69';
+}
+#widgetPanel #smallFeatures div span.iconNumericRangeField:before {
+  content: "\f1de";
+}
+#widgetPanel #smallFeatures div span.iconFileField:before {
+  content: "\f1c2";
+}
+#widgetPanel #smallFeatures div span.iconTreeViewField:before {
+  content: "\f1bb";
+}
+#widgetPanel #smallFeatures div span.iconSubformField {
+  font-family: 'reneco-font' !important;
+  speak: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  line-height: 50px !important;
+}
+#widgetPanel #smallFeatures div span.iconSubformField:before {
+  content: "\e678";
+}
+#widgetPanel #smallFeatures div span.iconThesaurusField {
+  font-family: 'reneco-font' !important;
+  speak: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  line-height: 50px !important;
+}
+#widgetPanel #smallFeatures div span.iconThesaurusField:before {
+  content: "\e696";
+}
+#widgetPanel #smallFeatures div span.iconHiddenField:before {
+  content: "\f070";
+}
+#widgetPanel #smallFeatures div span.iconHorizontalLineField:before {
+  content: "\f068";
+}
+#widgetPanel #smallFeatures div span.iconCheckBoxField:before {
+  content: "\f046";
+}
+#widgetPanel #smallFeatures div span.iconRadioField:before {
+  content: "\f192";
+}
+#widgetPanel #smallFeatures div span.iconSelectField:before {
+  content: "\f150";
+}
+#widgetPanel .scroll {
+  position: relative;
+  overflow: hidden;
+  height: 90%;
+  margin-top: 5%;
+}
+#widgetPanel #toggle {
+  text-align: right;
+  width: 100%;
+}
+#widgetPanel #toggle span {
+  font-size: 30px;
+  z-index: 255;
+  color: #555;
+}
+#widgetPanel #toggle span.closed:before {
+  content: "\e011";
+}
+#widgetPanel h1 {
+  font-weight: lighter;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#widgetPanel .col-md-5.col-md-offset-1 {
+  padding-left: 0 !important;
+}
+#widgetPanel .col-md-5:not(.col-md-offset-1) {
+  padding-right: 0 !important;
+}
+#widgetPanel .fields {
+  height: 45px;
+  background: white;
+  border: 0.5px #aaa solid;
+  text-align: left;
+  line-height: 43px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  padding-left: 7px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.5px;
+  vertical-align: middle;
+}
+#widgetPanel .fields label {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: #555;
+  font-size: 18px;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+#widgetPanel .fields i {
+  font-size: 22px;
+}
+#widgetPanel .fields i[class^="picto"] {
+  font-family: FontAwesome !important;
+  color: #aaa;
+  font-size: 18px;
+  font-style: normal !important;
+}
+#widgetPanel .fields i[class^="picto"].picto-text:before {
+  content: "\f031";
+}
+#widgetPanel .fields i[class^="picto"].picto-date:before {
+  font-family: 'reneco-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\e67a";
+}
+#widgetPanel .fields i[class^="picto"].picto-subform {
+  position: relative;
+  top: 1px;
+}
+#widgetPanel .fields i[class^="picto"].picto-subform:before {
+  font-family: 'reneco-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: '\e678';
+}
+#widgetPanel .fields i[class^="picto"].picto-thesaurus {
+  position: relative;
+  top: 2px;
+}
+#widgetPanel .fields i[class^="picto"].picto-thesaurus:before {
+  font-family: 'reneco-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: '\e691';
+}
+#widgetPanel .fields i[class^="picto"].picto-checkbox:before {
+  font-family: 'reneco-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: '\e659';
+}
+#widgetPanel .fields i[class^="picto"].picto-radio:before {
+  content: "\f10c";
+}
+#widgetPanel .fields i[class^="picto"].picto-textarea:before {
+  content: "\f039";
+}
+#widgetPanel .fields i[class^="picto"].picto-numericrange:before {
+  content: "\f1de";
+}
+#widgetPanel .fields i[class^="picto"].picto-number:before {
+  content: '69';
+}
+#widgetPanel .fields i[class^="picto"].picto-treeview:before {
+  content: "\f1bb";
+}
+#widgetPanel .fields i[class^="picto"].picto-file:before {
+  content: "\f1c2";
+}
+#widgetPanel .fields i[class^="picto"].picto-select:before {
+  content: "\f150";
+}
+#widgetPanel .fields i[class^="picto"].picto-hidden:before {
+  content: "\f070";
+}
+#widgetPanel .fields i.fa-plus {
+  position: absolute;
+  left: 100%;
+  -webkit-transition: left 0.1s ease-in;
+          transition: left 0.1s ease-in;
+  top: 13px;
+  color: #aaa;
+}
+#widgetPanel .fields:hover {
+  cursor: pointer;
+  outline: 1px #aaa solid;
+}
+#widgetPanel .fields:hover label {
+  font-size: 14px;
+  color: #111;
+  font-weight: 600;
+}
+#widgetPanel .fields:hover .fa-plus {
+  left: 85%;
+}
+#widgetPanel #accordion h3 {
+  border-bottom: 1px #555 solid;
+  padding-bottom: 10px;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#widgetPanel #accordion h3:hover {
+  color: #555;
+  cursor: pointer;
+  box-shadow: none;
+  border-bottom: 1px #555 solid;
+  outline: none;
+}
+#widgetPanel #accordion h3:active,
+#widgetPanel #accordion h3:focus,
+#widgetPanel #accordion h3:blur {
+  box-shadow: none;
+  border-bottom: 1px #555 solid;
+  outline: none;
+}
+#widgetPanel #accordion h3 span.glyphicon {
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+}
+#widgetPanel #accordion .ui-state-focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.help-block {
+  color: red;
+}
+#settingPanel {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  background: #151515;
+  padding-bottom: 50px;
+  height: 100%;
+}
+#settingPanel .brand {
+  padding-left: 15px;
+  padding-top: 45px;
+}
+#settingPanel .brand span {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#settingPanel .brand span:first-child {
+  font-size: 14px;
+  color: #706f6f;
+  text-transform: uppercase;
+}
+#settingPanel .brand span:last-child {
+  font-size: 28px;
+  color: white;
+  font-weight: 100;
+}
+#settingPanel footer {
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  background: #000000;
+  padding-top: 7px;
+  width: 100% !important;
+}
+#settingPanel > div:first-child {
+  height: 100%;
+}
+#settingPanel .scroll {
+  position: relative;
+  overflow: hidden;
+  height: 85% !important;
+  padding-bottom: 40px;
+}
+#settingPanel button:not(.selectpicker ) {
+  height: 35px;
+  margin-top: 12.5px;
+  color: white;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#settingPanel button:not(.selectpicker ).gray {
+  background: #454343;
+}
+#settingPanel button:not(.selectpicker ).gray:hover {
+  color: white;
+}
+#settingPanel button:not(.selectpicker ):not(.gray) {
+  background: #862332;
+}
+#settingPanel button:not(.selectpicker ):not(.gray):last-child {
+  margin-left: 20px;
+}
+#settingPanel hr {
+  border-color: black;
+}
+#settingPanel .bootstrap-select {
+  margin-top: 10px;
+}
+#settingPanel .bootstrap-select .dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-color: #333;
+  border-radius: 0;
+}
+#settingPanel .bootstrap-select .selectpicker {
+  background: #111;
+  border-radius: 0;
+  border-color: #333;
+  text-shadow: none;
+  color: #555;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#settingPanel .bootstrap-select .selectpicker li {
+  background: #111;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: #000;
+}
+#settingPanel .bootstrap-select .selectpicker li:hover {
+  color: #111;
+  background: #000;
+}
+#settingPanel .bootstrap-select .selectpicker li a {
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#settingPanel .bootstrap-select .selectpicker li .text {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: #555;
+  font-size: 15px;
+}
+#settingPanel.fa {
+  font-family: FontAwesome !important;
+}
+#settingPanel .listEdit:hover {
+  cursor: pointer;
+}
+#settingPanel h1 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  text-align: center;
+  padding-bottom: 0 !important ;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  color: #fff;
+  height: 70px;
+  line-height: 60px;
+}
+#settingPanel h1:hover {
+  cursor: pointer;
+}
+#settingPanel h2 {
+  text-align: center;
+  font-size: 18px;
+}
+#settingPanel h2 span:not(.selected) {
+  color: #08C;
+}
+#settingPanel h2 span:not(.selected):hover {
+  cursor: pointer;
+}
+#settingPanel h2 a {
+  color: #08c;
+  text-decoration: none;
+}
+#settingPanel h2 a.selected {
+  color: #222;
+}
+#settingPanel h2 a:hover {
+  text-decoration: none;
+}
+#settingPanel label {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 18px;
+  line-height: 50px;
+  height: 30px;
+  text-align: left;
+  font-weight: 500;
+  color: #575656;
+}
+#settingPanel input[type="number"],
+#settingPanel input[type="text"],
+#settingPanel select,
+#settingPanel textarea {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  background: #383737;
+  color: white;
+  border: none;
+  font-size: 18px;
+  line-height: 25px;
+  height: 40px;
+  font-weight: 100;
+}
+#settingPanel input[type="number"]:active,
+#settingPanel input[type="text"]:active,
+#settingPanel select:active,
+#settingPanel textarea:active,
+#settingPanel input[type="number"]:hover,
+#settingPanel input[type="text"]:hover,
+#settingPanel select:hover,
+#settingPanel textarea:hover,
+#settingPanel input[type="number"]:focus,
+#settingPanel input[type="text"]:focus,
+#settingPanel select:focus,
+#settingPanel textarea:focus {
+  box-shadow: none !important;
+}
+#settingPanel textarea {
+  resize: none;
+  height: 80px;
+}
+#settingPanel #fieldRequire {
+  text-align: left !important;
+  margin-left: -15px;
+}
+#settingPanel .close,
+#settingPanel .addOp {
+  background: none !important;
+  color: #111 !important;
+  opacity: 0.5 !important;
+  -webkit-transition: all 0.1s !important;
+          transition: all 0.1s !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 20px;
+}
+#settingPanel .close {
+  font-size: 28px;
+}
+#settingPanel .minMax label {
+  text-align: center !important;
+  line-height: 40px;
+}
+#settingPanel .block {
+  background: white;
+  margin-top: 10px;
+  box-shadow: 0 0 3px #aaa;
+}
+#settingPanel .block table {
+  margin-bottom: 0;
+}
+#settingPanel .block table caption {
+  box-shadow: 0 0 3px #aaa;
+  border-bottom: 1px #aaa solid;
+}
+#settingPanel .pillbox {
+  background: #111;
+  color: #aaa;
+  border: 1px #333 solid;
+}
+#settingPanel .pillbox .pill-group {
+  padding-left: 0;
+  margin-bottom: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+#settingPanel .pillbox .pill-group .pill {
+  background: transparent;
+  border: 1px #aaa solid;
+  border-radius: 0;
+  margin-left: 7px;
+  color: #aaa;
+}
+#settingPanel .pillbox .pill-group .pill span.reneco,
+#settingPanel .pillbox .pill-group .pill .glyphicon-close {
+  color: white !important;
+  font-size: 15px !important;
+  padding-left: 7px;
+  margin-top: 3px;
+}
+#settingPanel .pillbox .pill-group .pillbox-input-wrap input[type="text"] {
+  border: none;
+  background: transparent;
+  float: left;
+}
+#settingPanel .pillbox .pill-group .pillbox-input-wrap input[type="text"]:active,
+#settingPanel .pillbox .pill-group .pillbox-input-wrap input[type="text"]:focus {
+  box-shadow: none !important;
+}
+#settingPanel .pillbox .pill-group .pillbox-input-wrap .pillbox-more {
+  display: none;
+}
+#settingPanel .checkboxField label,
+#settingPanel .radioField label {
+  color: #575656;
+  font-weight: 100;
+}
+#settingPanel .leftField {
+  width: 30%;
+  float: left;
+}
+#settingPanel #form p[data-error] {
+  display: none;
+}
+.ui-autocomplete {
+  background: #333;
+  list-style-type: none;
+  color: white;
+  z-index: 255;
+  padding-left: 0;
+  border: 1px #555 solid;
+  border-top: none;
+}
+.ui-autocomplete li {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 16px;
+  padding: 5px;
+  padding-left: 10px;
+}
+.ui-autocomplete li:hover {
+  cursor: pointer;
+  background: #444;
+}
+#homePageRegion {
+  height: 100%;
+}
+#centerPanel {
+  background: #2a2e31;
+  height: 100%;
+}
+#centerPanel > div:first-child {
+  height: 100%;
+}
+#centerPanel .head {
+  border-bottom: 1px #75797b solid;
+  margin-bottom: 20px;
+}
+#centerPanel .head h1 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  color: #ffffff;
+  padding-left: 30px;
+  margin-top: 0;
+  height: 70px;
+  line-height: 71px;
+  font-size: 30px;
+  font-weight: 100;
+}
+#centerPanel .head .col-md-6:last-child {
+  padding-top: 20px;
+  text-align: right;
+}
+#centerPanel .head .col-md-1 {
+  height: 70px;
+  line-height: 95px;
+}
+#centerPanel #grid,
+#centerPanel #grid2 {
+  height: 80%;
+  margin-right: 30px;
+}
+#centerPanel #grid table,
+#centerPanel #grid2 table {
+  width: 100%;
+  table-layout: fixed;
+}
+#centerPanel #grid table thead tr th,
+#centerPanel #grid2 table thead tr th {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-weight: 900;
+}
+#centerPanel #grid table thead tr th:first-child,
+#centerPanel #grid2 table thead tr th:first-child {
+  width: 60%;
+  padding-left: 20px;
+}
+#centerPanel #grid table thead tr th a,
+#centerPanel #grid2 table thead tr th a {
+  color: #8c8f90 !important;
+  font-size: 16px;
+}
+#centerPanel #grid table thead tr th a:hover,
+#centerPanel #grid2 table thead tr th a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+#centerPanel #grid table tbody tr,
+#centerPanel #grid2 table tbody tr {
+  border-bottom: 1px #555 solid;
+}
+#centerPanel #grid table tbody tr.clone,
+#centerPanel #grid2 table tbody tr.clone {
+  background: #D9BF3D;
+}
+#centerPanel #grid table tbody tr.focused,
+#centerPanel #grid2 table tbody tr.focused {
+  background: #555;
+}
+#centerPanel #grid table tbody tr.selected,
+#centerPanel #grid2 table tbody tr.selected {
+  background: #d1d2d4 !important;
+  color: #111 !important;
+}
+#centerPanel #grid table tbody tr.selected td,
+#centerPanel #grid2 table tbody tr.selected td {
+  color: #111 !important;
+}
+#centerPanel #grid table tbody tr:not(.formInformation):hover,
+#centerPanel #grid2 table tbody tr:not(.formInformation):hover,
+#centerPanel #grid table tbody tr:not(.selected):hover,
+#centerPanel #grid2 table tbody tr:not(.selected):hover {
+  cursor: pointer;
+  background: #1e1e1e;
+}
+#centerPanel #grid table tbody tr td,
+#centerPanel #grid2 table tbody tr td {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: #8c8f90;
+}
+#centerPanel #grid table tbody tr td:first-child,
+#centerPanel #grid2 table tbody tr td:first-child {
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+#centerPanel #grid .formInformation,
+#centerPanel #grid2 .formInformation {
+  background: #222 !important;
+}
+#centerPanel #grid .formInformation td,
+#centerPanel #grid2 .formInformation td {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  text-transform: none !important;
+  vertical-align: top;
+}
+#centerPanel #grid .formInformation td p,
+#centerPanel #grid2 .formInformation td p {
+  width: 90%;
+  margin: 0 auto;
+}
+#centerPanel #grid table thead {
+  visibility: hidden;
+}
+#centerPanel #grid table thead tr th {
+  height: 0px !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+#centerPanel footer {
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  background: #2e2b2c;
+  margin-left: -15px;
+  margin-right: -15px !important;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+#centerPanel footer div {
+  height: 100%;
+}
+#centerPanel footer div.pull-left {
+  margin-left: 0 !important;
+  display: none;
+}
+#centerPanel footer div.pull-left button {
+  margin-left: 7px !important;
+}
+#centerPanel footer button,
+#centerPanel footer a.btn {
+  margin-top: 20px;
+}
+#centerPanel footer button label:hover,
+#centerPanel footer a.btn label:hover {
+  cursor: pointer;
+}
+#centerPanel footer button.red:last-child,
+#centerPanel footer a.btn.red:last-child {
+  margin-left: 17px;
+}
+#centerPanel .scrollSection {
+  height: 80%;
+  overflow: hidden;
+}
+#centerPanel .scrollSection.resized {
+  height: 4%;
+}
+#centerPanel .scrollSection .col-md-12:first-child {
+  height: 100%;
+}
+#centerPanel .scrollSection #scrollSection {
+  height: 85%;
+  position: relative;
+  overflow: hidden;
+}
+#centerPanel .scrollSection .ps-scrollbar-y-rail {
+  background: black;
+  height: 550px !important;
+  overflow: hidden;
+}
+#centerPanel #scrollSection2 {
+  height: auto;
+}
+#centerPanel #scrollSection2 #grid2 table tbody {
+  display: none;
+}
+#leftPanel {
+  background-image: url('../assets/images/back.jpg');
+  height: 100%;
+}
+#leftPanel > div:first-child {
+  height: 100%;
+}
+#leftPanel h1 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  padding-left: 30px;
+  border-bottom: 1px #75797b solid;
+  padding-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 65px;
+  line-height: 60px;
+  font-size: 30px;
+  font-weight: 100;
+}
+#leftPanel h1 span {
+  position: relative;
+  top: 4px;
+}
+#leftPanel .form h2 {
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 100%;
+  color: #353b3f;
+  border-bottom: 1px solid #353b3f;
+  padding-bottom: 10px;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+#leftPanel .form label {
+  color: #353b3f;
+  font-family: 'Exo 2', sans-serif !important;
+  font-weight: 300;
+}
+#leftPanel .form input {
+  width: 100%;
+}
+#leftPanel footer {
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  background: rgba(191, 188, 156, 0.8);
+  margin-left: -15px;
+  margin-right: -15px !important;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+#leftPanel footer div {
+  height: 100%;
+}
+#leftPanel footer button {
+  margin-top: 20px;
+}
+#leftPanel footer button label:hover {
+  cursor: pointer;
+}
+#leftPanel footer button.red:last-child {
+  margin-left: 20px;
 }

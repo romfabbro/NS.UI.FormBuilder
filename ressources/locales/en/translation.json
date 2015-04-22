@@ -1,4 +1,10 @@
 {
+    "grid" : {
+      "name"             : "Name",
+      "creationDate"     : "Creation date",
+      "modificationDate" : "Modfication date"
+    },
+
     "fields" : {
         "text"                 : "Text",
         "number"               : "Numeric",
@@ -22,36 +28,53 @@
         "numericrange"         : "Numeric with slider"
     },
 
+    "search" : {
+        "name"     : "Name",
+        "keywords" : "Keywords",
+        "user"     : "User",
+        "date" : {
+            "from" : "From",
+            "to"   : "to"
+        }
+    },
+
     "form" : {
-        "name" : "Protocol name",
+        "name"       : "Protocol name",
+        "tag"        : "Destination tag",
+        "cancel"     : "Cancel",
+        "clear"      : "Clear form",
+        "title"      : "Create new form",
+        "count"      : "Field(s)",
+        "find"       : "Find a form",
+        "validation" : "This field is required",
+
         "description" : {
             "fr" : "Frendh form description",
             "en" : "English form description"
+        },
+        "keywords" : {
+          "fr"     : "French keywords",
+          "en"     : "English keywords",
+          "action" : "Add keyword"
         },
         "label" : {
             "fr" : "French form displayed name",
             "fr" : "English form displayed name"
         },
-        "keywords" : {
-            "fr" : "French keywords",
-            "en" : "English keywords",
-            "action" : "Add keyword"
-        },
-        "cancel" : "Cancel",
-        "clear" : "Clear form",
-        "title" : "Create new form",
-        "count" : "Field(s)",
+
         "actions" : {
             "import" : "IMPORT",
             "export" : "EXPORT",
             "save"   : "SAVE",
-            "clear"  : "CLEAR ALL"
+            "clear"  : "CLEAR ALL",
+            "find"   : "FIND",
+            "add"    : "ADD"
         }
     },
 
     "nav" : {
         "save" : {
-            "title"     : " Save protocol",
+            "title"     : " Save form",
             "cloud"     : "Save on server",
             "export"    : "Export to JSON file"
         },
@@ -131,27 +154,33 @@
             "fr" : "French label",
             "en" : "English label"
         },
-        "name" : "Field name"
+        "name" : "Field name",
+        "linkedFieldTable" : "Linked field table",
+        "linkedFieldIdentifyingColumn" : "Identifying field",
+        "linkedField" : "Linked field",
+        "formIdentifyingColumn" : "Form identifying field"
     },
 
     "tooltip" : {
-        "text"                 : "Text field",
-        "number"               : "Numeric field",
-        "date"                 : "Date field",
+        "text"                 : "Text",
+        "number"               : "Numeric",
+        "date"                 : "Date",
         "select"               : "Dropdown list",
         "radio"                : "Radio button",
         "checkbox"             : "Checkbox",
-        "hidden"               : "Hidden field",
+        "hidden"               : "Hidden ",
         "file"                 : "File",
         "treeview"             : "Tree View",
         "textarea"             : "Long text",
-        "pattern"              : "Field with regular expression",
+        "pattern"              : " with regular expression",
         "line"                 : "Horizontal line",
         "autocomplete"         : "Auto complete",
-        "subform"              : "Fieldset",
+        "subform"              : "set",
         "horizontalline"       : "Horizontal line",
         "boolean"              : "Boolean",
-        "autocompletetreeview" : "A TreeView field with searching functionnalité"
+        "autocompletetreeview" : "A TreeView with searching functionality",
+      "numericrange"           : "Numeric field with range",
+      "thesaurus"              : "Thesaurus"
     },
 
     "clearProtocol" : "You're going to clear this form.<br />If you continue your work will be lost.<br />Do you continue ?",
@@ -168,7 +197,8 @@
 
     "navbar" : {
         "context" : {
-            "edition" : "edition"
+            "edition" : "edition",
+            "home" : "home"
         },
         "status" : {
             "online" : "Online"
@@ -194,12 +224,10 @@
         "comment" : "Your coment",
         "filename" : "File name",
         "save" : {
-            "title" : "Protocol save",
-            "button" : "Save"
+
         },
         "export" : {
-            "title" : "Export",
-            "json" : "Export as JSON file"
+
         },
         "clear" : {
             "title"       : "Are you sure ?",
@@ -210,19 +238,28 @@
             "formDeleted" : "Your form has been deleted !"
         },
         "import" : {
-            "error" : "An error occured !",
-            "errorMsg" : "Your form can't be imported !"
+            "error"    : "An error occured !",
+            "errorMsg" : "Your form can't be imported !",
+            "title"    : "Import a form",
+            "label"    : "Select JSON file to import",
+            "action"   : "Import",
+            "find"     : "Search"
         },
+
         "export" : {
-            "success" : "Export successful !",
-            "error" : "Export failed !",
-            "errorMsg" : "An error occured during form export"
+            "success"    : "Export successful !",
+            "error"      : "Export failed !",
+            "errorMsg"   : "An error occured during form export",
+            "title"      : "Export",
+            "json"       : "Export as JSON file"
         },
         "save" : {
-            "success" : "Form savad !",
+            "success"    : "Form savad !",
             "successMsg" : "Your form was successfully saved on the server !",
-            "error" : "An error occured !",
-            "errorMsg" :" Your form wasn't saved. Consider making a export"
+            "error"      : "An error occured !",
+            "errorMsg"   :" Your form wasn't saved. Consider making a export",
+            "title"      : "Protocol save",
+            "button"     : "Save"
         },
         "field" : {
             "error" : "Field can't be added !",
@@ -234,5 +271,37 @@
             "error"      : "Field not saved !",
             "errorMsg"   : "Your field couldn't be saved ."
         }
+    },
+    "placeholder" : {
+      "label" : {
+        "fr" : "French label of your field",
+        "en" : "English label of your field"
+      },
+      "name" : "Your field name",
+      "value" : "Default value of your field",
+      "help" : "Field help textt",
+      "url" : "Web service URL for autocomplete values",
+      "size" : "Maximum allowed size",
+      "mime" : "Allowed field type",
+      "fileSize" : "Maximum allowed field size",
+      "tree" : {
+        "default" : "Default node at start",
+        "url" : "URL returning tree structure"
+      },
+      "format" : "Allowed date format",
+      "num" : {
+        "min" : "Minimum value",
+        "max" : "Maximum value",
+        "precision" : "Step size",
+        "unity" : "Field unit"
+      },
+      "legend" : "Sub form legend"
+    },
+
+    "optional" : "optional",
+
+    "error" : {
+      "general" : "General error",
+      "message" : "One or more field are empty"
     }
 }

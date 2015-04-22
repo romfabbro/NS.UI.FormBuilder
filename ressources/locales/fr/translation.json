@@ -1,4 +1,9 @@
 {
+    "grid" : {
+        "name"             : "nom",
+        "creationDate"     : "Date de création",
+        "modificationDate" : "Date de modification"
+    },
 
     "fields" : {
         "text"                 : "Texte",
@@ -14,7 +19,7 @@
         "line"                 : "Ligne horizontale",
         "autocomplete"         : "Auto complétion",
         "table"                : "Présentation",
-        "subform"              : "Sous formulaire",
+        "subform"              : "Regroupement",
         "horizontalline"       : "Séparation",
         "treeview"             : "Arborescence",
         "boolean"              : "Booléen",
@@ -23,30 +28,47 @@
         "numericrange"         : "Curseur numérique"
     },
 
+    "search" : {
+        "name"     : "Nom",
+        "keywords" : "Mots clés",
+        "user"     : "Utilisateur",
+        "date" : {
+            "from" : "De",
+            "to"   : "à"
+        }
+    },
+
     "form" : {
-        "name" : "Nom du protocole",
+        "name"       : "Nom du protocole",
+        "tag"        : "Tag de destination",
+        "cancel"     : "Annuler",
+        "clear"      : "Supprimer",
+        "title"      : "Création d'un nouveau formulaire",
+        "count"      : "Champ(s)",
+        "find"       : "Rechercher un formulaire",
+        "validation" : "Ce champs est requis",
+
         "description" : {
             "fr" : "Description française du formulaire",
             "en" : "Description anglaise du formulaire"
         },
         "keywords" : {
-            "fr" : "Mots clés français",
-            "en" : "Mots clés anglais",
+            "fr"     : "Mots clés français",
+            "en"     : "Mots clés anglais",
             "action" : "Ajouter un mot clé"
         },
         "label" : {
             "fr" : "Intitulé français",
             "en" : "intitulé anglais"
         },
-        "cancel" : "Annuler",
-        "clear" : "Supprimer",
-        "title" : "Création d'un nouveau formulaire",
-        "count" : "Champ(s)",
+
         "actions" : {
             "import" : "IMPORTER",
             "export" : "EXPORTER",
             "save"   : "SAUVER",
-            "clear"  : "TOUT EFFACER"
+            "clear"  : "TOUT EFFACER",
+            "find"   : "TROUVER",
+            "add"    : "AJOUTER"
         }
     },
 
@@ -87,7 +109,7 @@
         "readonly"          : "Lecture seule",
         "value"             : "Valeur",
         "default"           : "Valeur par défaut",
-        "url"               : "Adresse service web",
+        "url"               : "Adresse du service web",
         "help"              : "Texte d'aide",
         "size"              : "Taille maximal",
         "file"              : "Fichier par défaut",
@@ -106,13 +128,13 @@
         "format"            : "Format d'affichage",
         "multiline"         : "Multi ligne",
         "min"               : "Valeur minimale",
-        "max"               : "Valuer maximale",
+        "max"               : "Valeur maximale",
         "precision"         : "Précision",
         "unity"             : "Unité",
         "pattern"           : "Masque de valeur",
         "multiple"          : "Multiple",
         "legend"            : "Légende",
-        "editorClass"       : "Class CSS de l'éditeur",
+        "editorClass"       : "Classe CSS de l'éditeur",
         "fieldClass"        : "Classe CSS du champs",
         "checked"           : "Sélectionné",
         "checkboxlabel"     : "Label checkbox",
@@ -125,7 +147,7 @@
             "large"  : "Large"
         },
         "eol"           : "Est en fin de ligne",
-        "webServiceURL" : "URL service web pour les données",
+        "webServiceURL" : "URL du service web pour les données",
         "wsUrl"         : "service web URL",
         "ws"            : "Identifiant service web",
         "wslng"         : "Langue d'affichage pour les données",
@@ -133,28 +155,34 @@
             "fr" : "Label en français",
             "en" : "Label en anglais"
         },
-        "name" : "Nom"
+        "name" : "Nom",
+        "linkedFieldTable" : "Table du champ lié",
+        "linkedFieldIdentifyingColumn" : "Champ identifiant",
+        "linkedField" : "Champ lié",
+        "formIdentifyingColumn" : "Champ du formulaire identifiant"
     },
 
     "tooltip" : {
-        "text"                 : "Champs texte",
-        "number"               : "Champs numérique",
-        "date"                 : "Champs date",
+        "text"                 : "Texte",
+        "number"               : "Numérique",
+        "date"                 : "Date",
         "select"               : "Liste déroulante",
         "radio"                : "Bouton radio",
         "checkbox"             : "Case à cocher",
-        "hidden"               : "Champs masqué",
+        "hidden"               : "Masqué",
         "file"                 : "Fichier",
-        "longtext"             : "Texte long",
-        "pattern"              : "Champs avec expression régulière",
+        "textarea"             : "Texte long",
+        "pattern"              : "Expression régulière",
         "line"                 : "Ligne horizontale",
         "autocomplete"         : "Auto complétion",
         "table"                : "Présentation",
-        "subform"              : "Sous formulaire",
+        "subform"              : "Regroupement",
         "horizontalline"       : "Séparation",
         "treeview"             : "Arborescence",
         "boolean"              : "Booléen",
-        "autocompletetreeview" : "Champs arborescence avec un champs de recherche"
+        "autocompletetreeview" : "arborescence avec un champs de recherche",
+        "numericrange"         : "Curseur numérique",
+        "thesaurus"            : "Thesaurus"
     },
 
     "clearProtocol" : "Vous êtes sur le point de créer un nouveau formulaire.<br />Le formulaire actuel sera perdu.<br />Voulez vous continuer ?",
@@ -171,7 +199,8 @@
 
     "navbar" : {
         "context" : {
-            "edition" : "édition"
+            "edition" : "édition",
+            "home" : "accueil"
         },
         "status" : {
             "online" : "Connecté"
@@ -195,37 +224,36 @@
     "modal" : {
         "comment"  : "Votre commentaire",
         "filename" : "Nom du fichier",
-        "save" : {
-            "title"  : "Sauvegarde du protocol",
-            "button" : "Sauvegarder"
-        },
-        "export" : {
-            "title" : "Export",
-            "json"  : "Exporter au format JSON",
-            "xml"   : "Exporter au format XML"
-        },
         "clear" : {
             "title"       : "Etes vous sûr ?",
             "text"        : "Le formulaire sera définitivement perdu !",
             "yes"         : "Oui, supprimer",
-            "no"          : "Non, nnuler",
+            "no"          : "Non, annuler",
             "deleted"     : "Supprimé !",
             "formDeleted" : "Votre formulaire a été supprimé !"
         },
         "import" : {
             "error"    : "Une erreur est survenu !",
-            "errorMsg" : "Votre formulaire n'a pas pu être importé"
+            "errorMsg" : "Votre formulaire n'a pas pu être importer",
+            "title" : "Importer un formulaire",
+            "label"    : "Selectionnez le fichier JSON a importé",
+            "action"   : "Importer",
+            "find"     : "Parcourir"
         },
         "export" : {
             "success"  : "Export réussi !",
             "error"    : "Echec de l'export !",
-            "errorMsg" : "Une erreur est survenue lors de l'export"
+            "errorMsg" : "Une erreur est survenue lors de l'export",
+            "title"    : "Export",
+            "json"     : "Exporter au format JSON"
         },
         "save" : {
             "success"    : "Sauvé !",
             "successMsg" : "Votre formulaire a été enregistré sur le serveur !",
             "error"      : "Une erreur est survenu !",
-            "errorMsg"   : "Votre formulaire n'a pas été enregistré !\nPensez à faire un export"
+            "errorMsg"   : "Votre formulaire n'a pas été enregistré !\nPensez à faire un export",
+            "title"      : "Sauvegarde du protocol",
+            "button"     : "Sauvegarder"
         },
         "field" : {
             "error"    : "Echec de l'ajout !",
@@ -237,6 +265,38 @@
             "error"      : "Champs non sauvegardé !",
             "errorMsg"   : "Votre champs n'a pas pu être sauvegardé."
         }
-    }
+    },
 
+    "placeholder" : {
+        "label" : {
+          "fr" : "Label français de votre champs",
+          "en" : "Label anglais de votre champs"
+        },
+        "name" : "Nom de votre champs",
+        "value" : "Valeur par défaut de votre champs",
+        "help" : "Text d'aide de votre champs",
+        "url" : "URL permettant de récupérer la liste des valeurs",
+        "size" : "Taille maximum de la valeur du champs",
+        "mime" : "Type de fichiers autorisés",
+        "fileSize" : "Taille maximum autoriser pour les fichiers choisis",
+        "tree" : {
+          "default" : "Noeud de départ",
+          "url" : "URL retournant l'arborescence de l'arbre"
+        },
+        "format" : "Format des dates autorisées",
+        "num" : {
+          "min" : "Valeur numérique minimale",
+          "max" : "Valeur numérique maximale",
+          "precision" : "Précision d'incrémentation",
+          "unity" : "Unité du champs"
+        },
+        "legend" : "Légende du regroupement"
+    },
+
+    "optional" : "facultatif",
+
+    "error" : {
+      "general" : "Erreur générale",
+      "message" : "Un ou plusieurs champs ne sont pas renseignés"
+    }
 }
