@@ -75,7 +75,7 @@ define([
                 if (topcontext == "reneco")
                     this.template = GridPanelViewROReneco;
             }
-            _.bindAll(this, 'addFormSection', 'displayFormInformation', 'updateGridWithSearch', 'deleteForm')
+            _.bindAll(this, 'addFormSection', 'displayFormInformation', 'updateGridWithSearch', 'deleteForm');
 
             this.URLOptions = options.URLOptions;
 
@@ -135,7 +135,7 @@ define([
 
             //  This event is send form the leftPanelView (see leftPanelView.js in views folder) when a user want to filter the grid via a form
             //  When the event is received we update grid data correspondig to the search
-            this.gridChannel.on('search', this.updateGridWithSearch)
+            this.gridChannel.on('search', this.updateGridWithSearch);
 
             //  Event send from LeftPanelView when user cleared search form
             //  We reset tje collection and update forms count
@@ -447,7 +447,6 @@ define([
          */
         initClickableRow : function() {
             var that = this;
-            var selectedForm = this.currentSelectedForm;
             // By default grid not fired click event
             // But we can't create a small clickable row to get the event
             return Backgrid.Row.extend({

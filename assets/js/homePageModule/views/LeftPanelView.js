@@ -60,7 +60,7 @@ define([
         },
 
         removeEmptyClass : function() {
-            this.$el.find('form').removeClass('empty')
+            this.$el.find('form').removeClass('empty');
         },
 
         /**

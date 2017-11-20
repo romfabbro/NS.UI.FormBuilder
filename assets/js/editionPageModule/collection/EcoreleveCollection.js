@@ -32,11 +32,35 @@ define([
                 title       : translater.getValueFromKey('form.author'),
                 editorClass : 'form-control',
                 template    : fieldTemplate
+            },
+            isgrid : {
+                type        : CheckboxEditor,
+                fieldClass  : "checkBoxEditor",
+                title       : translater.getValueFromKey('form.isgrid')
+            },
+            ishiddenprotocol : {
+                type        : CheckboxEditor,
+                fieldClass  : "checkBoxEditor",
+                title       : translater.getValueFromKey('form.ishiddenprotocol')
+            },
+            hideprotocolname : {
+                type        : CheckboxEditor,
+                fieldClass  : "checkBoxEditor",
+                title       : translater.getValueFromKey('form.hideprotocolname')
+            },
+            defaultforfieldactivity : {
+                type        : CheckboxEditor,
+                fieldClass  : "checkBoxEditor",
+                title       : translater.getValueFromKey('form.defaultforfieldactivity')
             }
         },
 
         propertiesDefaultValues : {
-            author : window.user
+            author : window.user,
+            isgrid : "",
+            ishiddenprotocol: "",
+            hideprotocolname: "",
+            defaultforfieldactivity: ""
         },
 
         rulesList : function() {
@@ -54,6 +78,26 @@ define([
                     title       : translater.getValueFromKey('form.author'),
                     editorClass : 'form-control',
                     template    : fieldTemplate
+                },
+                isgrid : {
+                    type        : CheckboxEditor,
+                    fieldClass  : "checkBoxEditor",
+                    title       : translater.getValueFromKey('form.isgrid')
+                },
+                ishiddenprotocol : {
+                    type        : CheckboxEditor,
+                    fieldClass  : "checkBoxEditor",
+                    title       : translater.getValueFromKey('form.ishiddenprotocol')
+                },
+                hideprotocolname : {
+                    type        : CheckboxEditor,
+                    fieldClass  : "checkBoxEditor",
+                    title       : translater.getValueFromKey('form.hideprotocolname')
+                },
+                defaultforfieldactivity : {
+                    type        : CheckboxEditor,
+                    fieldClass  : "checkBoxEditor",
+                    title       : translater.getValueFromKey('form.defaultforfieldactivity')
                 }
             });
         },

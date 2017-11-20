@@ -46,7 +46,7 @@ define([
             var creationDate     = this.get('creationDate'),
                 modificationDate = this.get('modificationDate');
 
-            if (creationDate != null) {
+                if (creationDate != null) {
                 creationDate = creationDate.toString();
                 this.set('creationDateDisplay', creationDate.substring(0, creationDate.length - 3));
             }

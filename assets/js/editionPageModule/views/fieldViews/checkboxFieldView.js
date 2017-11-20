@@ -15,6 +15,7 @@ define([
                 opt.template = viewTemplateRO;
 
             BaseView.prototype.initialize.apply(this, [opt]);
+
         }
     });
 

@@ -118,6 +118,17 @@ define([
             }
 
             this.settingFieldPanel.show(new SettingFieldPanelView(options, this.savedTemplateList));
+
+            console.log("ahlahlahalhalh", options);
+
+            var currentContext = window.context || $("#contextSwitcher .selectedContext").text();
+
+            if (currentContext.toLowerCase() == "ecoreleve" &&
+                options.modelToEdit.attributes.type &&
+                options.modelToEdit.attributes.type.toLowerCase() == "checkbox")
+            {
+                setTimeout(function(){ $(".nav-tabs").css("display", "none"); }, 100);
+            }
         },
 
         /**

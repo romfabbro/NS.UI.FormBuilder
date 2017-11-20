@@ -1241,7 +1241,6 @@ define([
                 minValue     : '',
                 maxValue     : '',
                 precision    : 1,
-                decimal      : true,
                 defaultValue : '',
                 unity        : []
             });
@@ -1252,11 +1251,6 @@ define([
         },
 
         baseSchema : {
-            decimal : {
-                type        : CheckboxEditor,
-                fieldClass : "checkBoxEditor",
-                title       : translater.getValueFromKey('schema.decimal')
-            },
             defaultValue : _.pick(models.TextField.prototype.schema(), 'defaultValue')['defaultValue'],
             minValue: {
                 type        : 'Text',

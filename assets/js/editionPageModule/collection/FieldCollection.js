@@ -989,7 +989,6 @@ define([
 
         createField3 : function(fieldObj, fieldType)
         {
-
             if (fieldObj.type == 'Checkboxes') {
                 fieldObj.type = 'CheckBox';
             }
