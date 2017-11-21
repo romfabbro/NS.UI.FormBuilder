@@ -213,13 +213,16 @@ define([
                 title       : translater.getValueFromKey('schema.fieldSize'),
                 validators : ['required',
                     function checkValue(value, formValues) {
-                    if (value < 1 || value > 12) {
-                        return {
-                            type : 'Invalid number',
-                            message : translater.getValueFromKey('schema.sizeError')
+                        var context = window.context || $("#contextSwitcher .selectedContext").text();
+
+                        console.log("thisthis", this);
+                        if ((value < 1 || value > 12) && context.toLowerCase() != "ecoreleve") {
+                            return {
+                                type : 'Invalid number',
+                                message : translater.getValueFromKey('schema.sizeError')
+                            }
                         }
-                    }
-                }]
+                    }]
             },
             linkedFieldset : {
                 title       : translater.getValueFromKey('schema.linkedFieldset'),
