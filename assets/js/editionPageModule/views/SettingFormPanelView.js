@@ -102,6 +102,7 @@ define([
          */
         removeForm : function() {
             //  I know it's bad but it works for the moment ;)
+            // Are you sure about that ? ...
             setTimeout(_.bind(function() {
                 this.$el.find('#form').html('');
                 this.form.undelegateEvents();
