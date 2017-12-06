@@ -50,7 +50,12 @@ define([
 
             try
             {
-                sqlParsed = sqliteParser(that.model.get('url'));
+                // TODO FIND A BETTER PARSING TOOL AS THIS ONE DOESNT RETURN GOOD RESULTS WITH SQL SERVER QUERIES ...
+                // sqlParsed = sqliteParser(that.model.get('url'));
+
+                // TODO TOREMOVE, ONLY HERE TEMPORARILY
+                var urlToParse = that.model.get('url').toLowerCase();
+                sqlParsed = urlToParse.indexOf("select") !== -1 && urlToParse.indexOf("from") !== -1;
             }
             catch (err)
             {
