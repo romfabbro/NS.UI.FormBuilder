@@ -869,7 +869,7 @@ define([
                 }
             });
 
-            if (nameCounter == 0) {
+            if (nameCounter == 0 || (this.modelToEdit.get('id') > 0 && nameCounter == 1)) {
 
                 if (this.subSettingView !== null) {
                     //  In this case wa have a sub setting view
@@ -925,6 +925,7 @@ define([
                 }
             }
             else {
+                console.log("namecounter equals " + nameCounter);
                 swal({
                     title:translater.getValueFromKey('configuration.save.fail') || "Echec !",
                     text:translater.getValueFromKey('configuration.save.samename') || "Votre champs ne peut avoir le même nom qu'un autre champ du formulaire",
