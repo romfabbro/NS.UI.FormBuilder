@@ -6,12 +6,13 @@ define([
     var EditionePageRouter = Backbone.Marionette.AppRouter.extend({
 
         appRoutes: {
-            "edition": "editionAction"
+            "edition" : "editionAction"
         },
 
         initialize : function() {
             this.initEditionPageChannel();
             this.initFormChannel();
+            this.initGlobalChannel();
         },
 
         initEditionPageChannel : function() {
@@ -28,8 +29,16 @@ define([
             //  Event send by FormPanelView when user click on "exit" button
             this.formChannel.on('exit', this.exit, this);
 
+            //  Event send by formPanel view when render is done
+            //  Send data to the controller
+            this.formChannel.on('renderFinished', this.sendJsonDataToController, this);
+
             //  Event send by Formbuilder when user wants to import a form from the homepage
             this.editionPageChannel.on('formImported', this.displayEditionPage, this);
+        },
+
+        initGlobalChannel : function() {
+            this.globalChannel = Backbone.Radio.channel('global');
         },
 
         /**
@@ -39,12 +48,10 @@ define([
          */
         displayEditionPage : function(formToEdit) {
 
-            //  Event send by formPanel view when render is done
-            //  Send data to the controller
-            this.formChannel.on('renderFinished', this.sendJsonDataToController, this);
-
             //  Keep data in memory
             this.formAsJSON = formToEdit;
+
+            $(".headerWhiteArrow").css("width", "0px");
 
             //  Go to edition page
             this.navigate('#edition', {
@@ -58,9 +65,10 @@ define([
         },
 
         exit : function() {
-            this.navigate('#', {
-                trigger : true
-            });
+            this.formChannel.trigger('exitingFormEditing');
+            this.navigate('#');
+            this.globalChannel.trigger('displayHomePage');
+            Backbone.Radio.channel('grid').trigger('resetCollection');
         }
 
     });

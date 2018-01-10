@@ -5,9 +5,13 @@ define([
     '../views/WidgetPanelView',
     '../views/SettingFieldPanelView',
     '../views/SettingFormPanelView',
-    'backbone.radio'
-], function(Marionette, EditionPageLayoutTemplate, FormPanelView, WidgetPanelView, SettingFieldPanelView, SettingFormPanelView, Radio ) {
+    'backbone.radio',
+    '../../Translater',
+    'sweetalert'
+], function(Marionette, EditionPageLayoutTemplate, FormPanelView, WidgetPanelView, SettingFieldPanelView,
+            SettingFormPanelView, Radio, Translater, swal ) {
 
+    var translater = Translater.getTranslater();
 
     /**
      * Main layout manages views in editionPageModule
@@ -27,8 +31,8 @@ define([
          * @type {Object}
          */
         events : {
-            'click #toggle span.open'   : 'minimizeWidgetPanel',
-            'click #toggle span.closed' : 'maximizeWidgetPanel'
+            'click #toggle.open'   : 'minimizeWidgetPanel',
+            'click #toggle.closed' : 'maximizeWidgetPanel'
         },
 
 
@@ -38,7 +42,8 @@ define([
         regions : {
             leftPanel       : '#widgetPanel',
             centerPanel     : '#formPanel',
-            settingPanel    : '#settingPanel'
+            settingFormPanel    : '#settingFormPanel',
+            settingFieldPanel    : '#settingFieldPanel'
         },
 
 
@@ -49,6 +54,7 @@ define([
          */
         initialize : function(options) {
             this.fieldCollection = options.fieldCollection;
+            this.testCollection = options.fieldCollection;
             this.URLOptions = options.URLOptions;
 
             this.initMainChannel();
@@ -66,8 +72,10 @@ define([
 
             //  edit form properties
             this.formChannel.on('editForm', this.formSetting, this);
-        },
 
+            //  edit form properties
+            this.formChannel.on('exitingFormEditing', this.exitFormEdition, this);
+        },
 
         /**
          * Init main channel ONLY for this module and listen some events
@@ -77,20 +85,24 @@ define([
 
             //  Event sent from setting view when backbone forms generation is finished
             //  Run an animation for hide panel view and display setting view, I love jQuery !
-            this.mainChannel.on('formCreated', this.displaySettingPanel, this)
+            // this.mainChannel.on('formCreated', this.displaySettingPanel, this);
 
             //  Event sent from setting view when field changed are saved
             //  and the data are correct
             //  Run an animation for hide setting view and display panel view
-            this.mainChannel.on('formCommit', this.closeSettingPanelAndResetURL, this)
+            this.mainChannel.on('formCommit', this.closeSettingPanelAndCommit, this);
 
             //  Event receive from setting view panel when user save form changed attributes
             //  Close setting panel and rest some components
-            this.mainChannel.on('editionDone', this.closeSettingPanelAndResetURL, this);
+            this.mainChannel.on('editionDone', this.closeSettingPanelAndSuccess, this);
 
             //  Event sent from setting view when modifications are cancelled
             //  Run an animation for hide setting view and display panel view
-            this.mainChannel.on('formCancel', this.closeSettingPanelAndResetURL, this)
+            this.mainChannel.on('formCancel', this.closeSettingPanelDefault, this);
+
+            this.mainChannel.on('setTemplateList', this.setTemplateList, this);
+
+            this.mainChannel.on('unsetTemplateList', this.unsetTemplateList, this);
         },
 
         /**
@@ -99,7 +111,24 @@ define([
          * @param  {Object} Model to edit and some options send by editionPageController like pre configurated field and linked fields
          */
         initFieldSetting : function(options) {
-            this.settingPanel.show(new SettingFieldPanelView(options));
+            if (this.settingFieldPanel == undefined)
+            {
+                this.addRegion('settingFieldPanel', '#settingFieldPanel');
+                this.settingFieldPanel =  this.getRegion('settingFieldPanel');
+            }
+
+            this.settingFieldPanel.show(new SettingFieldPanelView(options, this.savedTemplateList));
+
+            console.log("ahlahlahalhalh", options);
+
+            var currentContext = window.context || $("#contextSwitcher .selectedContext").text();
+
+            if (currentContext.toLowerCase() == "ecoreleve" &&
+                options.modelToEdit.attributes.type &&
+                options.modelToEdit.attributes.type.toLowerCase() == "checkbox")
+            {
+                setTimeout(function(){ $(".nav-tabs").css("display", "none"); }, 100);
+            }
         },
 
         /**
@@ -108,14 +137,47 @@ define([
          * @param  {Object} formToEdit form to edit
          */
         formSetting : function(formToEdit) {
-            if (this.settingPanel === undefined) {
-                this.addRegion('settingPanel', '#settingPanel');
-                this.settingPanel = this.getRegion('settingPanel');
+            if (this.savedFTE)
+            {
+                if (this.savedFTE.name == formToEdit.name)
+                {
+                    return;
+                }
+                else
+                {
+                    delete this;
+                    return;
+                }
             }
-            this.settingPanel.show(new SettingFormPanelView({
-                URLOptions : this.URLOptions,
-                formToEdit : formToEdit
-            }));
+
+            this.savedFTE = formToEdit;
+
+            if (this.settingFormPanel == undefined) {
+                this.addRegion('settingFormPanel', '#settingFormPanel');
+                this.settingFormPanel = this.getRegion('settingFormPanel');
+            }
+
+            var that = this;
+
+            if (that.testCollection)
+            {
+                if (that.testCollection.name.toLowerCase() == "new form" && that.testCollection.id != 0)
+                    that.testCollection.id = 0;
+            }
+
+            var newformPanel = new SettingFormPanelView({
+                URLOptions : that.URLOptions,
+                formToEdit : that.testCollection || formToEdit
+            });
+
+            that.settingFormPanel.show(newformPanel);
+
+            if (that.formPanel)
+                delete that.formPanel;
+
+            that.formPanel = newformPanel;
+
+            delete that.testCollection;
         },
 
         /**
@@ -123,12 +185,12 @@ define([
          */
         clearFormSettingView : function() {
             //  Destroy view and his html content
-            this.$el.find('#settingPanel').html('');
-            this.settingPanel.currentView.destroy();
+            this.$el.find('#settingFormPanel').html('');
+            this.settingFormPanel.currentView.destroy();
 
             //  Re add new region
-            this.addRegion('settingPanel', '#settingPanel');
-            this.settingPanel = this.getRegion('settingPanel');
+            this.addRegion('settingFormPanel', '#settingFormPanel');
+            this.settingFormPanel = this.getRegion('settingFormPanel');
         },
 
 
@@ -137,12 +199,9 @@ define([
          */
         displaySettingPanel : function() {
             if ($('#widgetPanel').hasClass('col-md-1')) {
-                $('#formPanel').switchClass('col-md-11', 'col-md-7 col-md-pull-1', 500);
+                //$('#formPanel').switchClass('col-md-8 col-md-offset-3', 'col-md-6 col-md-offset-6', 500);
             } else {
-                $('#formPanel').switchClass('col-md-8', 'col-md-7', 500);
-                $('#widgetPanel').animate({
-                    marginLeft : '-33.33333333%'
-                }, 500)
+                //$('#formPanel').switchClass('col-md-6 col-md-offset-6', 'col-md-6 col-md-offset-6', 500);
             }
         },
 
@@ -152,28 +211,39 @@ define([
          * Display ItemView like settingPanel
          */
         onRender : function() {
-            this.centerPanel.show( new FormPanelView({
-                fieldCollection : this.fieldCollection
-            }));
+            this.centerPanel.show(new FormPanelView({
+                fieldCollection : this.fieldCollection,
+                URLOptions : this.URLOptions
+            }, Backbone.Radio.channel('global').readonly));
 
-            this.leftPanel.show( new WidgetPanelView({
-
-            }));
+            if (!Backbone.Radio.channel('global').readonly)
+                this.leftPanel.show( new WidgetPanelView({}));
         },
 
         onDestroy : function() {
-            this.mainChannel.reset();
+
+            delete this.formChannel;
+            delete this.mainChannel;
+            delete this.settingFieldPanel;
+            delete this.settingFormPanel;
+            delete this;
         },
 
+        exitFormEdition : function() {
+            this.destroy();
+        },
 
         /**
          * Animate widget panel to put it in small size
          */
         minimizeWidgetPanel : function() {
+            /*
             $('#formPanel').switchClass('col-md-8', 'col-md-11', 300);
             $('#widgetPanel').switchClass('col-md-4', 'col-md-1', 300);
             $('#widgetPanel #features').fadeOut(200);
-            $('#toggle span').switchClass('open', 'closed');
+            $('#widgetPanel #smallFeatures').fadeIn(200);
+            $('#toggle').switchClass('open', 'closed');
+            */
         },
 
 
@@ -181,12 +251,14 @@ define([
         * Animate widget panel to put it in large size
          */
         maximizeWidgetPanel : function() {
+            /*
             $('#formPanel').switchClass('col-md-11', 'col-md-8', 300);
             $('#widgetPanel').switchClass('col-md-1', 'col-md-4', 300, function() {
                 $('#widgetPanel #features').fadeIn(200);
-                $('#toggle span').switchClass('closed', 'open');
+                $('#widgetPanel #smallFeatures').fadeOut(200);
+                $('#toggle').switchClass('closed', 'open');
             });
-
+            */
         },
 
 
@@ -195,20 +267,19 @@ define([
         */
         closeSettingPanel : function() {
             if ($('#widgetPanel').hasClass('col-md-1')) {
-                $('#formPanel').switchClass('col-md-7 col-md-pull-1', 'col-md-8', 500);
-                $('#widgetPanel').switchClass('col-md-1', 'col-md-4', 500, _.bind(function() {
-                    this.clearFormSettingView();
-                }, this));
-
-                $('#widgetPanel #features').fadeIn(200);
-                $('#toggle span').switchClass('closed', 'open');
+                $('#formPanel').switchClass('col-md-6', 'col-md-8', 500);
             } else {
-                $('#formPanel').switchClass('col-md-7', 'col-md-8', 500);
+                //$('#formPanel').switchClass('col-md-6 col-md-offset-6', 'col-md-6 col-md-offset-6', 500);
                 $('#widgetPanel').animate({
-                    marginLeft : 0
+                    marginRight : 0
                 }, 500, _.bind(function() {
                     this.clearFormSettingView();
                 }, this))
+            }
+
+            if ($('#settingFieldPanel').hasClass('col-md-3')) {
+                $('#settingFieldPanel').switchClass('col-md-3', 'col-md-0', 500);
+                $('#widgetPanel').show();
             }
         },
 
@@ -216,10 +287,32 @@ define([
         /**
          * Callback launch when setting panel needs to be closed
          */
-        closeSettingPanelAndResetURL : function() {
-            this.closeSettingPanel();
-        }
+        closeSettingPanelDefault : function(form) {
 
+            if (form)
+            {
+
+            }
+            this.closeSettingPanel();
+        },
+
+        closeSettingPanelAndSuccess : function(form) {
+
+            this.closeSettingPanelDefault(form);
+        },
+
+        closeSettingPanelAndCommit : function(form) {
+
+            this.closeSettingPanelDefault(form);
+        },
+
+        setTemplateList : function(templateList) {
+            this.savedTemplateList = templateList;
+        },
+
+        unsetTemplateList : function() {
+            this.savedTemplateList = undefined;
+        }
     });
 
     return EditionPageLayout;

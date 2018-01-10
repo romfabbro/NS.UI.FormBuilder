@@ -11,12 +11,24 @@
     color        : #555;
 }
 
+.fieldType {
+    color : #68696b;
+    padding-left: 7px;
+    font-size: 20px;
+}
+
 .col11centered { margin-left: 4.15555% !important; }
 
 #formPanel {
-    height: 100%;
-    padding-left: 0;
+    height       : 100%;
+    padding-left : 0;
     padding-right: 0;
+    position     : relative;
+    z-index      : 10;
+
+    #count {
+        margin-right: 10px;
+    }
 
     .dropArea {
 
@@ -27,10 +39,17 @@
         margin-bottom : 50px;
         z-index: 1;
 
+        .saveSpinner {
+            display:none;
+            max-height: 40px;
+            vertical-align: initial;
+            margin: 7px 50px 0 63px;
+        }
+
         footer {
-            height        : 120px;
+            height        : 80px;
             position      : absolute;
-            bottom        : 0;
+            bottom        : 30px;
             background    : @footerBackgroundColor;
             width         : 100% !important;
 
@@ -42,13 +61,41 @@
                 &.grey:first-child {
                     margin-right: 20px;
                 }
-                margin-top: 15px;
+                margin-top: 12px;
                 label:hover {
                     cursor : pointer;
                 }
                 &.red {
                     &:last-child {
                         margin-left: 20px;
+                    }
+                }
+            }
+        }
+
+        .sizepreview-container{
+            margin-top: 20px;
+
+            .sizepreview {
+                margin-left: 10%;
+                cursor: pointer;
+                color: white;
+                font-size: 15px;
+                display:none;
+
+                &:hover {
+                    color:#892833;
+                    text-decoration:underline;
+                }
+
+                &.selected {
+                    color:#892833;
+                    font-size:large;
+                    text-decoration:underline;
+
+                    &:hover {
+                        color:white;
+                        text-decoration:line-through;
                     }
                 }
             }
@@ -62,31 +109,37 @@
                 .exo;
                 width          : 100%;
                 background     : @backgroundColor;
-                font-size      : 35px;
+                font-size      : 30px;
                 color          : #fff;
                 border-bottom  : 1px #555 solid;
+                padding-bottom : 5px;
+//                overflow       : hidden;
+                margin-bottom  : 0;
+                margin-top     : 12px;
+                &:focus { box-shadow: none; }
                 label {
                     .exo;
                 }
-
-                padding-bottom : 15px;
-                overflow       : hidden;
-                margin-bottom  : 0;
-                &:focus { box-shadow: none; }
+                #count {
+                    color      : #6e6d71;
+                    font-size  : 21px;
+                    margin-left: 15px;
+                }
             }
 
-            .reneco.settings {
-                color : #555;
-                &:hover {
-                    cursor : pointer;
-                    color : #888;
-                }
+            #editForm {
+                position: relative;
+                top: -4px;
+            }
+
+            .pull-right#editForm {
+                font-size : 14px;
             }
         }
 
-        //  Main drop section, use perfect scrollbar library
+        //  Main drop section, use perfect scroll bar library
         .scrollSection {
-            height: 90%;
+            height: ~"calc(100% - 150px)";
             overflow: hidden;
             .col-md-12:first-child {
                 height: 100%;
@@ -94,58 +147,94 @@
                 .slimScrollBar {
                     left : 90%;
                 }
+
+                .slimScrollRail {
+                    left : 90%;
+                }
             }
         }
 
         .drop {
             padding: 0;
-            padding-bottom: 200px;
+            padding-bottom: 0px;
         }
 
         //  Class for each field in the drop zone
         .dropField {
             .noMarginTop;
-            padding-top   : 0px;
+            padding   : 0px;
             margin-left   : 0!important;
             background    : #111;
-            margin-bottom : 20px;
+            margin-bottom : 10px;
 
             .element {
                 background : #222;
-                padding: 0 !important;
+                padding: 3px !important;
                 border : 1px solid @dropFieldHeaderColor;
+
+                @hoverColor : #777;
+
+                &.selected {
+                    border-color : @hoverColor !important;
+                    .paddingBottom5 {
+                        background-color : @hoverColor !important;
+                    }
+                    .fieldType {
+                        color : #222;
+                    }
+                    &:hover {
+                        border-color : @hoverColor !important;
+                        .paddingBottom5 {
+                            background : @hoverColor !important;
+                        }
+                    }
+                }
 
                 .row {
                     //  field banner with label and action
                     &.paddingBottom5 {
                         .exo;
                         transition       : background 0.2s ease-in-out;
-                        height           : 45px;
-                        line-height      : 45px;
+                        height           : 35px;
+                        line-height      : 35px;
                         color            : white;
                         background-color : @dropFieldHeaderColor;
+                        overflow: hidden;
 
-                        .col-md-6 {
+                        .field-icon {
+                            height     : 35px;
+                            margin     : 2px 3px 0 5px;
+                            padding    : 0;
+                            overflow   : hidden;
+                            text-align : center;
+                            line-height: 35px;
+                            font-size  : 25px;
+                        }
+
+                        .field-label {
                             .exo;
-                            height      : 45px;
-                            line-height : 40px;
+                            height      : 35px;
+                            line-height : 35px;
                             color       : white;
-                            .reneco-drag2 {
-                                margin-right: 10px;
-                                position    : relative;
-                                top         : 2px;
+                            display     : inline;
+                            padding-left: 5px;
+                            i {
+                                font-size : 20px;
+                                position  : relative;
+                                top       : 2px;
+                                color     : #8b8d8f;
                             }
                         }
                         .fa-arrows { color : white; }
                     }
 
                     .actions {
-
+                        padding-right: 15px;
                         span {
                             color : #aaa;
-                            font-size : 24px;
-                            line-height: 42px;
-                            padding-left: 20px;
+                            font-size : 20px;
+                            line-height: 35px;
+                            margin-left: 20px;
                             &.edit {
                                 color : white;
                             }
@@ -160,17 +249,28 @@
                     &:not(.paddingBottom5) {
                         //  row with input
                         background : @backgroundColor;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
                     }
 
+                    .thesaurusField {
+                        max-height: 200px;
+                        overflow: auto;
+                    }
                 }
 
                 &:hover {
                     border : 1px solid @elementHoverColor;
                     .row {
                         &.paddingBottom5 {
-                            background: @elementHoverColor;
+                            background: #57585a;
+                            cursor : all-scroll !important;
+                            label.col-md-6:hover {
+                                cursor : all-scroll;
+                            }
+                        }
+                        .fieldType {
+                            color : #ddd;
                         }
                     }
                     .actions:not(.locked) span {
@@ -234,12 +334,13 @@
             //  ---------------------------------------------------
             //  Style for specific field type
 
-            label { .text(); .exo; &:hover { cursor : default !important; } }
+            label { .text(); .exo; &:hover { cursor : default; } }
 
             &.textArea {
                 textarea {
                     .mainField;
                     resize       : none;
+                    height       : 32px !important;
                 }
                 .span1:last-child {
                     height      : 48px;
@@ -369,7 +470,7 @@
 
             .slider {
                 float : left;
-                width: 500px !important;
+                //width: 500px !important;
             }
 
             .find {
@@ -390,6 +491,16 @@
             }
         }
 
+        #formOriginalIdArea{
+            font-size: 16px;
+            margin-top: 10px;
+
+            #datasImg{
+                cursor: pointer;
+                height: 30px;
+                margin-top: -10px;
+            }
+        }
     }
 
 }

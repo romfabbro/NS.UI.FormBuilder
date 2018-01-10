@@ -4,8 +4,10 @@ define([
     'backbone',
     'editionPageModule/views/fieldViews/BaseView',
     'text!editionPageModule/templates/fields/treeviewFieldView.html',
-    'jquery-ui', 'fancytree'
-], function($, _, Backbone, BaseView, viewTemplate) {
+    'text!editionPageModule/templates/fields/readonly/treeviewFieldView.html',
+    'jquery-ui',
+    'fancytree'
+], function($, _, Backbone, BaseView, viewTemplate, viewTemplateRO) {
 
     var TreeViewFieldView = BaseView.extend({
         events: function() {
@@ -13,16 +15,17 @@ define([
             });
         },
 
-        initialize : function(options) {
+        initialize : function(options, readonly) {
             var opt = options;
             opt.template = viewTemplate;
-
+            if (readonly)
+                opt.template = viewTemplateRO;
             BaseView.prototype.initialize.apply(this, [opt]);
         },
 
         render : function() {
             BaseView.prototype.render.apply(this, arguments);
-            $('#treeview' + this.model.get('id')).fancytree({
+            $('#treeview' + this.model.get('id')).autocompTree({
                 source: [
                     {title: "Node 1", key: "1"},
                     {title: "Folder 2", key: "2", folder: true, children: [

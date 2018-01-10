@@ -1,33 +1,132 @@
-# NS.UI.FormBuilder
+# FormBuilder Front-End
 
-## Screenshoots
+What does the Front of the Formbuilder needs to work ?
+-----
 
-![homepage](http://img4.hostingpics.net/pics/865244FormBuilderGoogleChrome.jpg)
+- npm
+- bower
+- grunt
 
-![editionPage](http://img4.hostingpics.net/pics/463955FormBuilderGoogleChrome2.jpg)
+**optional**
+- the "thesaurus" application (for thesaurus inputs)
+- the "position" application (for position inputs)
 
-## Presentation
+--------------------------------------------------
+Installation
+-----
 
-The Formbuilder is a marionette and backbone-forms based web application for JSON form definition.
-The application allows to define backbone-forms schema in order to generate HTML forms.
+Clone the repository
 
-Formbuilder features :
+	git clone https://github.com/NaturalSolutions/NS.UI.FormBuilder.git
+
+Install npm developpement tools
+
+    npm install
+
+Install library dependancies
+
+    bower install
+
+Compile with grunt
+
+	grunt build
 
 
-* Graphical form definition
-* Export / Import in JSON file
-* Drag'n drop field position ajustement
-* Model definition based on backone-forms
+--------------------------------------------------
+Configuration
+-----
 
-## Documentations
+Rename and edit as following :
 
-See our [documentation](docs/index.md)
+**App-config.js**
 
-## Demo
+	assets/js/app-config.example.js
 
-You can try the formBuilder on [this page](http://naturalsolutions.github.io/NS.UI.FormBuilder/)
-That page is static, so some functionnalities like "save on the cloud" will not work.
+Must be renamed into
 
-## Back end
+	assets/js/app-config.js
+	
+You'll have to rewrite the paths for the server calls with proper values (for the **URLOptions** item)
 
-Check out python back end [repository](https://github.com/NaturalSolutions/NS.Server.FormBuilder) built with Flask and SQLAlchemy.
+You'll also have to set the configuration rules for the app :
+
+- Weather the application interface is readonly or not
+		
+		readonlyMode : true OR false
+
+- Display advanced filters on the left pannel
+
+		displayUserFilter : true OR false
+		
+- Set the authentication mode
+
+		authMode : "portal" OR anything else
+		
+- If portal authentication mode is set, indicate the URL linking to the portal
+
+		portalURL : "http://path/to/your/portal/"
+
+- If portal authentication mode is set, the JWT security key 
+
+		securityKey : "yourSecurityKey"
+		
+- Some paths to reach various webservices (optional, if you want to use their linked inputs) :
+
+	- Path leading to thesaurs webservices
+		
+			thesaurusWSPath : "http://path/to/thesaurus/webservices/"
+			
+	- Path leading to position webservices
+		
+			positionWSPath : "http://path/to/position/webservices/"
+		
+
+- The list of all application contexts you want to find in the formbuilder
+
+	**See next chapter** for a full description of what you should put there
+
+- The start ID for the thesaurus and position for each of your contexts (optional, if you want to use their linked inputs) :
+
+		startID : {context1 : 0, context2 : 508, ...}
+
+
+--------------------------------------------------
+Contexts Configuration
+-----
+
+For the **appMode** option, you will have to indicate the list of contexts you want to see in your formbuilder application.
+
+- First you have to set a topcontext value
+
+		topcontext : "classic"
+
+- Then simply indicate the list of your contexts associated with an array of all the kind of inputs you want to link with your contexts 
+
+		context1 : ['Text', 'Date', 'Number'],
+		context2 : ['Select', 'Thesaurus', 'CheckBox', 'Autocomplete'],
+		contextZ : ['File', 'Radio']
+
+
+**Here is the list of existing generic types :**
+
+- Hidden
+- HorizontalLine
+- Autocomplete
+- Text
+- File
+- TreeView
+- Date
+- TextArea
+- Number
+- Decimal
+- NumericRange
+- Pattern
+- CheckBox
+- Radio
+- Select
+- ChildForm
+- Thesaurus
+- AutocompleteTreeView
+
+
+**This documentation is slightly out of date and lacks some informations, should be updated soon**

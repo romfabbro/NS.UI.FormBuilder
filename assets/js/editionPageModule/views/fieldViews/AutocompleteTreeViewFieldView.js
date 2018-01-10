@@ -3,9 +3,10 @@
     'underscore',
     'backbone',
     'editionPageModule/views/fieldViews/BaseView',
-    'text!editionPageModule/templates/fields/AutocompleteTreeViewFieldView.html',
+       'text!editionPageModule/templates/fields/AutocompleteTreeViewFieldView.html',
+       'text!editionPageModule/templates/fields/readonly/AutocompleteTreeViewFieldView.html',
     'backbone.radio'
-], function($, _, Backbone, BaseView, viewTemplate, Radio) {
+], function($, _, Backbone, BaseView, viewTemplate, viewTemplateRO, Radio) {
 
     var AutocompleteTreeViewFieldView = BaseView.extend({
         events: function() {
@@ -13,9 +14,11 @@
             });
         },
 
-        initialize : function(options) {
+        initialize : function(options, readonly) {
             var opt = options;
             opt.template = viewTemplate;
+            if (readonly)
+                opt.template = viewTemplateRO;
 
             BaseView.prototype.initialize.apply(this, [opt]);
             this.mainChannel = Backbone.Radio.channel('global');
@@ -24,7 +27,10 @@
                 var key     = data.node.key,
                     treeID  = '#treeViewtree'+ this.model.get('id');
 
-                $(treeID).fancytree("getTree").activateKey(key);
+                this.model.set('defaultNode', data.node.key);
+                this.model.set('fullpath', data.node.data.fullpath);
+
+                $(treeID).autocompTree("getTree").activateKey(key);
             }, this));
         },
 
@@ -35,7 +41,7 @@
                     language    : { hasLanguage: true, lng : this.model.get('language') },
                     wsUrl       : 'ressources/thesaurus',
                     webservices : 'autocompleteTreeView.json',
-                    startId     : '85263'
+                    startId     : '0'
 	            });
             }, this));
         }

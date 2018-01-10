@@ -21,7 +21,8 @@ define([
          */
         initialize : function(options) {
             this.url = options.url || 'ressources/forms/formsExample.json'; //  get a default URL for client-side mode
-
+            if (options.url && options.context)
+                this.url = options.url + "/" + options.context;
             this.initHomePageChannel();
         },
 
@@ -34,15 +35,35 @@ define([
          * @param  {int} modelID model to copy ID
          */
         cloneModel : function(modelID) {
+            //  Get information from original form
+            //  We remove id and add "copy" word at the end
             var original    = this.get(modelID).toJSON();
-            original.id     = this.length + 1;
-            original.name  += ' (copy)'
+            delete original.id;
+            original.name  += ' (copy)';
 
-            this.add(new FormModel(original))
+            //  Create field
+            var field = new FormModel(original);
+
+            this.add(field);
+
+            //  Save field
+            field.urlRoot = this.url;
+
+            field.save(field, {
+                success : _.bind(function(model, response, options) {
+                    field.id = response.id;
+                    this.homePageChannel.trigger('duplicate:success');
+                }, this),
+                error : _.bind(function(model, response, options) {
+                    this.homePageChannel.trigger('duplicate:error');
+                }, this)
+            });
         },
 
         deleteModel : function(modelID) {
+
             var modelToRemove = this.get(modelID);
+
             modelToRemove.urlRoot = this.url;
 
             modelToRemove.destroy({

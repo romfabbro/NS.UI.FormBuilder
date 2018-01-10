@@ -1,6 +1,6 @@
 define([
-    'jquery', 'marionette', 'text!../templates/LeftPanelView.html', 'i18n', 'jquery-ui'
-], function($, Marionette, LeftPanelViewTemplate) {
+    'jquery', 'marionette', 'text!../templates/LeftPanelView.html', 'text!../templates/LeftPanelViewNoUserNoTags.html', 'app-config', 'i18n', 'jquery-ui', "eonasdan-bootstrap-datetimepicker"
+], function($, Marionette, LeftPanelViewTemplate, LeftPanelViewTemplateNoUser, AppConfig) {
 
     /**
      * Left panel view in the homepage layout, contains form to filter grid on the center view
@@ -17,13 +17,16 @@ define([
          */
         events : {
             'click #find' : 'runSearch',    //  when user submit form
-            'click #clearForm' : 'clearForm'
+            'click #clearForm' : 'clearForm',
+            'keyup .form input' : 'removeEmptyClass'
         },
 
         /**
          * View constructor, init grid channel
          */
-        initialize : function(options) {
+        initialize : function(options, readonly) {
+            if (!AppConfig.displayUserFilter)
+                this.template = LeftPanelViewTemplateNoUser;
             this.initGridChannel();
             this.URLOptions = options.URLOptions;
         },
@@ -48,9 +51,16 @@ define([
                     values[field.name] = field.value;
                 }
             });
+
             if (!$.isEmptyObject(values)) {
                 this.gridChannel.trigger('search', values);
+            } else {
+                this.gridChannel.trigger('resetCollection');
             }
+        },
+
+        removeEmptyClass : function() {
+            this.$el.find('form').removeClass('empty');
         },
 
         /**
@@ -59,6 +69,13 @@ define([
         onRender : function(options) {
             this.$el.i18n(); // run i18nnext translation in the view context
             this.enableAutocomplete();
+
+            this.$el.find('#dateFrom').datetimepicker({
+                format : 'DD/MM/YYYY'
+            });
+            this.$el.find('#dateTo').datetimepicker({
+                format : 'DD/MM/YYYY'
+            });
         },
 
         /**
@@ -69,21 +86,41 @@ define([
             //  Enable autocomplete for form name search
             $.getJSON(this.URLOptions.formAutocomplete, _.bind(function(data) {
                 this.$el.find('#name').autocomplete({
-                    source : data.options
-                })
+                    minLength: 2,
+                    source : data.options,
+                    appendTo : '#leftPanel form #name-group',
+                    open : _.bind(function(event, ui) {
+                        var inputWidth = this.$el.find('#name-group input').css('width');
+                        $('.form-group ul, .form-group li').css('width', inputWidth);
+                    }, this)
+                });
             }, this));
 
             $.getJSON(this.URLOptions.keywordAutocomplete, _.bind(function(data) {
                 this.$el.find('#keywords').autocomplete({
-                    source : data.options
-                })
+                    minLength: 2,
+                    source : data.options,
+                    appendTo : '#leftPanel form #keywords-group',
+                    open : _.bind(function(event, ui) {
+                        var inputWidth = this.$el.find('#name-group input').css('width');
+                        $('.form-group ul, .form-group li').css('width', inputWidth);
+                    }, this)
+                });
             }, this));
 
-            $.getJSON(this.URLOptions.usersAutocomplete, _.bind(function(data) {
-                this.$el.find('#user').autocomplete({
-                    source : data.options
-                })
-            }, this));
+            if (AppConfig.displayUserFilter) {
+                $.getJSON(this.URLOptions.usersAutocomplete, _.bind(function(data) {
+                    this.$el.find('#user').autocomplete({
+                        minLength: 2,
+                        source : data.options,
+                        appendTo : '#leftPanel form #user-group',
+                        open : _.bind(function(event, ui) {
+                            var inputWidth = this.$el.find('#name-group input').css('width');
+                            $('.form-group ul, .form-group li').css('width', inputWidth);
+                        }, this)
+                    });
+                }, this));
+            }
         },
 
         /**

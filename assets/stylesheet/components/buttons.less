@@ -1,4 +1,20 @@
-button.reneco {
+
+//
+//  Button style
+//
+
+input[type="submit"].reneco { color : white; }
+
+button.reneco2 {
+    line-height : initial !important;
+    overflow : initial !important;
+    padding: 8px !important;
+    margin: 5px !important;
+    width: 100% !important;
+}
+
+button.reneco, button.reneco2 {
+    .exo;
     border        : none;
     box-shadow    : none !important;
     outline       : none !important;
@@ -7,6 +23,7 @@ button.reneco {
     line-height   : 35px;
     padding       : 0 !important;
     overflow      : hidden;
+    color         : white;
 
     &:hover {
         cursor: pointer;
@@ -33,10 +50,6 @@ button.reneco {
         }
     }
 
-    &.red {
-        background    : #892833;
-    }
-
     &.transparent {
         background     : transparent !important;
         box-shadow     : none;
@@ -45,40 +58,72 @@ button.reneco {
         color          : #555 !important;
         padding-top    : 7px;
         padding-bottom : 7px;
-        margin         : 5px auto;
-        width          : 250px;
+        margin-left    : 16px;
+        min-width      : 130px;
         height         : 45px !important;
-        margin-left    : 0 !important;
         margin-top     : 30px !important;
         margin-bottom  : 30px;
     }
 
-     label {
-         .exo;
+    label {
+        .exo;
         color      : white;
         display    : inline-block;
         float      : left;
         border     : none !important;
-        box-shasow : none !important;
+        box-shadow : none !important;
 
-         &:hover {
-             cursor: pointer;
-         }
+        &:hover {
+            cursor: pointer;
+        }
 
-         &:first-child {
-             padding-left  : 10px;
-             padding-right : 10px;
-             text-transform: uppercase;
-         }
+        &:first-child {
+            padding-left  : 10px;
+            padding-right : 10px;
+            text-transform: uppercase;
+        }
 
-         &:last-child:not(.empty) {
-             height    : 35px;
-             width     : 40px;
-             float     : right;
-             position  : relative;
-             left      : 1px;
-             font-size : 20px;
-             overflow  : hidden;
-         }
+        &:last-child:not(.empty) {
+            height    : 35px;
+            width     : 40px;
+            float     : right;
+            position  : relative;
+            left      : 1px;
+            font-size : 20px;
+            overflow  : hidden;
+        }
+    }
+
+    &.small {
+        width           : 40px;
+        height          : 40px;
+        text-align      : center;
+        line-height     : 45px;
+        span {
+            font-size       : 20px;
+        }
+    }
+
+    &.dark {
+        background-color: rgb(22, 22, 23);
+        color           : white;
+    }
+
+    &.round {
+        width        : 50px;
+        height       : 50px;
+        background   : #444;
+        border-radius: 50px;
+        color        : white;
+        text-align   : center;
+        font-size    : 18px;
+        transition   : all 0.2s ease-in;
+        box-shadow : 0 0 2px #222;
+        &:hover {
+            background   : #aaa;
+            font-size    : 20px;
+            color : #222;
+        }
     }
 }
+

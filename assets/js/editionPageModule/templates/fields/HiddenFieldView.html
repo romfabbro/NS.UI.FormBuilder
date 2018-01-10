@@ -1,17 +1,24 @@
 <div class="element padding5">
     <div class="row paddingBottom5">
-        <label class="col-md-4">
-            <i class="reneco reneco-drag2"></i>
-            <%= title %>
+        <label class="field-icon pull-left">
+            <i class="reneco reneco-hidden"></i>
         </label>
-        <div class="col-md-8 right actions">
+        <label class="field-label">
+            <%= title %>
+            <span data-i18n="fields.hidden" class="fieldType"></span>
+        </label>
+        <% if ($('.sizepreview').hasClass('selected')) { %>
+        <div class="pull-right actions" style="display:none;">
+            <% } else { %>
+            <div class="pull-right actions">
+                <% } %>
             <span id="trash" class="reneco reneco-trash"></span>
-            <span id="duplicate" class="reneco reneco-duplicate"></span>
+            <!-- <span id="duplicate" class="reneco reneco-duplicate"></span> -->
            <span id="edit" class="reneco reneco-edit"></span>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-11 col11centered">
+        <div class="col-md-12">
             <input type="text" class="form-control" name="<%= name %>" id="<%= id%>" value="<%= value %>" disabled="disabled" />
         </div>
     </div>

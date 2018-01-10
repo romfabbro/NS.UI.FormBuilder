@@ -3,7 +3,7 @@ define([
     'marionette',
     'text!../../templates/settingViews/EnumerationViewTemplate.html',
     'backgrid',
-], function($, Marionette, EnumerationViewTemplate, Backgrid) {
+], function ($, Marionette, EnumerationViewTemplate, Backgrid) {
 
     /**
      * This model represents a choice of a list
@@ -14,29 +14,30 @@ define([
         /**
          * Default value
          */
-        defaults : {
-            en             : 'french label',
-            fr             : 'English label',
-            value          : 'val',
-            isDefaultValue : false
+        defaults: {
+
+            isDefaultValue: false,
+            fr: 'French label',
+            en: 'English label',
+            value: 'val'
         },
 
         /*initialize : function(options) {
-            this.set(options)
-        },*/
+         this.set(options)
+         },*/
 
         /**
          * Return a choice as a JSON object
          *
          * @returns {{id: *, en: *, fr: *, value: *}}
          */
-        toJSON : function() {
+        toJSON: function () {
             return {
-                id             : this.get('id'),
-                en             : this.get('en'),
-                fr             : this.get('fr'),
-                value          : this.get('value'),
-                isDefaultValue : this.get('isDefaultValue')
+                id: this.get('id'),
+                isDefaultValue: this.get('isDefaultValue'),
+                fr: this.get('fr'),
+                en: this.get('en'),
+                value: this.get('value')
             }
         }
     });
@@ -57,8 +58,8 @@ define([
          *
          * @returns {boolean} if one attribute has a default value
          */
-        hasADefaultValue : function() {
-            var modelWithDefaultValue = this.filter(function(model) {
+        hasADefaultValue: function () {
+            var modelWithDefaultValue = this.filter(function (model) {
                 return model.get("isDefaultValue");
             });
 
@@ -71,16 +72,14 @@ define([
      */
     var EnumarationView = Backbone.Marionette.ItemView.extend({
 
-        events : {
-            "click #addChoice"                                  : 'addOption',
-            'click #enumGrid tbody tr:last-child td:last-child' : 'trashClick',
-            'click #enumGrid tbody input[type="checkbox"]'      : 'changeDefaultValue'
+        events: {
+            "click #addChoice": 'addOption'
         },
 
         /**
          * Use custom template
          */
-        template : function() {
+        template: function () {
             return _.template(EnumerationViewTemplate)();
         },
 
@@ -89,62 +88,39 @@ define([
          *
          * @param options options object
          */
-        initialize : function(options) {
-            this.model   = options.model;
+        initialize: function (options) {
+            this.model = options.model;
+
             this.choices = new Choices(this.model.get('choices'));
 
-            _.bindAll(this, 'template', 'addOption', 'trashClick', 'changeDefaultValue');
+            _.bindAll(this, 'template', 'addOption', 'trashClick');
         },
 
         /**
          * Render callback
          */
-        onRender : function() {
+        onRender: function () {
             this.initGrid();
-        },
-
-        changeDefaultValue : function(e) {
-            var index           = $(e.target).parents('tr').index(),
-                isChecked       = $(e.target).is(':checked'),
-                collectionItem  = this.choices.at(index);
-
-            if(this.model.get('multiple')) {
-
-                //  We can have multiple default values
-                var lastValues = this.model.get('defaultValue');
-
-                if (isChecked) {
-                    lastValues.push(collectionItem.get('id'));
-                } else {
-                    lastValues.splice(lastValues.indexOf(collectionItem.get('id')), 1);
-                }
-
-                this.model.set('defaultValue', lastValues);
-
-            }   else {
-
-                this.clearRadio();
-                $(e.target).prop('checked', isChecked);
-
-                //  If we can have only one default value we have one item array or empty
-                this.model.set('defaultValue', isChecked ? [collectionItem.get('id')] : []);
-            }
-        },
-
-        /**
-         * Set all input unchecked
-         */
-        clearRadio : function() {
-            this.$el.find('#enumGrid tbody input').prop('checked', false);
         },
 
         /**
          * Initialize backgrid and display grid
          */
-        initGrid : function() {
+        initGrid: function () {
             this.grid = new Backgrid.Grid({
-                columns    : this.model.columns,
-                collection : this.choices
+                columns: this.model.columns,
+                collection: this.choices,
+                events : {
+                    click : function(data){
+                        var defaultval = $(data.target).find("input").val();
+                        if (defaultval == "My first Option" || defaultval == "Mon option" ||
+                            defaultval == "English value" || defaultval == "French label" ||
+                            defaultval == "1" || defaultval == "Value")
+                        {
+                            $(data.target).find("input").val("");
+                        }
+                    }
+                }
             });
 
             this.$el.find('#enumGrid').html(this.grid.render().el);
@@ -154,8 +130,13 @@ define([
          * That callback add a new element on the grid with default attribute
          * The user can edit model attributes on the grid
          */
-        addOption : function() {
-            this.grid.insertRow( this.model.columDefaults );
+        addOption: function () {
+            this.grid.insertRow(this.model.columDefaults);
+
+            var lastTd = this.$el.find('#enumGrid tbody tr:last-child td:last-child');
+            lastTd.html('<span class="reneco trash"></span>');
+
+            lastTd.bind('click', this.trashClick);
         },
 
         /**
@@ -163,10 +144,10 @@ define([
          *
          * @param e jquery Click event
          */
-        trashClick : function(e) {
+        trashClick: function (e) {
             //  The index of the tr corresponds to the model to remove id
             var modelToRemoveID = $(e.target).parents('tr').index(),
-                modelToRemove   = this.choices.at(modelToRemoveID);
+                modelToRemove = this.choices.at(modelToRemoveID);
 
             //  We remove the element from the collection
             //  The gri is automatically updated
@@ -178,11 +159,12 @@ define([
          *
          * @returns {*} List of values or undefined
          */
-        commitValues : function() {
+        commitValues: function () {
             this.model.set('choices', this.choices.toJSON());
         }
 
     });
 
     return EnumarationView;
+
 });

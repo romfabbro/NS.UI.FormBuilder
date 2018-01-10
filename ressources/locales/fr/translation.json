@@ -1,8 +1,9 @@
 {
     "grid" : {
         "name"             : "nom",
-        "creationDate"     : "Date de création",
-        "modificationDate" : "Date de modification"
+        "creationDate"     : "Date création",
+        "modificationDate" : "Date modification",
+        "formContext"      : "Contexte"
     },
 
     "fields" : {
@@ -23,14 +24,19 @@
         "horizontalline"       : "Séparation",
         "treeview"             : "Arborescence",
         "boolean"              : "Booléen",
-        "thesaurus"            : "Thesaurus",
-        "autocompletetreeview" : "Arborescence avec autocompletion",
-        "numericrange"         : "Curseur"
+        "thesaurus"            : "Sélecteur Hiérarchisé",
+        "autocompletetreeview" : "Arbre avec autocomplétion",
+        "numericrange"         : "Curseur",
+        "childform"            : "Formulaire fils",
+        "objectpicker"         : "Selecteur d'objet",
+        "imageFile"            : "Fichier Image",
+        "decimal"              : "Numérique Décimal",
+        "position"             : "Position"
     },
 
     "search" : {
         "name"     : "Nom",
-        "keywords" : "Mots clés",
+        "keywords" : "Mots-clés",
         "user"     : "Utilisateur",
         "date" : {
             "from" : "De",
@@ -39,16 +45,42 @@
     },
 
     "form" : {
-        "name"       : "Nom du protocole",
-        "tag"        : "Tag de destination",
-        "cancel"     : "Annuler",
-        "clear"      : "Supprimer",
-        "title"      : "Création d'un nouveau formulaire",
-        "count"      : "Champ(s)",
-        "find"       : "Rechercher un formulaire",
-        "validation" : "Ce champs est requis",
-        "setting"    : "Caractéristiques <br /> du formulaire",
-        "new"        : "Nouveau formulaire",
+        "author"      : "Auteur",
+        "isgrid"      : "Est en grille",
+        "ishiddenprotocol" : "Protocole caché",
+        "hideprotocolname" : "Cacher le nom du Protocole",
+        "defaultforfieldactivity" : "Par défaut pour la fieldactivity",
+        "name"        : "Nom du protocole",
+        "tag"         : "Tag de destination",
+        "cancel"      : "Annuler",
+        "clear"       : "Supprimer",
+        "title"       : "Création d'un nouveau formulaire",
+        "count"       : "Champ(s)",
+        "find"        : "Rechercher",
+        "validation"  : "Ce champs est requis",
+        "importance"  : "Importance",
+        "minimalSize" : "La taille minimale doit être inéfieur à la taille maximale",
+        "setting"     : "Caractéristiques <br /> du formulaire",
+        "new"         : "Nouveau formulaire",
+        "context"     : "Contexte",
+        "activite"    : "Activité",
+        "ordre"       : "Ordre",
+        "typeIndividus" : "Type d'individus",
+        "frequence"   : "Fréquence",
+        "groupe"      : "Groupe",
+        "color"       : "Couleur",
+
+        "actif"       : {
+            "title"    : "Actif",
+            "actif"    : "Actif",
+            "pasactif" : "Inactif"
+        },
+
+        "importapressortie" : {
+            "title"    : "Import après sortie",
+            "only"     : "Oui",
+            "not"      : "Non"
+        },
 
         "description" : {
             "fr" : "Description française du formulaire",
@@ -61,16 +93,19 @@
         },
         "label" : {
             "fr" : "Intitulé français",
-            "en" : "intitulé anglais"
+            "en" : "Intitulé anglais"
         },
 
         "actions" : {
             "import" : "IMPORTER",
             "export" : "EXPORTER",
-            "save"   : "SAUVER",
+            "save"   : "SAUVER FORMULAIRE",
             "clear"  : "TOUT EFFACER",
             "find"   : "TROUVER",
-            "add"    : "AJOUTER"
+            "add"    : "AJOUTER",
+            "viewdetails" : "VOIR DETAILS",
+            "edit"   : "EDITER",
+            "sizepreview" : "Input sizes preview"
         }
     },
 
@@ -109,11 +144,29 @@
     "schema" : {
         "required"          : "Requis",
         "readonly"          : "Lecture seule",
+        "editMode"          : {
+            "visible"           : "Visible",
+            "editable"          : "Editable",
+            "nullable"          : "Nullable",
+            "nullmean"          : "Null signifiant",
+            "editMode"          : "Mode d'édition"
+        },
         "value"             : "Valeur",
         "default"           : "Valeur par défaut",
         "url"               : "Adresse du service web",
         "help"              : "Texte d'aide",
-        "size"              : "Taille maximal",
+        "triggerlength"     : "Taille pour déclenchement",
+        "size"              : "Champ des tailles",
+        "maximalSize"       : "Taille maximale",
+        "minimalSize"       : "Taille minimale",
+        "sizes" : {
+            "string" : {
+                "defaultsize" : "From 0 to 255"
+            },
+            "numeric" : {
+                "defaultsize" : "From 0 to 255"
+            }
+        },
         "file"              : "Fichier par défaut",
         "mime"              : "Type de fichier autorisé",
         "title"             : "Intitulé",
@@ -131,17 +184,25 @@
         "multiline"         : "Multi ligne",
         "min"               : "Valeur minimale",
         "max"               : "Valeur maximale",
+        "maxTextLength"     : "Longueur maximale",
+        "maxTextLengthError": "Longueur invalide",
+        "maxTextLengthMin"  : "La longueur doit être compris entre 1 et 255 !",
         "precision"         : "Précision",
         "unity"             : "Unité",
-        "pattern"           : "Masque de valeur",
+        "pattern"           : "Masque de saisie",
         "multiple"          : "Multiple",
         "legend"            : "Légende",
         "editorClass"       : "Classe CSS de l'éditeur",
-        "fieldClass"        : "Classe CSS du champs",
+        "fieldClassEdit"        : "Classe CSS du champs en mode Edition",
+        "fieldClassDisplay"        : "Classe CSS du champs en mode Affichage",
         "checked"           : "Sélectionné",
         "checkboxlabel"     : "Label checkbox",
-        "decimal"           : "Valeur décimal autorisée",
-        "fieldSize"         : "Taille d'affichage",
+        "decimal"           : "Valeur décimale autorisée",
+        "fieldSizeEdit"     : "Taille d'affichage en mode Edition",
+        "fieldSizeDisplay"  : "Taille d'affichage en mode Affichage",
+        "fieldSize"         : "Taille d'affichage (/12 or pixels)",
+        "fullpath"          : "Chemin entier",
+        "obsolete"          : "Inactif",
         "sizeValue" : {
             "small"  : "Etroit",
             "medium" : "Moyen",
@@ -161,7 +222,33 @@
         "linkedFieldIdentifyingColumn" : "Champ identifiant",
         "linkedField"                  : "Champ lié",
         "formIdentifyingColumn"        : "Champ du formulaire identifiant",
-        "isLinkedField"                : "Est un champs lié"
+        "linkedFieldset"               : "Fieldset parent",
+        "isLinkedField"                : "Est un champs lié",
+        "showCssProperties"            : "Voir Propriétés Css",
+        "childForm"                    : "Nom du formulaire fils",
+        "applyTemplate"                : "Template à appliquer (valider en bas de page)",
+        "objectType"                   : "Object Picker",
+        "iscollapsed"                  : "Arbre replié",
+        "ACTrigger"                    : "Caractère d'execution de l'autocomplétion",
+        "ACTriggerMinValue"            : "Le charactère minimum d'execution est 1",
+        "linkedLabel"                  : "Label associé",
+        "propagate"                    : "Propagé",
+        "isBinaryWeight"               : "Est un poid binaire",
+        "preview"                      : "Montrer une prévisualisation",
+        "atBeginingOfLine"             : "Est en début de ligne",
+        "sizeError"                    : "La taille doit être comprise entre 1 et 12",
+        "positionPath"                 : "Chemin vers la position",
+        "defaultPath"                  : "Valeur par défaut",
+        "nbFixedCol"                   : "Nombre de colonnes fixes",
+        "delFirst"                     : "Supprimer le premier",
+        "showLines"                    : "Montrer les lignes",
+        "nbFixedColMinValue"           : "La valeur minimale est 1",
+        "minAppearance"                : "Minimum d'apparitions",
+        "minValueError"                : "La valeur minimale est 0",
+        "maxlength255"                 : "La longueur maximale est 255",
+        "maxlength55"                  : "La longueur maximale est 55",
+        "errorbetween0and5"            : "La valeur doit être comprise entre 0 et 5",
+        "trackType"                    : "Type Track"
     },
 
     "tooltip" : {
@@ -184,25 +271,34 @@
         "boolean"              : "Booléen",
         "autocompletetreeview" : "arborescence avec un champs de recherche",
         "numericrange"         : "Curseur numérique",
-        "thesaurus"            : "Thesaurus"
+        "thesaurus"            : "Sélecteur Hiérarchisé",
+        "childform"            : "Formulaire Fils",
+        "objectpicker"         : "Selecteur d'objet",
+        "imageFile"            : "Fichier Image",
+        "decimal"              : "Numérique Décimal",
+        "position"             : "Position"
     },
 
-    "clearProtocol" : "Vous êtes sur le point de créer un nouveau formulaire.<br />Le formulaire actuel sera perdu.<br />Voulez vous continuer ?",
+    "clearProtocol" : "Vous êtes sur le point de purger le formulaire.<br />Les modifications non sauvegardées seront perdues.<br />Voulez vous continuer ?",
 
     "accordion" : {
-        "standard"     : "Champs standards",
-        "autocomplete" : "Champs avec autocomplétion",
+        "text"         : "Champs texte",
+        "numeric"      : "Champs numérique",
+        "list"         : "Listes",
         "presentation" : "Champs de présentation",
-        "other"        : "Autres champs",
-        "list"         : "Champs à choix multiples"
+        "autocomplete" : "Champs avec autocomplétion",
+        "tree"         : "Arbres de selection",
+        "file"         : "Selecteurs de fichier",
+        "other"        : "Autres types de champs",
+        "reneco"       : "Champs spéciaux Reneco"
     },
 
     "panel" : "Paramètres",
 
     "navbar" : {
         "context" : {
-            "edition" : "édition",
-            "home" : "accueil"
+            "edition" : "Edition",
+            "home" : "Accueil"
         },
         "status" : {
             "online" : "Connecté"
@@ -217,35 +313,57 @@
 
     "settings" : {
         "actions" : {
-            "saveAsType" : "Enregistrez comme nouveau type",
-            "save"       : "Sauvegarder",
-            "cancel"     : "Annuler"
+            "saveAsType" : "Enregistrez comme nouveau template",
+            "applyTemplate" : "Appliquer",
+            "chooseNewTemplate" : "Appliquer un template :",
+            "save"       : "Sauver modifications",
+            "validate"   : "Valider",
+            "cancel"     : "Annuler",
+            "listOfParentForms" : "Liste des formulaires parents :",
+            "convertType" : "Convertir le champ",
+            "chooseNewType" : "Choisissez un nouveau type d'input :",
+            "convertAction" : "Convertir",
+            "convertTitle" : "Confirmation de convertion",
+            "convertValidate" : "L'input sera convertit sans retour possible !",
+            "convertYes" : "Oui, convertir",
+            "convertNo" : "Annuler",
+            "choosefile" : "Associer un fichier",
+            "browse" : "Parcourir"
         },
-        "preField" : "Champs pré configurés"
+        "preField" : "Champs pré configurés",
+        "linkedFilesList" : "Liste des fichiers associés :"
     },
     "modal" : {
         "comment"  : "Votre commentaire",
         "filename" : "Nom du fichier",
         "clear" : {
             "title"            : "Etes vous sûr ?",
-            "text"             : "Le formulaire sera définitivement perdu !",
+            "title2"           : "Etes vous VRAIMENT sûr ?",
+            "text"             : "Le formulaire sera supprimé !",
+            "text2"            : "Le formulaire et ses champs associés seront définitivement perdus !",
+            "textinput"        : "Le champ sera supprimé !",
+            "textinput2"       : "Après sauvegarde, le champ sera définitivement perdu !",
             "yes"              : "Oui, supprimer",
             "no"               : "Non, annuler",
-            "deleted"          : "Supprimé !",
-            "formDeleted"      : "Votre formulaire a été supprimé !",
-            "deleteError"      : "Non supprimé !",
-            "formDeletedError" : "Votre formulaire n'a pas pu être supprimé !"
+            "deleted"          : "Champs supprimés !",
+            "formDeleted"      : "Votre formulaire a été vidé !",
+            "deleteError"      : "Champs non supprimé !",
+            "formDeletedError" : "Votre formulaire n'a pas pu être vidé !",
+            "fieldsdeleted"    : "Les champs du formulaire seront supprimés !",
+            "loosingModifications" : "En quittant, vous perdrez vos modifications !"
         },
         "exit" : {
           "yes" : "Oui quitter"
         },
         "import" : {
-            "error"    : "Une erreur est survenu !",
+            "error"    : "Une erreur est survenue !",
             "errorMsg" : "Votre formulaire n'a pas pu être importé",
             "title"    : "Importer un formulaire",
             "label"    : "Selectionnez le fichier JSON a importé",
             "action"   : "Importer",
-            "find"     : "Parcourir"
+            "find"     : "Parcourir",
+            "success"  : "Succès",
+            "successMsg" : "Le formulaire a bien été importé"
         },
         "export" : {
             "success"  : "Export réussi !",
@@ -257,10 +375,26 @@
         "save" : {
             "success"    : "Sauvé !",
             "successMsg" : "Votre formulaire a été enregistré sur le serveur !",
-            "error"      : "Une erreur est survenu !",
+            "successMsgTmp" : "Nouveaux paramètres du formulaire enregistrés !",
+            "error"      : "Une erreur est survenue !",
             "errorMsg"   : "Votre formulaire n'a pas été enregistré !\nPensez à faire un export",
+            "errorMsgNoExport"   : "Votre formulaire n'a pas été enregistré. Pour une raison quelconque ...",
             "title"      : "Sauvegarde du protocol",
-            "button"     : "Sauvegarder"
+            "button"     : "Sauvegarder",
+            "uncompleteFormerror" : "Formulaire incorrect !",
+            "uncompleteForm" : "Au moins une information manque ou est incorrecte dans les propriétés du formulaire !",
+            "uncompleteFormProp" : "Au moins un champ obligatoire des propriétés du formulaire est vide !",
+            "uncompleteFielderror" : "Champs incorrects !",
+            "uncompleteField" : "Au moins une information manque ou est incorrecte dans les propriétés de vos champs !",
+            "uncompleteFieldProp" : "Au moins un champ obligatoire des propriétés du champ est vide !",
+            "inputnamehasothertype" : "Un des champs de ce formulaire existe déjà dans un autre formulaire avec un autre type pour ce contexte comme suis : ",
+            "hasDuplicateFieldNamesError" : "Formulaire invalide !",
+            "hasDuplicateFieldNames" : "Certains de vos champs ont des noms identiques",
+            "formSimilarName" : "Un formulaire avec un nom similaire existe déjà !",
+            "formSimilarFrName" : "Un formulaire avec un nom d'affichage français similaire existe déjà !",
+            "formSimilarEnName" : "Un formulaire avec un nom d'affichage anglais similaire existe déjà !",
+            "circularDependency" : "Une dépendance circulaire a été détectée parmis vos childforms !!",
+            "418" : "Je suis une théière !"
         },
         "field" : {
             "error"    : "Echec de l'ajout !",
@@ -271,21 +405,63 @@
             "successMsg" : "Votre champs a été enregistré comme champs pré-configuré.",
             "error"      : "Champs non sauvegardé !",
             "errorMsg"   : "Votre champs n'a pas pu être sauvegardé."
+        },
+        "duplicate" : {
+          "success"    : "Dupliqué !",
+          "successMsg" : "Votre formulaire a été dupliqué et enregistré sur le serveur !",
+          "error"      : "Une erreur est survenue !",
+          "errorMsg"   : "Votre formulaire n'a pas pas être dupliqué"
+        },
+        "newForm" : {
+            "title"            : "Nouveau formulaire",
+            "text"             : "Saisir le nom du nouveau formulaire",
+            "inputPlaceholder" : "Nom du nouveau formulaire",
+            "error"            : "Le nom ne peut pas être vide",
+            "cancelButtonText" : "Annuler"
+        },
+        "template" : {
+          "success"    : "Sauvé !",
+          "successMsg" : "Votre formulaire a été enregistré comme template !",
+          "error"      : "Une erreur est survenue !",
+          "errorMsg"   : "Votre formulaire n'a pas été enregistré comme template."
+        },
+        "editionField" : {
+            "fieldEditAlert" : "Alerte d'édition de champ",
+            "defaultValueEdit" : "Attention, en éditant la propriété 'valeur par défaut', vous pourriez avoir envie de mettre a jour les données de bases de données liées à cette valeur",
+            "propagationactivated" : "Assurez vous que vos règles ont bien été configurées avant de sauvegarder avec la propagation activée !"
+        },
+        "makeObs" : {
+            "success" : "Succès !",
+            "successMsg" : "Le formulaire a été passé en obsolète"
         }
     },
 
     "placeholder" : {
         "label" : {
-          "fr" : "Label français de votre champs",
-          "en" : "Label anglais de votre champs"
+          "fr" : "Label français de votre champ",
+          "en" : "Label anglais de votre champ"
         },
-        "name"     : "Nom de votre champs",
-        "value"    : "Valeur par défaut de votre champs",
-        "help"     : "Text d'aide de votre champs",
-        "url"      : "URL permettant de récupérer la liste des valeurs",
-        "size"     : "Taille maximum de la valeur du champs",
-        "mime"     : "Type de fichiers autorisés",
-        "fileSize" : "Taille maximum autoriser pour les fichiers choisis",
+        "form" : {
+            "name" : "Nom du formulaire",
+            "label" : {
+                "fr" : "Nom français",
+                "en" : "Nom anglais"
+            },
+            "description" : {
+                "fr" : "Description française",
+                "en" : "Description anglaise"
+            }
+        },
+        "name"        : "Nom de votre champ",
+        "value"       : "Valeur par défaut de votre champ",
+        "valueSQL"    : "Requête SQL comme valeur par défaut",
+        "help"        : "Text d'aide de votre champ",
+        "triggerlength": "Taille de la chaine pour le déclenchement de l'autocomplétion",
+        "url"         : "URL permettant de récupérer la liste des valeurs",
+        "size"        : "Taille maximum de la valeur du champs",
+        "minimalSize" : "Taille minimum de la valeur du champs",
+        "mime"        : "Type de fichiers autorisés",
+        "fileSize"    : "Taille maximum autorisée pour les fichiers choisis",
         "tree" : {
           "default" : "Noeud de départ",
           "url"     : "URL retournant l'arborescence de l'arbre"
@@ -295,7 +471,9 @@
           "min"       : "Valeur numérique minimale",
           "max"       : "Valeur numérique maximale",
           "precision" : "Précision d'incrémentation",
-          "unity"     : "Unité du champs"
+          "unity"     : "Unité du champs",
+          "ACTrigger" : "L'autocompletion se lancera à",
+          "minAppearance"   : "Au moins 0"
         },
         "legend" : "Légende du regroupement",
 
@@ -304,7 +482,9 @@
         "autocomplete" : "Entrez une valeur pour voir la liste d'autocomplétion",
         "file"         : "Veuillez choisir un fichier",
         "numeric"      : "Saisir une valeur numérique",
-        "date"         : "Entrez une date ou cliquez sur le picto"
+        "date"         : "Entrez une date ou cliquez sur le picto",
+        "childform"    : "Nom du formulaire fils : ",
+        "objectpicker" : "Type d'objet : "
 
     },
 
@@ -312,11 +492,41 @@
 
     "error" : {
       "general" : "Erreur générale",
-      "message" : "Un ou plusieurs champs ne sont pas renseignés"
+      "message" : "Un ou plusieurs champs ne sont pas renseignés",
+      "cookieCheck" : "Votre identité ne peut être vérifiée",
+      "serverAvailable" : "Merci de bien vouloir vous reconnecter"
     },
 
     "fetch" : {
       "error"    : "Erreur de récupération des formulaires !",
-      "errorMsg" : "Impossible de récupérer la liste des formulaires depuis le serveur."
+      "errorMsg" : "Impossible de récupérer la liste des formulaires depuis le serveur. Le serveur est-il inactif ?"
+    },
+
+    "configuration" : {
+      "save" : {
+        "success"    : "Sauvé !",
+        "successMsg" : "Votre champs a bien été sauvgeardé",
+        "fail"       : "Echec !",
+        "failMsg"    : "Votre champs n'a pas pu être sauvegardé",
+        "samename"   : "Votre champs ne peut avoir le même nom qu'un autre champ du formulaire",
+        "loadsuccess": "Chargement réussi !",
+        "loadsuccessMsg": "Le template a bien été chargé"
+      },
+      "cancel" : {
+        "yousure" : "Vraiment ?",
+        "unsavedchanges" : "Vous avez effectué des changements !",
+        "yescancel" : "Oui, quitter !",
+        "stay" : "No, continue."
+      }
+    },
+
+    "formCount" : {
+      "form": "__count__ Formulaire",
+      "form_plural": "__count__ Formulaires"
+    },
+
+    "fieldCount" : {
+      "field": "__count__ Champ",
+      "field_plural": "__count__ Champs"
     }
 }

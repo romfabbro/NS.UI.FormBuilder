@@ -1,88 +1,111 @@
-//	--------------------------------------------------
-//	All field style like select, radio, ...
 
-//	Style is separated to beused on setting and form panel
+//
+//  Field style
+//
 
-.fontAwesomeField(@type, @selectedContent, @unSelectedContent) {
-
-    input[type="@{type}"] {
-        display : none;
-    }
-
-    label {
-        &.@{type}Label {
-
-            &:before {
-                .fa;
-                display        : inline-block;
-                color          : #555;
-                font-size      : 24px;
-                content        : @unSelectedContent;
-                letter-spacing : 10px;
-
-                &:hover {
-                    cursor: pointer !important;
-                }
-            }
-
-            &.selected {
-                &:before {
-                    content: @selectedContent;
-                    &:hover {
-                        cursor: pointer !important;
-                    }
-                }
-            }
-        }
-    }
-
+//  remove shadow
+.form-control {
+    box-shadow: none!important;
+    height: 32px;
+    padding: 5px 10px;
+    font-size: 13px;
 }
 
+//  checkbox custom field
+//  We hide the input and replace with before icon, we use reneco fonts https://github.com/NaturalSolutions/RenecoFonts
 .checkboxField {
-	//.fontAwesomeField(checkbox, "\f046", "\f096");
-    &.form-control {
-        background : transparent !important;
-        border : none !important;
-        margin-bottom : 45px;
-        padding-left : 0;
+    input {
+        display : none;
 
-        .help-block {
-            .exo;
-            font-size : 16px;
-            color : #aaa183;
+        &+label {
+            color : #aaa;
+            font-size : 20px;
+            &:before {
+                .reneco;
+                content: "\e640";
+            }
+        }
+
+        &:checked+label:before {
+            .reneco;
+            content: "\e63f"
         }
     }
 }
 
-.checkboxField input {
-  display : none;
-}
-.checkboxField input + label {
-  color : #aaa;
-  font-size : 20px;
-}
-
-.checkboxField input + label:before {
-  .fa;
-  content: "\f096";
-}
-
-.checkboxField input:checked + label:before {
-  .fa;
-  content: "\f046"
-}
-
+//  checkbox custom field
 .radioField {
-    .fontAwesomeField(radio, "\f192", "\f10c");
+    input {
+        display : none;
+
+        &+label {
+            color : #aaa;
+            font-size : 20px;
+            &:before {
+                .reneco;
+                content: "\e642";
+            }
+        }
+
+        &:checked+label:before {
+            .reneco;
+            content: "\e641"
+        }
+    }
 }
 
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.neverHasShadow(@color) {
+    outline     : none !important;
+    box-shadow  : none !important;
+    border-color: @color !important;
+
+    &:hover, &:active, &:visited, &:focus, &:blur {
+        box-shadow  : none !important;
+        border-color: @color !important;
+        outline     : none !important;
+    }
+}
+
+.bootstrap-select .btn:focus {
+    outline: none !important;
+}
+
+//  override bootstrap select style
+//  bootstrap select library : http://silviomoreto.github.io/bootstrap-select/
 .bootstrap-select {
     box-shadow: none;
     border-radius: 2.5px;
     background : transparent !important;
 
+    .caret {
+        color : white;
+    }
+
     .btn {
-        background : transparent !important;
+        background   : #292c2e !important;
+        border-color : transparent !important;
+        .neverHasShadow(#292c2e);
+        span {
+            .exo;
+            color : white;
+            text-shadow: none;
+        }
+    }
+
+    .btn-default {
+        border : none !important;
+        box-shadow: none !important;
+    }
+
+    button {
+        span {.exo;}
     }
 
     .selectpicker {
@@ -100,13 +123,19 @@
 
         ul {
             li {
-                background : #222 !important;
-                a { background : #222 !important; }
+                .neverHasShadow(#292c2e);
+                background : #292c2e !important;
+                .exo;
+                a {
+                    background : #292c2e !important;
+                    .neverHasShadow(#292c2e);
+                }
                 &:hover {
-                    background : #222;
-                    * { background : #222; }
+                    background : #222 !important;
+                    a, span { background : #222 !important; }
                 }
                 span {
+                    .neverHasShadow(#292c2e);
                     &.text {
                         .exo;
                         font-size : 16px;
@@ -114,52 +143,20 @@
                     }
                 }
                 &.selected {
-                    box-shadow: none;
-                    background : #222;
+                    .neverHasShadow(#292c2e);
+                    background : #292c2e;
                 }
             }
         }
     }
 }
 
-.checkBoxEditor {
-  margin-bottom: 10px;
-  &>label:first-child {
-    display: none;
-  }
-}
-
-.form-control {
-    box-shadow: none!important;
-}
-
-.radiosField {
-    padding-left   : 0;
-    display        : inline-block;
-    width          : 100%;
-    list-style-type: none;
-    li {
-        float: left;
-        width: 33.3% !important;
-
-        input {
-            display : none;
-        }
-
-        label {
-            &:before {
-                .fa;
-                content: "\f10c";
-                padding-right: 5px;
-            }
-        }
-
-        *:checked+label {
-            &:before {
-                .fa;
-                content: "\f192";
-                padding-right: 5px;
-            }
-        }
+.slider-field {
+    .slider {
+        width : ~'calc(100% - 100px)';
     }
 }
+
+
+
+

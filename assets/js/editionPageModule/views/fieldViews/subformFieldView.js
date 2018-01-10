@@ -4,8 +4,10 @@ define([
     'backbone',
     'editionPageModule/views/fieldViews/BaseView',
     'text!editionPageModule/templates/fields/subformFieldView.html',
-    'backbone.radio'
-], function ($, _, Backbone, BaseView, viewTemplate, Radio) {
+    'text!editionPageModule/templates/fields/readonly/subformFieldView.html',
+    'backbone.radio',
+    '../../models/fields'
+], function ($, _, Backbone, BaseView, viewTemplate, viewTemplateRO, Radio, Fields) {
 
     var SubformFieldView = BaseView.extend({
 
@@ -14,16 +16,11 @@ define([
          *
          * @returns {object} view events
          */
-        events: function () {
-            return _.extend({}, BaseView.prototype.events, {
-                'delete'         : 'deleteSubView',
-                'isDroppedReturn': 'isDroppedReturn',
-
-                //  Duplicate BaseView events
-                'click #sub-trash'       : 'removeView',
-                'click #sub-duplicate'   : 'copyModel',
-                'click #sub-edit'        : 'editModel'
-            });
+        events: {
+            //  Duplicate BaseView events
+            'click #sub-trash'       : 'removeView',
+            'click #sub-duplicate'   : 'copyModel',
+            'click #sub-edit'        : 'editModel'
         },
 
         removeView : function() {
@@ -38,14 +35,20 @@ define([
             BaseView.prototype.editModel.apply(this);
         },
 
-        initialize: function (options) {
+        initialize: function (options, readonly) {
+            if (this.model.get("legend") == Fields.SubformField.prototype.defaults.legend)
+                this.model.set("legend", this.model.get('legend') + " " + this.model.get('id'));
             var opt = options;
             opt.template = viewTemplate;
+            opt.next     = 'nextFieldSet'
+            if (readonly)
+                opt.template = viewTemplateRO;
 
             BaseView.prototype.initialize.apply(this, [opt]);
-            this._subView = []
 
-
+            this.model.off('change');
+            this.model.bind('change:legend', this.changeLegend, this);
+            this.model.on('fieldAdded', this.fieldAdded, this);
 
             _.bindAll(this, 'renderSubView', 'render');
 
@@ -68,20 +71,23 @@ define([
         },
 
         /**
-         * Event sned by formPanelView when a view is dropped in a subForm view
+         * Event send by formPanelView when a view is dropped in a subForm view
          *
          * @param viewToMove view to move from the form panel to the subForm view
          */
-        viewDropped: function (viewToMove) {
-            var viewToMoveDetech = $(viewToMove.el).detach();
+        viewDropped: function (viewToMoveModel) {
+            //TODO HERE THERE IS SOMETHING TO CHANGE ABOUT VIEW BEING SCREWED UP
+            if (viewToMoveModel.get('subFormParent') == this.model.get('id'))
+                console.log("Error, you are trying to reset his parentform to the field '" + viewToMoveModel.attributes.labelFr + "' !");
+            else {
+                viewToMoveModel.set('subFormParent', this.model.get('id'));
+                viewToMoveModel.set('isUnderFieldset', true);
+                viewToMoveModel.set('linkedFieldset', this.model.get('legend') + " " + this.model.cid);
 
-            //  I don't why but the follow code don't work without a setTimeout
-            //  I think the code is ran before the detach finish
-            setTimeout(_.bind(function () {
-                this.$el.find('.subformField fieldset').append(viewToMoveDetech);
-                //  Add new view model
-                this.model.addModel(viewToMove.model)
-            }, this), 1);
+                this.model.addField(viewToMoveModel);
+
+                this.addSubView(viewToMoveModel);
+            }
         },
 
         render: function () {
@@ -103,6 +109,9 @@ define([
             });
 
             $(this.el).find('fieldset').sortable({
+                start: function(event, ui) {
+                    ui.item.startPos = ui.item.index();
+                },
                 cancel: null,
                 cursor: 'pointer',
                 axis: 'y',
@@ -110,58 +119,71 @@ define([
                 hoverClass: 'hovered',
                 activeClass: 'hovered',
                 stop: _.bind(function (event, ui) {
-                    var id = $(ui.item).find('.subElement').prop('id'),
-                        from = this._subView.indexOf(id),
-                        to = $(ui.item).index() - 1;
-
+                    var id = ui.item[0].id,
+                        from = ui.item.startPos,
+                        to = ui.item.index() - 1;
+                    /*
+                    // HTMLT
                     this._subView.splice(this._subView.indexOf(id), 1);
                     this._subView.splice(to, 0, id);
+                    */
+
+                    // MAJ Model BB
                     this.model.updateModel(id, from, to);
                 }, this)
             });
 
             this.renderSubView();
+
             return this;
+        },
+
+        addSubView : function(model) {
+            require(['editionPageModule/views/fieldViews/' + model.constructor.type + 'FieldView'], _.bind(function(fieldView) {
+
+                this.$el.find('fieldset').append('<div class="row sortableRow marginTop0" id="subView' + model.cid + '"></div>');
+
+                var vue = new fieldView({
+                    el         : '#subView' + model.cid,
+                    model      : model
+                });
+                if (vue !== null) {
+                    vue.render();
+                }
+                
+                $(".actions").i18n();
+            }, this));
+        },
+
+        /**
+         * Call execute when a field is added into the subForm view
+         * The subForm view create the view for the new added field
+         *
+         * @param element new added field
+         */
+        fieldAdded : function(element) {
+            this.addSubView(element);
+
         },
 
         /**
          * Render subView
          */
         renderSubView: function () {
-            _.each(this.model.get('fields'), _.bind(function (el, idx) {
-
-                require(['editionPageModule/views/fieldViews/' + el.constructor.type + 'FieldView'], _.bind(function(fieldView) {
-
-                    $(this.el + ' fieldset').append('<div class="row sortableRow marginTop0" id="subView' + el.cid + '"></div>');
-
-                    var vue = new fieldView({
-                        el         : '#subView' + el.cid,
-                        model      : el
-                    });
-                    if (vue !== null) {
-                        vue.render();
-                    }
-
-                    $(".actions").i18n();
-                }, this));
-
-            }, this))
+            _.each(this.model.get('fieldsObject'), _.bind(function(model, idx) {
+                this.addSubView(model);
+            }, this));
         },
 
         /**
-         * Remove the subView
-         *
-         * @param event jQuery event
+         * Change fieldset label when legend model attribute changed
          */
-        deleteSubView: function (event) {
-            delete this._subView[$(event.target).prop('id')];
-
-            var index = $(event.target).prop('id').replace('subform', '');
-            index = index.replace('dropField', '');
-
-            this.model.removeModel(parseInt(index));
-
-            $(event.target).replaceWith('');
+        changeLegend : function() {
+            this.$el.find('.legend').text(this.model.get('legend'));
+            var that = this;
+            $.each(this.model.get('fields'), function(){
+                this.attributes.linkedFieldset = that.model.get('legend') + " " + that.model.cid;
+            });
         }
 
     });

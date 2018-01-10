@@ -7,8 +7,9 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     paths: ["stylesheet"],
-                    cleancss: false,
+                    cleancss: true,
                     sourceMap: false,
+                    compress : true,
                     sourceMapFilename: 'compressed/formbuilder.css.map',
                     sourceMapRootpath: ''
                 },
@@ -33,6 +34,9 @@ module.exports = function(grunt) {
             }
         }
     });
+
+    grunt.registerTask('prod', ['less', 'autoprefixer']);
+	grunt.registerTask('build', ['less', 'autoprefixer']);
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
